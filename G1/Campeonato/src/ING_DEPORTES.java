@@ -21,6 +21,7 @@ public class ING_DEPORTES extends javax.swing.JFrame {
      */
     public ING_DEPORTES() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -48,6 +49,7 @@ public class ING_DEPORTES extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -223,7 +225,7 @@ public class ING_DEPORTES extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

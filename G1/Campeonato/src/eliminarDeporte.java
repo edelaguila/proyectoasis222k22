@@ -19,6 +19,7 @@ public class eliminarDeporte extends javax.swing.JFrame {
      */
     public eliminarDeporte() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,6 +45,7 @@ public class eliminarDeporte extends javax.swing.JFrame {
         BTELIMINAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -206,7 +208,7 @@ public class eliminarDeporte extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
