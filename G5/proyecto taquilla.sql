@@ -75,6 +75,13 @@ fecha_nac date,
 sexo varchar(15)
 );
 
+create table usuariosadmin(
+	id_usuarioadmin int primary key,
+    usuario varchar(50),
+    contraseña varchar(50),
+    permisos varchar(50)
+);
+
 alter table cines add constraint llave1 foreign key (Depto) references ubicaciones(No_depto);
 alter table salas add constraint llave2 foreign key (id_cine) references cines(Id_cines);
 alter table salas add constraint llave3 foreign key (id_peliculas) references peliculas(id_peli);
@@ -82,6 +89,9 @@ alter table peliculas add constraint llave4 foreign key (clasificacion) referenc
 alter table cartelera add constraint llave5 foreign key (salas) references salas(Id_sala);
 -- alter table cines add constraint llave5 foreign key (Depto) references ubicaciones(No_depto);
 
+insert into usuariosadmin values (1, "usuariouno","12345","ninguno");
+insert into usuariosadmin values (2, "usuariodos","987654","gestionar");
+insert into usuariosadmin values (3, "usuariotres","holamundo","gestionar");
 
 insert into ubicaciones values (15,"Guatemala","Guatemala");
 insert into ubicaciones values (10,"Quetzaltenango","Coatepeque");
@@ -141,5 +151,6 @@ select * from usuarios;
 select * from peliculas;
 select * from clasificaciones;
 select * from cartelera;
+select * from usuariosadmin;
 
 select * from salas s INNER JOIN cines c ON c.Id_cines = s.id_cine INNER JOIN cartelera car  ON  s.id_sala= car.salas where nombre_cine= 'Rush Mall';
