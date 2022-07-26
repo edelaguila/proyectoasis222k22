@@ -2,6 +2,8 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,65 +26,49 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-   public void validaruser() {
-      conectar cc=new conectar();
-      java.sql.Connection cn=cc.conexion();
-
-
+  void mostrardatos(String valor){
+        conectar cc=new conectar();
+        java.sql.Connection cn=cc.conexion();
         
-
+       
+       
         String sql="";
         if (valor.equals(""))
         {
-            sql="SELECT * FROM equipos";
+            sql="SELECT * FROM usuarios";
         }
         else{
-            sql="SELECT * FROM equipos WHERE (Id_Equipo='"+valor+"'  OR Nombre='"+valor+"')";
+            sql="SELECT * FROM usuarios WHERE (Usuario='"+valor+"'  AND Contraseña='"+valor+"')";
         }  
-       
-       
-       
-       
-       
-       
-       conectar cc=new conectar();
-       java.sql.Connection cn=cc.conexion();
-       
-       
-       int resultado =0 ;
-       String pass=String.valueOf(jcontraseña.getPassword());
-       String usuario=jusuario.getText();
-       String SQL="select * from usuarios = '"+usuario+"' and pass='"+pass+"' ";
-       
-       
-       
-       
-       
-       try{
-           Statement st=cc.createStatement();
-           ResultSet rs=st.executeQuery(SQL);
+        
+        String []datos=new String [4];
+        try{
+            Statement st=cn.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            while(rs.next()){
+            datos[0]=rs.getString(1);
+            datos[1]=rs.getString(2);
+            datos[2]=rs.getString(3);
+            datos[3]=rs.getString(4);
+            
+            
+            
+            
+            if(datos[1].equals(jusuario.getText()) && datos[2].equals(jcontraseña.getText())){
+              Menu generar = new Menu();
+              generar.setVisible(true);  
+            }
            
+             
+         
+            
+            
+            }
            
-           
-          if(rs.next()){
-           resultado=1;
-           
-           if(resultado==1){
-               Menu generar = new Menu();
-                generar.setVisible(true);
-           }
-           
-       } else {
-              JOptionPane.showMessageDialog(null, "Error al Ingresar");
-          }
-       } catch (Exception e){
-           JOptionPane.showMessageDialog(null, "Error en to pa");
-       }
-       
-       
-       
-       
-   }
+        }catch(SQLException ex){
+            Logger.getLogger(datos.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
     
     
     
@@ -100,6 +86,7 @@ public class Login extends javax.swing.JFrame {
         btingresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        btinvitado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -199,21 +186,37 @@ public class Login extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
 
+        btinvitado.setBackground(new java.awt.Color(0, 0, 51));
+        btinvitado.setFont(new java.awt.Font("Segoe UI Semilight", 3, 12)); // NOI18N
+        btinvitado.setForeground(new java.awt.Color(255, 255, 255));
+        btinvitado.setText("INVITADO");
+        btinvitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btinvitadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(btinvitado, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addGap(18, 18, 18)
+                .addComponent(btinvitado)
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -253,10 +256,16 @@ public class Login extends javax.swing.JFrame {
 
     private void btingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btingresarActionPerformed
         
-      validaruser();
+         mostrardatos("");
         
+        
+ 
            
     }//GEN-LAST:event_btingresarActionPerformed
+
+    private void btinvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btinvitadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btinvitadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -295,6 +304,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btingresar;
+    private javax.swing.JButton btinvitado;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
