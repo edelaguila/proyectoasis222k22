@@ -1,0 +1,72 @@
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csprojAssemblyReference.cache
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Administracion.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Cita.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.DetalleFactura.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.DetallePaciente.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Factura.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Formulario1.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.OpcionesAdministracion.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.OpcionesPacientes.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Paciente - Copia.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Paciente.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.GenerateResource.cache
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.AssemblyInfoInputs.cache
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.AssemblyInfo.cs
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.CoreCompileInputs.cache
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.exe
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.deps.json
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.runtimeconfig.json
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.runtimeconfig.dev.json
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\ref\LaboratorioClinico.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.pdb
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.CopyComplete
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\ref\LaboratorioClinico.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.pdb
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.genruntimeconfig.cache
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Login.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Menu.resources
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\luist\Desktop\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.exe
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.deps.json
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.runtimeconfig.json
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.runtimeconfig.dev.json
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\LaboratorioClinico.pdb
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.AssemblyReference.cache
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Cita.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.DetalleFactura.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Factura.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Login.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Menu.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.OpcionesAdministracion.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Paciente - Copia.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Paciente.resources
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.GenerateResource.cache
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.AssemblyInfoInputs.cache
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.AssemblyInfo.cs
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.CoreCompileInputs.cache
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.csproj.CopyComplete
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\refint\LaboratorioClinico.dll
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.pdb
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.genruntimeconfig.cache
+C:\Users\Home\Documents\ASDFADFADFADFAFD (3) (1)\ASDFADFADFADFAFD\ASDFADFADFADFAFD\WinFormsApp1\obj\Debug\net5.0-windows\ref\LaboratorioClinico.dll
