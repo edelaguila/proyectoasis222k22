@@ -264,7 +264,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btingresarActionPerformed
 
     private void btinvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btinvitadoActionPerformed
-        // TODO add your handling code here:
+        
+        Menu_invi generar = new Menu_invi();
+        generar.setVisible(true);
+        
+        
     }//GEN-LAST:event_btinvitadoActionPerformed
 
     /**
