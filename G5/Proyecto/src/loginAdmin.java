@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class loginAdmin extends javax.swing.JFrame {
     
-    public static final String URL="jdbc:mysql://localhost:3308/ptaquilla";
+    public static final String URL="jdbc:mysql://localhost:3306/ptaquilla";
     public static final String USERNAME="root";
     public static final String PASSWORD="";
     PreparedStatement ps;

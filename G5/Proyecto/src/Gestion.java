@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Gestion extends javax.swing.JFrame {
 
-    public static final String URL="jdbc:mysql://localhost:3308/ptaquilla";
+    public static final String URL="jdbc:mysql://localhost:3306/ptaquilla";
     public static final String USERNAME="root";
     public static final String PASSWORD="";
     PreparedStatement ps;
@@ -56,6 +56,32 @@ public class Gestion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al conectar a base de datos");
         }
     }
+        public void buscar(String valor){
+        Connection con=getConection();
+        String sql = "select * from usuariosadmin";
+        System.out.println(sql);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Id");
+        model.addColumn("Usuario");
+        model.addColumn("Contraseña");
+        model.addColumn("Permisos");
+        visor.setModel(model);
+        sql="SELECT * FROM usuariosadmin WHERE id_usuarioadmin='"+valor+"'";
+        String [] datos = new String[4];
+        try{
+            Statement st=con.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            while(rs.next()){
+                datos[0]=rs.getString(1);
+                datos[1]=rs.getString(2);
+                datos[2]=rs.getString(3);
+                datos[3]=rs.getString(4);
+                model.addRow(datos);
+            }
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(null, "Error al conectar a base de datos");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,28 +95,49 @@ public class Gestion extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         visor = new javax.swing.JTable();
         Mostrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        num = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        contra = new javax.swing.JTextField();
+        modificar = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
+        buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Gestión para el registro de usuarios y permisos");
 
-        visor.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane1.setViewportView(visor);
 
-        Mostrar.setText("Mostrar");
+        Mostrar.setText("Mostrar Todos");
         Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("No. ");
+
+        jLabel3.setText("Contraseña");
+
+        modificar.setText("Modificar");
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
+
+        eliminar.setText("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
+        buscar.setText("Buscar");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarActionPerformed(evt);
             }
         });
 
@@ -99,26 +146,53 @@ public class Gestion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Mostrar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(88, 88, 88))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(179, 179, 179)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(175, 175, 175)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Mostrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(modificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(eliminar)
+                        .addGap(18, 18, 18)
+                        .addComponent(buscar)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel1)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(Mostrar)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Mostrar)
+                    .addComponent(modificar)
+                    .addComponent(eliminar)
+                    .addComponent(buscar))
+                .addContainerGap())
         );
 
         pack();
@@ -127,6 +201,47 @@ public class Gestion extends javax.swing.JFrame {
     private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
         mostrar();
     }//GEN-LAST:event_MostrarActionPerformed
+
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+         conectar cc=new conectar();
+        Connection cn=cc.conexion();
+        try{
+            PreparedStatement pst=cn.prepareStatement("UPDATE usuariosadmin SET contraseña ='"+contra.getText()+"'WHERE id_usuarioadmin="+num.getText()+";");
+        int a=pst.executeUpdate();
+        if(a>0){
+            JOptionPane.showMessageDialog(null,"Registro Actualizado");
+             mostrar();
+             num.setText(null);
+             contra.setText(null);
+        }
+        else{
+             JOptionPane.showMessageDialog(null,"Error al actualizar");
+        }
+        }catch(Exception e){
+    }             
+    }//GEN-LAST:event_modificarActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+          conectar cc=new conectar();
+          Connection cn=cc.conexion();
+        try{
+            PreparedStatement pst=cn.prepareStatement("DELETE FROM usuariosadmin WHERE id_usuarioadmin="+num.getText()+";");
+        int a=pst.executeUpdate();
+        if(a>0){
+            JOptionPane.showMessageDialog(null,"Registro Eliminado");
+             mostrar();
+             num.setText(null);
+        }
+        else{
+             JOptionPane.showMessageDialog(null,"Error al eliminar");
+        }
+        }catch(Exception e){
+    } 
+    }//GEN-LAST:event_eliminarActionPerformed
+
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        buscar(num.getText());
+    }//GEN-LAST:event_buscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,8 +280,15 @@ public class Gestion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Mostrar;
+    private javax.swing.JButton buscar;
+    private javax.swing.JTextField contra;
+    private javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton modificar;
+    private javax.swing.JTextField num;
     public javax.swing.JTable visor;
     // End of variables declaration//GEN-END:variables
 }
