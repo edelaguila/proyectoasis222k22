@@ -13,6 +13,7 @@ public class AdministracionMenu extends javax.swing.JFrame {
 
     public AdministracionMenu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     //Mostrar Datos con el buscar
 void mostrardatos(String valor){
@@ -259,6 +260,11 @@ void mostrardatoscart(String valor){
         });
 
         jButton4.setText("Regresar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -468,6 +474,12 @@ void mostrardatoscart(String valor){
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
         setVisible(false);
     }//GEN-LAST:event_closeActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        loginAdmin form=new loginAdmin();
+        form.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
