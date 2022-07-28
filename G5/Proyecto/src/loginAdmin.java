@@ -47,7 +47,7 @@ public class loginAdmin extends javax.swing.JFrame {
                 if (rs.next()){
                     resultado=1;
                     if(resultado==1){
-                        AdministracionMenu form=new AdministracionMenu();
+                        GestionF form=new GestionF();
                         form.setVisible(true);
                         this.dispose();
                     }
