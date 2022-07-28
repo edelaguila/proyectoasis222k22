@@ -64,7 +64,8 @@ create table cartelera(
 id_pelicula int,
 diapres varchar(15),
 horapres varchar(15),
-salas int
+salas int,
+id_descuento int
 );
 
 create table usuarios(
@@ -82,11 +83,19 @@ create table usuariosadmin(
     permisos varchar(50)
 );
 
+create table descuentos(
+	id_descuento int primary key,
+    descripcion varchar(50),
+    descuento int,
+    codigo varchar(10)
+);
+
 alter table cines add constraint llave1 foreign key (Depto) references ubicaciones(No_depto);
 alter table salas add constraint llave2 foreign key (id_cine) references cines(Id_cines);
 alter table salas add constraint llave3 foreign key (id_peliculas) references peliculas(id_peli);
 alter table peliculas add constraint llave4 foreign key (clasificacion) references clasificaciones(id_clas);
 alter table cartelera add constraint llave5 foreign key (salas) references salas(Id_sala);
+alter table cartelera add constraint llave6 foreign key (id_descuento) references descuentos(id_descuento);
 -- alter table cines add constraint llave5 foreign key (Depto) references ubicaciones(No_depto);
 
 insert into usuariosadmin values (1, "usuariouno","12345","ninguno");
