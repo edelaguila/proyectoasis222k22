@@ -126,7 +126,7 @@ public class AdministracionMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        Administración form=new Administración();
+        loginAdmin form=new loginAdmin();
         form.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
