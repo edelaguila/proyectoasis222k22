@@ -43,7 +43,7 @@ namespace WinFormsApp1
                 cargo = "trabajador";
             }
 
-            //conexion con = new conexion();
+           
             string sql = "insert into usuario values '" + usuario + "'" +contraseña+"'" +cargo +"'";
         }
     }

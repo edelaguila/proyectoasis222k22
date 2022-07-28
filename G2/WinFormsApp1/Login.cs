@@ -21,7 +21,7 @@ namespace LaboratorioClinico
         private void button1_Click(object sender, EventArgs e)
         {
             string usuario, contraseña, cargo = " ";
-            int columna = 4;
+            int columna = 3;
             string[] resultado = new string[columna];
             usuario = txtusuario.Text;
             contraseña = txtcontraseña.Text;
@@ -38,15 +38,21 @@ namespace LaboratorioClinico
 
 
             conexion con = new conexion();
-            string sql = "select * from tipousuario where nombre = '"+ usuario +"'";
+            string sql = "select * from usuario where usuario = '"+ usuario +"'";
 
             resultado = con.buscar(sql, columna);
 
-            if(resultado[2].Equals(usuario) && resultado[3].Equals(contraseña)&& resultado[1].Equals(cargo))
+            if(resultado[0].Equals(usuario) && resultado[1].Equals(contraseña)&& resultado[2].Equals(cargo))
             {
-                
-               // Menu m = new Menu();
-               // m.Show();
+
+                // Menu m = new Menu();
+                // m.Show();
+
+                //solo es para prueba
+                Paciente p = new Paciente();
+                p.Show();
+
+                //
                 this.Hide();
                 MessageBox.Show("Bienvenido " + usuario);
             }
