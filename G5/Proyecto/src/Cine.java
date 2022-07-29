@@ -63,6 +63,11 @@ void mostrardatos(String valor){
         dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunes", "Martes", "Miercoles", "Jueves ", "Viernes", "Sabado", "Domingo", " " }));
 
         tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3D dob", "2D dob", "Macro", "Niños" }));
+        tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoActionPerformed(evt);
+            }
+        });
 
         close.setText("Close");
         close.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +161,10 @@ void mostrardatos(String valor){
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
         setVisible(false);
     }//GEN-LAST:event_closeActionPerformed
+
+    private void tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoActionPerformed
 
     /**
      * @param args the command line arguments

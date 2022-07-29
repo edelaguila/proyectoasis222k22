@@ -34,6 +34,7 @@ public class GestionF extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         Modificar = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        eliminarcart = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         BuscarCart = new javax.swing.JMenuItem();
         buscarpeli = new javax.swing.JMenuItem();
@@ -88,6 +89,15 @@ public class GestionF extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Eliminar");
+
+        eliminarcart.setText("Eliminar Cartelera");
+        eliminarcart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarcartActionPerformed(evt);
+            }
+        });
+        jMenu3.add(eliminarcart);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Buscar");
@@ -157,6 +167,12 @@ public class GestionF extends javax.swing.JFrame {
         form.show();
     }//GEN-LAST:event_ModificarActionPerformed
 
+    private void eliminarcartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarcartActionPerformed
+        BorrarCart form=new BorrarCart();
+        escritorio.add(form);
+        form.show();
+    }//GEN-LAST:event_eliminarcartActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,6 +214,7 @@ public class GestionF extends javax.swing.JFrame {
     private javax.swing.JMenuItem Inpelicula;
     private javax.swing.JMenuItem Modificar;
     private javax.swing.JMenuItem buscarpeli;
+    private javax.swing.JMenuItem eliminarcart;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

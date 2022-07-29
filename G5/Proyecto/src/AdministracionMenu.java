@@ -37,7 +37,7 @@ public class AdministracionMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 153));
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton2.setText("Menú de Ayuda");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +147,7 @@ public class AdministracionMenu extends javax.swing.JFrame {
         Connection cn=cc.conexion();
         
         JasperReport reporte = null;
-        String path = "C:\\Users\\ester\\Workspace\\ProyectoTaquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes\\report1.jasper";
+        String path = "C:\\Users\\50231\\OneDrive\\Escritorio\\Proyecto Taquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes\\report1.jasper"; //CAMBIAR UBICACION
         try {
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             

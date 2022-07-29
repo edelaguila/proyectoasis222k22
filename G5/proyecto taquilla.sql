@@ -65,6 +65,9 @@ id_pelicula int,
 diapres varchar(15),
 horapres varchar(15),
 salas int,
+fecha date,
+idioma varchar(10),
+subtitulado varchar(2),
 id_descuento int
 );
 

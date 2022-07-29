@@ -1,10 +1,12 @@
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -17,12 +19,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author 50231
  */
-public class Buscar extends javax.swing.JInternalFrame {
+public class BorrarCart extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Buscar
+     * Creates new form BorrarCart
      */
-    public Buscar() {
+    public BorrarCart() {
         initComponents();
     }
 void mostrardatoscart(String valor){
@@ -107,7 +109,7 @@ void mostrardatoscart(String valor){
             }
         });
 
-        buscarcart.setText("Buscar");
+        buscarcart.setText("Borrar");
         buscarcart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarcartActionPerformed(evt);
@@ -164,11 +166,11 @@ void mostrardatoscart(String valor){
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 569, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 7, Short.MAX_VALUE)))
+                    .addGap(0, 8, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,7 +190,21 @@ void mostrardatoscart(String valor){
     }//GEN-LAST:event_closeActionPerformed
 
     private void buscarcartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarcartActionPerformed
-        mostrardatoscart(num.getText());
+          conectar cc=new conectar();
+          Connection cn=cc.conexion();
+        try{
+            PreparedStatement pst=cn.prepareStatement("DELETE FROM cartelera WHERE id_pelicula="+num.getText()+";");
+        int a=pst.executeUpdate();
+        if(a>0){
+            JOptionPane.showMessageDialog(null,"Registro Eliminado");
+             mostrardatoscart("");
+             num.setText(null);
+        }
+        else{
+             JOptionPane.showMessageDialog(null,"Error al eliminar");
+        }
+        }catch(Exception e){
+    } 
     }//GEN-LAST:event_buscarcartActionPerformed
 
 
