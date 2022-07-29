@@ -45,12 +45,10 @@ namespace LaboratorioClinico
             if(resultado[0].Equals(usuario) && resultado[1].Equals(contraseña)&& resultado[2].Equals(cargo))
             {
 
-                // Menu m = new Menu();
-                // m.Show();
+                 Menu m = new Menu();
+                 m.Show();
 
-                //solo es para prueba
-                Paciente p = new Paciente();
-                p.Show();
+               
 
                 //
                 this.Hide();
@@ -72,10 +70,34 @@ namespace LaboratorioClinico
 
         private void btncrear_Click(object sender, EventArgs e)
         {
-            CrearUsuario cu = new CrearUsuario();
-            cu.show();
+            UsuarioNuevo cu = new UsuarioNuevo();
+            cu.Show();
             this.Hide();
         
+        }
+
+        private void btningresar_MouseHover(object sender, EventArgs e)
+        {
+            btningresar.BackColor = Color.FromArgb(255, 255, 255);
+            btningresar.ForeColor = Color.FromArgb(49, 101, 244);
+        }
+
+        private void btningresar_MouseLeave(object sender, EventArgs e)
+        {
+            btningresar.BackColor = Color.FromArgb(49, 101, 244);
+            btningresar.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void btncrear_MouseHover(object sender, EventArgs e)
+        {
+            btncrear.BackColor = Color.FromArgb(255, 255, 255);
+            btncrear.ForeColor = Color.FromArgb(49, 101, 244);
+        }
+
+        private void btncrear_MouseLeave(object sender, EventArgs e)
+        {
+            btncrear.BackColor = Color.FromArgb(49, 101, 244);
+            btncrear.ForeColor = Color.FromArgb(255, 255, 255);
         }
     }
 }

@@ -72,6 +72,7 @@ namespace LaboratorioClinico
             this.btnbuscar = new System.Windows.Forms.Button();
             this.btnborrar = new System.Windows.Forms.Button();
             this.btnactualizar = new System.Windows.Forms.Button();
+            this.btnregresar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
@@ -254,6 +255,8 @@ namespace LaboratorioClinico
             this.btncancelar.Text = "Limpiar";
             this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            this.btncancelar.MouseLeave += new System.EventHandler(this.btncancelar_MouseLeave);
+            this.btncancelar.MouseHover += new System.EventHandler(this.btncancelar_MouseHover);
             // 
             // btnagregar
             // 
@@ -267,6 +270,8 @@ namespace LaboratorioClinico
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = false;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
+            this.btnagregar.MouseLeave += new System.EventHandler(this.btnagregar_MouseLeave);
+            this.btnagregar.MouseHover += new System.EventHandler(this.btnagregar_MouseHover);
             // 
             // groupBox2
             // 
@@ -486,6 +491,8 @@ namespace LaboratorioClinico
             this.btnbuscar.Text = "Buscar";
             this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            this.btnbuscar.MouseLeave += new System.EventHandler(this.btnbuscar_MouseLeave);
+            this.btnbuscar.MouseHover += new System.EventHandler(this.btnbuscar_MouseHover);
             // 
             // btnborrar
             // 
@@ -499,6 +506,8 @@ namespace LaboratorioClinico
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = false;
             this.btnborrar.Click += new System.EventHandler(this.button1_Click);
+            this.btnborrar.MouseLeave += new System.EventHandler(this.btnborrar_MouseLeave);
+            this.btnborrar.MouseHover += new System.EventHandler(this.btnborrar_MouseHover);
             // 
             // btnactualizar
             // 
@@ -512,13 +521,31 @@ namespace LaboratorioClinico
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.UseVisualStyleBackColor = false;
             this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
+            this.btnactualizar.MouseLeave += new System.EventHandler(this.btnactualizar_MouseLeave);
+            this.btnactualizar.MouseHover += new System.EventHandler(this.btnactualizar_MouseHover);
+            // 
+            // btnregresar
+            // 
+            this.btnregresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btnregresar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnregresar.ForeColor = System.Drawing.Color.White;
+            this.btnregresar.Location = new System.Drawing.Point(779, 598);
+            this.btnregresar.Name = "btnregresar";
+            this.btnregresar.Size = new System.Drawing.Size(118, 37);
+            this.btnregresar.TabIndex = 25;
+            this.btnregresar.Text = "Regresar";
+            this.btnregresar.UseVisualStyleBackColor = false;
+            this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
+            this.btnregresar.MouseLeave += new System.EventHandler(this.btnregresar_MouseLeave);
+            this.btnregresar.MouseHover += new System.EventHandler(this.btnregresar_MouseHover);
             // 
             // Paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(905, 597);
+            this.ClientSize = new System.Drawing.Size(909, 647);
+            this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.btnborrar);
             this.Controls.Add(this.btnbuscar);
@@ -530,6 +557,7 @@ namespace LaboratorioClinico
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnagregar);
             this.Name = "Paciente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -586,5 +614,6 @@ namespace LaboratorioClinico
         private System.Windows.Forms.DataGridViewTextBoxColumn Recomendacion;
         private System.Windows.Forms.Button btnborrar;
         private System.Windows.Forms.Button btnactualizar;
+        private System.Windows.Forms.Button btnregresar;
     }
 }
