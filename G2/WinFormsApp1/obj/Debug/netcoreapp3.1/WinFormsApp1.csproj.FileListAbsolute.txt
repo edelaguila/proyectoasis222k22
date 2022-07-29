@@ -94,3 +94,4 @@ C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis22
 C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\netcoreapp3.1\WinFormsApp1.csproj.CopyComplete
 C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\netcoreapp3.1\WinFormsApp1.genruntimeconfig.cache
+C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\netcoreapp3.1\WinFormsApp1.CrearUsuario.resources
