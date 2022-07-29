@@ -103,6 +103,7 @@ namespace LaboratorioClinico
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.picturecliente);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.picturecliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
