@@ -42,7 +42,7 @@ namespace WinFormsApp1
             {
                 cargo = "trabajador";
             }
-
+            
            
             string sql = "insert into usuario values '" + usuario + "'" +contraseña+"'" +cargo +"'";
         }
