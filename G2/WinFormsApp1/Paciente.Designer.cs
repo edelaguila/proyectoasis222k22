@@ -93,6 +93,7 @@ namespace LaboratorioClinico
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(650, 167);
@@ -102,27 +103,31 @@ namespace LaboratorioClinico
             // 
             // txttelefono
             // 
+            this.txttelefono.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txttelefono.Location = new System.Drawing.Point(526, 22);
             this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(118, 23);
+            this.txttelefono.Size = new System.Drawing.Size(118, 20);
             this.txttelefono.TabIndex = 13;
             // 
             // txtdpi
             // 
+            this.txtdpi.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtdpi.Location = new System.Drawing.Point(250, 22);
             this.txtdpi.Name = "txtdpi";
-            this.txtdpi.Size = new System.Drawing.Size(156, 23);
+            this.txtdpi.Size = new System.Drawing.Size(156, 20);
             this.txtdpi.TabIndex = 12;
             // 
             // txtcorreo
             // 
+            this.txtcorreo.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtcorreo.Location = new System.Drawing.Point(118, 126);
             this.txtcorreo.Name = "txtcorreo";
-            this.txtcorreo.Size = new System.Drawing.Size(229, 23);
+            this.txtcorreo.Size = new System.Drawing.Size(229, 20);
             this.txtcorreo.TabIndex = 11;
             // 
             // txtdireccion
             // 
+            this.txtdireccion.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtdireccion.Location = new System.Drawing.Point(393, 64);
             this.txtdireccion.Multiline = true;
             this.txtdireccion.Name = "txtdireccion";
@@ -131,106 +136,136 @@ namespace LaboratorioClinico
             // 
             // txtapellidos
             // 
+            this.txtapellidos.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtapellidos.Location = new System.Drawing.Point(63, 90);
             this.txtapellidos.Name = "txtapellidos";
-            this.txtapellidos.Size = new System.Drawing.Size(220, 23);
+            this.txtapellidos.Size = new System.Drawing.Size(220, 20);
             this.txtapellidos.TabIndex = 9;
             // 
             // txtnombres
             // 
+            this.txtnombres.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtnombres.Location = new System.Drawing.Point(63, 61);
             this.txtnombres.Name = "txtnombres";
-            this.txtnombres.Size = new System.Drawing.Size(220, 23);
+            this.txtnombres.Size = new System.Drawing.Size(220, 20);
             this.txtnombres.TabIndex = 8;
             // 
             // txtid
             // 
+            this.txtid.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtid.Location = new System.Drawing.Point(63, 22);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(57, 23);
+            this.txtid.Size = new System.Drawing.Size(57, 20);
             this.txtid.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label7.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(319, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.Size = new System.Drawing.Size(61, 14);
             this.label7.TabIndex = 6;
             this.label7.Text = "Dirección";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label6.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(7, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 15);
+            this.label6.Size = new System.Drawing.Size(112, 14);
             this.label6.TabIndex = 5;
             this.label6.Text = "Correo Electrónico";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label5.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(452, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 15);
+            this.label5.Size = new System.Drawing.Size(55, 14);
             this.label5.TabIndex = 4;
             this.label5.Text = "Teléfono";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label4.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(6, 95);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.Size = new System.Drawing.Size(59, 14);
             this.label4.TabIndex = 3;
             this.label4.Text = "Apellidos";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(203, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 15);
+            this.label3.Size = new System.Drawing.Size(26, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "DPI";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(6, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.Size = new System.Drawing.Size(58, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombres";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(19, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 15);
+            this.label1.Size = new System.Drawing.Size(19, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // btncancelar
             // 
+            this.btncancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btncancelar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.Location = new System.Drawing.Point(714, 257);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(118, 37);
             this.btncancelar.TabIndex = 15;
             this.btncancelar.Text = "Limpiar";
-            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnagregar
             // 
+            this.btnagregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btnagregar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnagregar.ForeColor = System.Drawing.Color.White;
             this.btnagregar.Location = new System.Drawing.Point(714, 31);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(118, 37);
             this.btnagregar.TabIndex = 14;
             this.btnagregar.Text = "Agregar";
-            this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.UseVisualStyleBackColor = false;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // groupBox2
@@ -243,6 +278,7 @@ namespace LaboratorioClinico
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtsangre);
             this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(13, 186);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(650, 149);
@@ -256,7 +292,7 @@ namespace LaboratorioClinico
             this.radiomujer.AutoSize = true;
             this.radiomujer.Location = new System.Drawing.Point(151, 117);
             this.radiomujer.Name = "radiomujer";
-            this.radiomujer.Size = new System.Drawing.Size(56, 19);
+            this.radiomujer.Size = new System.Drawing.Size(60, 19);
             this.radiomujer.TabIndex = 24;
             this.radiomujer.TabStop = true;
             this.radiomujer.Text = "Mujer";
@@ -267,7 +303,7 @@ namespace LaboratorioClinico
             this.radiohombre.AutoSize = true;
             this.radiohombre.Location = new System.Drawing.Point(19, 117);
             this.radiohombre.Name = "radiohombre";
-            this.radiohombre.Size = new System.Drawing.Size(69, 19);
+            this.radiohombre.Size = new System.Drawing.Size(72, 19);
             this.radiohombre.TabIndex = 23;
             this.radiohombre.TabStop = true;
             this.radiohombre.Text = "Hombre";
@@ -275,6 +311,7 @@ namespace LaboratorioClinico
             // 
             // txtenfermedad
             // 
+            this.txtenfermedad.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtenfermedad.Location = new System.Drawing.Point(373, 28);
             this.txtenfermedad.Multiline = true;
             this.txtenfermedad.Name = "txtenfermedad";
@@ -285,24 +322,28 @@ namespace LaboratorioClinico
             // 
             this.txtrecomendacion.Location = new System.Drawing.Point(118, 71);
             this.txtrecomendacion.Name = "txtrecomendacion";
-            this.txtrecomendacion.Size = new System.Drawing.Size(89, 23);
+            this.txtrecomendacion.Size = new System.Drawing.Size(89, 21);
             this.txtrecomendacion.TabIndex = 20;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(19, 74);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 15);
+            this.label12.Size = new System.Drawing.Size(97, 15);
             this.label12.TabIndex = 19;
             this.label12.Text = "Recomendacion";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(296, 31);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 15);
+            this.label11.Size = new System.Drawing.Size(78, 15);
             this.label11.TabIndex = 18;
             this.label11.Text = "Enfermedad";
             // 
@@ -310,15 +351,17 @@ namespace LaboratorioClinico
             // 
             this.txtsangre.Location = new System.Drawing.Point(118, 28);
             this.txtsangre.Name = "txtsangre";
-            this.txtsangre.Size = new System.Drawing.Size(89, 23);
+            this.txtsangre.Size = new System.Drawing.Size(89, 21);
             this.txtsangre.TabIndex = 17;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(19, 31);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 15);
+            this.label10.Size = new System.Drawing.Size(92, 15);
             this.label10.TabIndex = 16;
             this.label10.Text = "Tipo de Sangre";
             // 
@@ -414,53 +457,67 @@ namespace LaboratorioClinico
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label8.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(20, 356);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 15);
+            this.label8.Size = new System.Drawing.Size(47, 15);
             this.label8.TabIndex = 21;
             this.label8.Text = "Buscar";
             // 
             // txtbuscar
             // 
+            this.txtbuscar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtbuscar.Location = new System.Drawing.Point(68, 353);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(449, 23);
+            this.txtbuscar.Size = new System.Drawing.Size(449, 21);
             this.txtbuscar.TabIndex = 14;
             // 
             // btnbuscar
             // 
+            this.btnbuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btnbuscar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnbuscar.ForeColor = System.Drawing.Color.White;
             this.btnbuscar.Location = new System.Drawing.Point(559, 350);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(98, 27);
             this.btnbuscar.TabIndex = 22;
             this.btnbuscar.Text = "Buscar";
-            this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // btnborrar
             // 
+            this.btnborrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btnborrar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnborrar.ForeColor = System.Drawing.Color.White;
             this.btnborrar.Location = new System.Drawing.Point(714, 103);
             this.btnborrar.Name = "btnborrar";
             this.btnborrar.Size = new System.Drawing.Size(118, 37);
             this.btnborrar.TabIndex = 23;
             this.btnborrar.Text = "Borrar";
-            this.btnborrar.UseVisualStyleBackColor = true;
+            this.btnborrar.UseVisualStyleBackColor = false;
             this.btnborrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnactualizar
             // 
+            this.btnactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btnactualizar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnactualizar.ForeColor = System.Drawing.Color.White;
             this.btnactualizar.Location = new System.Drawing.Point(714, 174);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(118, 37);
             this.btnactualizar.TabIndex = 24;
             this.btnactualizar.Text = "Actualizar";
-            this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.UseVisualStyleBackColor = false;
             this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // Paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(905, 597);
             this.Controls.Add(this.btnactualizar);
             this.Controls.Add(this.btnborrar);

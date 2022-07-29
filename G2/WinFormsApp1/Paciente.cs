@@ -74,6 +74,7 @@ namespace LaboratorioClinico
             txtsangre.Clear();
             radiohombre.Checked = false;
             radiomujer.Checked = false;
+            tabla.Rows.Clear();
 
         }
 

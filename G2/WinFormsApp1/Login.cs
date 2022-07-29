@@ -72,7 +72,9 @@ namespace LaboratorioClinico
 
         private void btncrear_Click(object sender, EventArgs e)
         {
-            
+            CrearUsuario cu = new CrearUsuario();
+            cu.show();
+            this.Hide();
         
         }
     }

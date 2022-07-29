@@ -38,7 +38,7 @@ namespace LaboratorioClinico
                 this.con.Open();
                 cmd.ExecuteNonQuery();
                 this.con.Close();
-                
+                MessageBox.Show("Realizado con exito");
             }
             catch (MySqlException e)
             {
