@@ -253,3 +253,8 @@ C:\Users\Kuht_saal\Desktop\Prototipo_Final\proyectoasis222k22\G2\WinFormsApp1\ob
 C:\Users\Kuht_saal\Desktop\Prototipo_Final\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.pdb
 C:\Users\Kuht_saal\Desktop\Prototipo_Final\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.genruntimeconfig.cache
 C:\Users\Kuht_saal\Desktop\Prototipo_Final\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\ref\LaboratorioClinico.dll
+C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Empleado.resources
+C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Examen.resources
+C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Laboratorio.resources
+C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.Medico.resources
+C:\Users\luist\OneDrive\Universidad\8semestre\Analisis2\proyecto1\proyectoasis222k22\G2\WinFormsApp1\obj\Debug\net5.0-windows\LaboratorioClinico.MenuTrabajador.resources
