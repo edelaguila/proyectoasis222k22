@@ -32,6 +32,7 @@ namespace LaboratorioClinico
             sangre = txtsangre.Text;
             enfermedad = txtenfermedad.Text;
             recomendacion = txtrecomendacion.Text;
+            int n = tabla.Rows.Add();
 
 
             if (radiohombre.Checked == true)
@@ -56,6 +57,20 @@ namespace LaboratorioClinico
            "','" + enfermedad + "','" + recomendacion + "')";
 
             con.IDU(sql2);
+
+
+            tabla.Rows[n].Cells[0].Value = txtid.Text;
+            tabla.Rows[n].Cells[1].Value = txtdpi.Text;
+            tabla.Rows[n].Cells[2].Value = txtnombres.Text;
+            tabla.Rows[n].Cells[3].Value = txtapellidos.Text;
+            tabla.Rows[n].Cells[4].Value = txttelefono.Text;
+            tabla.Rows[n].Cells[5].Value = txtcorreo.Text;
+            tabla.Rows[n].Cells[6].Value = txtdireccion.Text;
+            tabla.Rows[n].Cells[6].Value = sexo;
+            tabla.Rows[n].Cells[8].Value = txtsangre.Text;
+            tabla.Rows[n].Cells[9].Value = txtenfermedad.Text;
+            tabla.Rows[n].Cells[10].Value = txtrecomendacion.Text;
+
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

@@ -70,6 +70,7 @@ namespace LaboratorioClinico
             this.picturetrabajador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturetrabajador.TabIndex = 1;
             this.picturetrabajador.TabStop = false;
+            this.picturetrabajador.Click += new System.EventHandler(this.picturetrabajador_Click);
             this.picturetrabajador.MouseLeave += new System.EventHandler(this.lbtrabajador_MouseLeave);
             this.picturetrabajador.MouseHover += new System.EventHandler(this.lbtrabajador_MouseHover);
             // 
