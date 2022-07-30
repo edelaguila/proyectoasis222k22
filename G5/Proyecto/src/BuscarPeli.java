@@ -1,10 +1,17 @@
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -25,7 +32,7 @@ public class BuscarPeli extends javax.swing.JInternalFrame {
     public BuscarPeli() {
         initComponents();
     }
-void mostrardatos(String valor){
+void mostrardatos(String valor) throws IOException{
         conectar cc=new conectar();
         Connection cn=cc.conexion();
         DefaultTableModel modelo=new DefaultTableModel();
@@ -41,7 +48,8 @@ void mostrardatos(String valor){
         String sql="";
         if (valor.equals(""))
         {
-            sql="SELECT * FROM peliculas";
+            JOptionPane.showMessageDialog(null,"Ingrese el código de la pelicula");
+            sql="select * from peliculas";
         }
         else{
             sql="SELECT * FROM peliculas WHERE (id_peli='"+valor+"'  OR nombrePeli='"+valor+"')";
@@ -60,6 +68,13 @@ void mostrardatos(String valor){
             datos[5]=rs.getString(6);
             
             modelo.addRow(datos);
+            Blob fotos = rs.getBlob(7);
+            byte []recuperar = fotos.getBytes(1, (int )fotos.length());
+            BufferedImage img = ImageIO.read(new ByteArrayInputStream(recuperar));
+            
+            labelfoto.setIcon(new ImageIcon(img));
+            
+                    
             }
             jTable1.setModel(modelo);
             num.setText(null);
@@ -85,6 +100,7 @@ void mostrardatos(String valor){
         jTable1 = new javax.swing.JTable();
         close = new javax.swing.JButton();
         buscarcart = new javax.swing.JButton();
+        labelfoto = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -135,7 +151,7 @@ void mostrardatos(String valor){
                             .addComponent(buscarcart))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addGap(149, 149, 149))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -160,27 +176,33 @@ void mostrardatos(String valor){
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addComponent(buscarcart)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(592, Short.MAX_VALUE)
+                .addComponent(labelfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 5, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(labelfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(245, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         pack();
@@ -191,7 +213,11 @@ void mostrardatos(String valor){
     }//GEN-LAST:event_closeActionPerformed
 
     private void buscarcartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarcartActionPerformed
-        mostrardatos(num.getText());
+        try {
+            mostrardatos(num.getText());
+        } catch (IOException ex) {
+            Logger.getLogger(BuscarPeli.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_buscarcartActionPerformed
 
 
@@ -204,6 +230,7 @@ void mostrardatos(String valor){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelfoto;
     private javax.swing.JTextField num;
     // End of variables declaration//GEN-END:variables
 }

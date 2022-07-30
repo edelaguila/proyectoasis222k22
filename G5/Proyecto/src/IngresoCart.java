@@ -52,6 +52,8 @@ public class IngresoCart extends javax.swing.JInternalFrame {
         idioma = new javax.swing.JComboBox<>();
         sub = new javax.swing.JComboBox<>();
         desc = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        npelicula = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -115,6 +117,10 @@ public class IngresoCart extends javax.swing.JInternalFrame {
 
         desc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "50%", "75%" }));
 
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel13.setText("No. Pelicula");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -172,6 +178,12 @@ public class IngresoCart extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(desc, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(197, 197, 197)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(npelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +195,11 @@ public class IngresoCart extends javax.swing.JInternalFrame {
                             .addComponent(jLabel3)
                             .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(close))
-                .addGap(62, 62, 62)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(npelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
@@ -203,7 +219,7 @@ public class IngresoCart extends javax.swing.JInternalFrame {
                     .addComponent(jLabel11)
                     .addComponent(idioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -235,18 +251,20 @@ public class IngresoCart extends javax.swing.JInternalFrame {
         Connection cn=cc.conexion();
    
         try{
-            PreparedStatement pst=cn.prepareStatement("INSERT INTO cartelera(id_pelicula,diapres,horapres,salas,fecha,idioma,subtitulado,descuento) VALUES(?,?,?,?,?,?,?,?)");
+            PreparedStatement pst=cn.prepareStatement("INSERT INTO cartelera(id_cartelera,id_pelicula,diapres,horapres,salas,fecha,idioma,subtitulado,descuento) VALUES(?,?,?,?,?,?,?,?,?)");
             pst.setString(1,num.getText());
-            pst.setString(2,dia.getText());
-            pst.setString(3,hora.getText());
-            pst.setString(4,sala.getText());
-            pst.setString(5,fecha.getText());
-            pst.setString(6,idioma.getSelectedItem().toString());
-            pst.setString(7,sub.getSelectedItem().toString());
-            pst.setString(8,desc.getSelectedItem().toString());
+            pst.setString(2,npelicula.getText());
+            pst.setString(3,dia.getText());
+            pst.setString(4,hora.getText());
+            pst.setString(5,sala.getText());
+            pst.setString(6,fecha.getText());
+            pst.setString(7,idioma.getSelectedItem().toString());
+            pst.setString(8,sub.getSelectedItem().toString());
+            pst.setString(9,desc.getSelectedItem().toString());
             int a=pst.executeUpdate();
             if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro exitoso");
+                npelicula.setText(null);
                 num.setText(null);
                 dia.setText(null);
                 hora.setText(null);
@@ -273,6 +291,7 @@ public class IngresoCart extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -281,6 +300,7 @@ public class IngresoCart extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField npelicula;
     private javax.swing.JTextField num;
     private javax.swing.JTextField sala;
     private javax.swing.JComboBox<String> sub;

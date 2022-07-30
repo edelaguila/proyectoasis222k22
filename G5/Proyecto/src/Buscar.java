@@ -31,9 +31,14 @@ void mostrardatoscart(String valor){
         DefaultTableModel modelo=new DefaultTableModel();
        
         modelo.addColumn("Id");
-        modelo.addColumn("Dia presentacion");
+        modelo.addColumn("No Pelicula");
+        modelo.addColumn("Dia");
         modelo.addColumn("Hora");
-        modelo.addColumn("Sala");
+        modelo.addColumn("Salas");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Idioma");
+        modelo.addColumn("Subtitulado");
+        modelo.addColumn("Descuento");
         
         jTable1.setModel(modelo);
         String sql="";
@@ -45,7 +50,7 @@ void mostrardatoscart(String valor){
             sql="SELECT * FROM cartelera WHERE id_pelicula='"+valor+"'";
         }  
         
-        String []datos=new String [4];
+        String []datos=new String [9];
         try{
             Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(sql);
@@ -54,6 +59,12 @@ void mostrardatoscart(String valor){
             datos[1]=rs.getString(2);
             datos[2]=rs.getString(3);
             datos[3]=rs.getString(4);
+            datos[4]=rs.getString(5);
+            datos[5]=rs.getString(6);
+            datos[6]=rs.getString(7);
+            datos[7]=rs.getString(8);
+            datos[8]=rs.getString(9);
+            
 
             
             modelo.addRow(datos);

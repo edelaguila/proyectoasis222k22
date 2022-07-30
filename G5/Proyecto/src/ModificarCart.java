@@ -33,6 +33,7 @@ void mostrardatoscart(String valor){
         DefaultTableModel modelo=new DefaultTableModel();
        
         modelo.addColumn("Id");
+        modelo.addColumn("Id_pelicula");
         modelo.addColumn("Dia presentacion");
         modelo.addColumn("Hora");
         modelo.addColumn("Sala");
@@ -51,7 +52,7 @@ void mostrardatoscart(String valor){
             sql="SELECT * FROM cartelera WHERE id_pelicula='"+valor+"'";
         }  
         
-        String []datos=new String [8];
+        String []datos=new String [9];
         try{
             Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(sql);
@@ -64,7 +65,7 @@ void mostrardatoscart(String valor){
             datos[5]=rs.getString(6);
             datos[6]=rs.getString(7);
             datos[7]=rs.getString(8);
-
+            datos[8]=rs.getString(9);
             
             modelo.addRow(datos);
             }
