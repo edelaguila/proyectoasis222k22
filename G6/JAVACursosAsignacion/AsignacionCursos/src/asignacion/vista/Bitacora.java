@@ -5,13 +5,17 @@
  */
 package asignacion.vista;
 
+import asignacion.datos.BitacoraDAO;
+import java.io.File;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Diana
  */
-public class Bitacora extends javax.swing.JInternalFrame {
+public class Bitacora extends javax.swing.JFrame {
 
     /**
      * Creates new form Bitacora
@@ -22,17 +26,39 @@ public class Bitacora extends javax.swing.JInternalFrame {
         modelo.addColumn("Usuario");
         modelo.addColumn("Fecha");
         modelo.addColumn("Hora");
-        modelo.addColumn("IP");
-        modelo.addColumn("Host");
+        modelo.addColumn("Ip");
+        modelo.addColumn("host");
         modelo.addColumn("Accion");
         modelo.addColumn("Codigo Aplicacion");
         modelo.addColumn("Modulo");
-        
-        
+        /**
+         *
+         * instaciamiento de las las clases Bitacora y BiracoraDAO intaciamiento
+         * de la clases con el llenado de tablas
+         */
+        BitacoraDAO BicDAO = new BitacoraDAO();
+        List<Bitacora> usuario = BicDAO.select();
+        JtProductos1.setModel(modelo);
+        String[] dato = new String[9];
+        for (int i = 0; i < usuario.size(); i++) {
+//            dato[0] = usuario.get(i).getId_Bitacora();
+//            dato[1] = usuario.get(i).getId_Usuario();
+//            dato[2] = usuario.get(i).getFecha();
+//            dato[3] = usuario.get(i).getHora();
+//            dato[4] = usuario.get(i).getHost();
+//            dato[5] = usuario.get(i).getIp();
+//            dato[6] = usuario.get(i).getAccion();
+//            dato[7] = usuario.get(i).getCodigoAplicacion();
+//            dato[8] = usuario.get(i).getModulo();
+
+            //System.out.println("vendedor:" + vendedores);
+            modelo.addRow(dato);
         }
-         
+    }
+
     public Bitacora() {
         initComponents();
+        llenadoDeTablas();
     }
 
     /**
@@ -44,10 +70,30 @@ public class Bitacora extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        btnCargar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("BITACORA");
+
+        btnCargar.setText("Cargar");
+        btnCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Actualizar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,11 +108,6 @@ public class Bitacora extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("BITACORA");
-
-        jButton1.setText("Actualizar");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,25 +115,29 @@ public class Bitacora extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(52, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(327, 327, 327)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCargar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
                 .addGap(68, 68, 68))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(btnCargar))
                         .addGap(26, 26, 26)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -101,8 +146,76 @@ public class Bitacora extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
+        // TODO add your handling code here:
+        llenadoDeTablas();
+        /**
+         *
+         * instaciamiento de la Bitacora y BitacoraDAO llaamar a llenado de
+         * tablas para inserta los datos de mosttar
+         */
+
+        Bitacora Consultar = new Bitacora();
+        BitacoraDAO BicDAO = new BitacoraDAO();
+    //    Consultar.setId_Usuario(id_usuario.getText());
+    }//GEN-LAST:event_btnCargarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            if ((new File("src\\main\\java\\seguridad\\ayuda\\help.chm")).exists()) {
+                Process p = Runtime
+                        .getRuntime()
+                        .exec("rundll32 url.dll,FileProtocolHandler src\\main\\java\\seguridad\\ayuda\\help.chm");
+                p.waitFor();
+            } else {
+                JOptionPane.showMessageDialog(null, "La ayuda no Fue encontrada");
+            }
+            //System.out.println("Correcto");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Bitacora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Bitacora().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCargar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -26,6 +26,12 @@ import java.util.logging.Logger;
  * @author Diana
  */
 public class BitacoraDAO {
+ 
+
+//
+//            System.out.println("Host: " + hostname);
+//
+//            System.out.println("IP: " + addr.getHostAddress());
     public static String fechaActual() {
 
         java.util.Date fecha = new java.util.Date();
@@ -56,7 +62,11 @@ public class BitacoraDAO {
         InetAddress LocalHost = InetAddress.getLocalHost();
         return address.getHostAddress();
     }
-    
+
+    /**
+     *
+     * declaracion estatico de selec ,insert y query
+     */
     private static final String SQL_INSERT = "INSERT INTO tbl_bitacora( PK_id_usuario, fecha,hora,ip,accion,tabla,host1,PK_id_Modulo) VALUES(?, ?,?, ?,?, ?,?,?)";
     private static final String SQL_SELECT = "SELECT PK_id_bitacora, PK_id_usuario, fecha,hora,ip,accion, tabla ,host1,PK_id_Modulo FROM tbl_bitacora";
     private static final String SQL_QUERY = "SELECT PK_id_bitacora, PK_id_usuario, fecha,hora,ip,accion, tabla,host1,PK_id_Modulo FROM tbl_bitacora WHERE PK_id_usuario = ?";
@@ -99,7 +109,7 @@ public class BitacoraDAO {
                 String CodigoAplicacion = rs.getString("tabla");
                 String Modulo = rs.getString("PK_id_Modulo");
 
-//                usuario = new Bitacora();
+                usuario = new Bitacora();
 //                usuario.setId_Bitacora(id_bitacora);
 //                usuario.setId_Usuario(id_usuario);
 //                usuario.setFecha(fecha);
@@ -143,7 +153,7 @@ public class BitacoraDAO {
             conn = (Connection) Conexion.getConnection();
             System.out.println("Ejecutando query:" + SQL_QUERY);
             stmt = conn.prepareStatement(SQL_QUERY);
-  //          stmt.setString(1, usuario.getId_Usuario());
+//            stmt.setString(1, usuario.getId_Usuario());
             rs = stmt.executeQuery();
             while (rs.next()) {
                 /**
@@ -164,7 +174,7 @@ public class BitacoraDAO {
                  *
                  * concatenacionde de variables de de busqueda
                  */
-//                usuario = new Bitacora();
+                usuario = new Bitacora();
 //                usuario.setId_Bitacora(id_bitacora);
 //                usuario.setId_Usuario(id_usuario);
 //                usuario.setFecha(fecha);
@@ -203,10 +213,10 @@ public class BitacoraDAO {
 //            insertar.setFecha(fechaActual());
 //            insertar.setHost(hostname);
 //            insertar.setIp(getIp());
-//
-//            conn = (Connection) Conexion.getConnection();
-//            stmt = conn.prepareStatement(SQL_INSERT);
-//
+
+            conn = (Connection) Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_INSERT);
+
 //            stmt.setString(1, insertar.getId_Usuario());
 //            stmt.setString(2, insertar.getFecha());
 //            stmt.setString(3, insertar.getHora());

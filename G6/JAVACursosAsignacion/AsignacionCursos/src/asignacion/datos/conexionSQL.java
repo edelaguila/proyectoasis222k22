@@ -24,7 +24,7 @@ public class conexionSQL {
        
        try{
            Class.forName("com.mysql.jdbc.Driver");
-           conectar=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/asignacioncurso2","root","Mariogalaxy9.*");
+           conectar=(Connection) DriverManager.getConnection("jdbc:mysql://localhost/AsignacionCursos","root","Mariogalaxy9.*");
        }catch (Exception e){
            JOptionPane.showMessageDialog(null,"Error de Conexion" +e.getMessage());
        }

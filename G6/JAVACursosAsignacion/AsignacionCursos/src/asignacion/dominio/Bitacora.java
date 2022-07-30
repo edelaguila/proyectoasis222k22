@@ -92,7 +92,10 @@ public class Bitacora {
     public void setModulo(String Modulo) {
         this.Modulo = Modulo;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Bitacora{" + "Id_Bitacora=" + Id_Bitacora + ", Id_Usuario=" + Id_Usuario + ", Fecha=" + Fecha + ", Hora=" + Hora + ", Host=" + Host + ", Ip=" + Ip + ", Accion=" + Accion + ", CodigoAplicacion=" + CodigoAplicacion + ", Modulo=" + Modulo + '}';
+    }
+
 }

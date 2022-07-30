@@ -16,6 +16,7 @@ import java.net.UnknownHostException;
 public class MDISistemas extends javax.swing.JFrame {
         
     private Bitacora Bitacora;
+     private RegistroCatedratico RegistroCatedratico;
     
     /**
      * Creates new form MDISistemas
@@ -36,17 +37,34 @@ public class MDISistemas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        itemRegistroCatedratico = new javax.swing.JMenuItem();
+        itemCursohabilitadoAlumno = new javax.swing.JMenuItem();
+        itemListadoAlumnoCursoCatedratico = new javax.swing.JMenuItem();
+        itemListado_Alumno_Carrera = new javax.swing.JMenuItem();
+        itemListado_Alumno_Curso = new javax.swing.JMenuItem();
+        itemListado_Alumno_Seccion = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        itemBoletaAsignacionCurso = new javax.swing.JMenuItem();
+        itemAsignacion_Cursos = new javax.swing.JMenuItem();
+        itemPensum = new javax.swing.JMenuItem();
+        itemCertificacion_Curso = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
         jMenu13 = new javax.swing.JMenu();
         btnBitacora = new javax.swing.JMenuItem();
+
+        jMenu1.setText("jMenu1");
+
+        jMenuItem8.setText("jMenuItem8");
+
+        jMenuItem9.setText("jMenuItem9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
@@ -67,19 +85,63 @@ public class MDISistemas extends javax.swing.JFrame {
 
         jMenu4.setText("Mantenimientos");
 
-        jMenu5.setText("Boleta_Asignacion_Curso");
+        jMenu5.setText("Mantenimientos");
 
-        jMenuItem1.setText("BoletaAsignacionCurso");
-        jMenu5.add(jMenuItem1);
+        itemRegistroCatedratico.setText("RegistroCatedratico");
+        itemRegistroCatedratico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemRegistroCatedraticoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(itemRegistroCatedratico);
+
+        itemCursohabilitadoAlumno.setText("Curso_Habilitado_Alumno");
+        itemCursohabilitadoAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCursohabilitadoAlumnoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(itemCursohabilitadoAlumno);
+
+        itemListadoAlumnoCursoCatedratico.setText("Listado_Alumno_Curso_Catedratico");
+        jMenu5.add(itemListadoAlumnoCursoCatedratico);
+
+        itemListado_Alumno_Carrera.setText("Listado_Alumno_Carrera");
+        jMenu5.add(itemListado_Alumno_Carrera);
+
+        itemListado_Alumno_Curso.setText("Listado_Alumno_Curso");
+        itemListado_Alumno_Curso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListado_Alumno_CursoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(itemListado_Alumno_Curso);
+
+        itemListado_Alumno_Seccion.setText("Listado_Alumno_Seccion");
+        itemListado_Alumno_Seccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListado_Alumno_SeccionActionPerformed(evt);
+            }
+        });
+        jMenu5.add(itemListado_Alumno_Seccion);
 
         jMenu4.add(jMenu5);
 
-        jMenu6.setText("Registro_Catedratico");
+        jMenu11.setText("Procesos");
 
-        jMenuItem2.setText("RegistroCatedratico");
-        jMenu6.add(jMenuItem2);
+        itemBoletaAsignacionCurso.setText("BoletaAsignacionCurso");
+        jMenu11.add(itemBoletaAsignacionCurso);
 
-        jMenu4.add(jMenu6);
+        itemAsignacion_Cursos.setText("Asignacion_Cursos");
+        jMenu11.add(itemAsignacion_Cursos);
+
+        itemPensum.setText("Pensum");
+        jMenu11.add(itemPensum);
+
+        itemCertificacion_Curso.setText("Certificacion_Curso");
+        jMenu11.add(itemCertificacion_Curso);
+
+        jMenu4.add(jMenu11);
 
         jMenuBar2.add(jMenu4);
 
@@ -140,6 +202,41 @@ public class MDISistemas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBitacoraActionPerformed
 
+    private void itemListado_Alumno_CursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_CursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemListado_Alumno_CursoActionPerformed
+
+    private void itemCursohabilitadoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCursohabilitadoAlumnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemCursohabilitadoAlumnoActionPerformed
+
+    private void itemListado_Alumno_SeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_SeccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemListado_Alumno_SeccionActionPerformed
+
+    private void itemRegistroCatedraticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemRegistroCatedraticoActionPerformed
+        RegistroCatedratico = new RegistroCatedratico();
+
+      
+        RegistroCatedratico.show();
+       
+        RegistroCatedratico.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+      //  Insertar.setId_Usuario(Login.usuarioComercial);
+   //     Insertar.setAccion("Acceso ");
+
+        
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }       
+    }//GEN-LAST:event_itemRegistroCatedraticoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -178,15 +275,26 @@ public class MDISistemas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnBitacora;
+    private javax.swing.JMenuItem itemAsignacion_Cursos;
+    private javax.swing.JMenuItem itemBoletaAsignacionCurso;
+    private javax.swing.JMenuItem itemCertificacion_Curso;
+    private javax.swing.JMenuItem itemCursohabilitadoAlumno;
+    private javax.swing.JMenuItem itemListadoAlumnoCursoCatedratico;
+    private javax.swing.JMenuItem itemListado_Alumno_Carrera;
+    private javax.swing.JMenuItem itemListado_Alumno_Curso;
+    private javax.swing.JMenuItem itemListado_Alumno_Seccion;
+    private javax.swing.JMenuItem itemPensum;
+    private javax.swing.JMenuItem itemRegistroCatedratico;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
