@@ -135,5 +135,12 @@ namespace LaboratorioClinico
             this.Hide();
             MessageBox.Show("Factura");
         }
+
+        private void picturetrabajador_Click(object sender, EventArgs e)
+        {
+            Empleado em = new Empleado();
+            em.Show();
+            this.Hide();
+        }
     }
 }
