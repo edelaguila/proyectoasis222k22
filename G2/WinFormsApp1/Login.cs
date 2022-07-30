@@ -45,10 +45,27 @@ namespace LaboratorioClinico
             if(resultado[0].Equals(usuario) && resultado[1].Equals(contraseña)&& resultado[2].Equals(cargo))
             {
 
-                 Menu m = new Menu();
-                 m.Show();
-                this.Hide();
-                MessageBox.Show("Bienvenido " + usuario);
+
+
+                if(resultado[2].Equals("administrador"))
+                {
+                    Menu m = new Menu();
+                    m.Show();
+                    this.Hide();
+                    MessageBox.Show("Bienvenido " + usuario);
+                }
+                else if (resultado[2].Equals("trabajador"))
+                {
+                    MenuTrabajador m = new MenuTrabajador();
+                    m.Show();
+                    this.Hide();
+                    MessageBox.Show("Bienvenido " + usuario);
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+                 
             }
             else 
             { MessageBox.Show("Datos Incorrectos"); }

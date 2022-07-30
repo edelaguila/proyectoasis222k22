@@ -130,17 +130,54 @@ namespace LaboratorioClinico
 
         private void picturelaboratorio_Click(object sender, EventArgs e)
         {
-            Factura m = new Factura();
+            Laboratorio m = new Laboratorio();
             m.Show();
             this.Hide();
-            MessageBox.Show("Factura");
+            MessageBox.Show("Laboratorio");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Examen m = new Examen();
+            m.Show();
+            this.Hide();
+            MessageBox.Show("Bienvenido a Examenes");
+        }
+
+        private void picturedoctor_Click(object sender, EventArgs e)
+        {
+            Medico m = new Medico();
+            m.Show();
+            this.Hide();
+            MessageBox.Show("Bienvenido a Medicos");
         }
 
         private void picturetrabajador_Click(object sender, EventArgs e)
         {
-            Empleado em = new Empleado();
-            em.Show();
+            Empleado m = new Empleado();
+            m.Show();
             this.Hide();
+            MessageBox.Show("Bienvenido a Empleado");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Factura m = new Factura();
+            m.Show();
+            this.Hide();
+            MessageBox.Show("Bienvenido a Factura");
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l = new Login();
+            l.Show();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace LaboratorioClinico
 {
@@ -39,41 +40,91 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             
-
-           
-
-            if(confirmar.Equals(contraseña) && cargo != " ")
+            if (cargo == "administrador")
             {
-                string sql = "select * from usuario where usuario =  '" + usuario + "'";
-                resultado = con.buscar(sql, 3);
+                string validacion="4cept0", prueba;
+                prueba = Interaction.InputBox("Ingrese la contraseña para crear el usuario");
 
-                if (resultado[0] == null)
+                if (prueba.Equals(validacion))
                 {
-                    string sql1 = "insert into usuario values ('" + usuario + "', '" + contraseña + "','" + cargo + "')";
-                    con.IDU(sql1);
-                    Login l = new Login();
-                    l.Show();
-                    this.Hide();
+                    if (confirmar.Equals(contraseña) && cargo != " ")
+                    {
+                        string sql = "select * from usuario where usuario =  '" + usuario + "'";
+                        resultado = con.buscar(sql, 3);
 
+                        if (resultado[0] == null)
+                        {
+                            string sql1 = "insert into usuario values ('" + usuario + "', '" + contraseña + "','" + cargo + "')";
+                            con.IDU(sql1);
+                            Login l = new Login();
+                            l.Show();
+                            this.Hide();
+
+                        }
+
+                        else if (resultado[0].Equals(usuario))
+                        {
+                            txtusuario.Clear();
+                            txtcontraseña.Clear();
+                            txtconfirmar.Clear();
+                            radioadministrador.Checked = false;
+                            radiotrabajador.Checked = false;
+                            MessageBox.Show("El usuario ya existe");
+                        }
+
+                    }
+                    else
+                    {
+                        txtcontraseña.Clear();
+                        txtconfirmar.Clear();
+                        MessageBox.Show("Las contraseñas no coinciden");
+                    }
                 }
-
-                else if (resultado[0].Equals(usuario))
+                else
                 {
-                    txtusuario.Clear();
-                    txtcontraseña.Clear();
-                    txtconfirmar.Clear();
-                    radioadministrador.Checked = false;
-                    radiotrabajador.Checked = false;
-                    MessageBox.Show("El usuario ya existe");
+                    MessageBox.Show("No tiene permisos");
                 }
                
             }
+
             else
             {
-                txtcontraseña.Clear();
-                txtconfirmar.Clear();
-                MessageBox.Show("Las contraseñas no coinciden");
+                if (confirmar.Equals(contraseña) && cargo != " ")
+                {
+                    string sql = "select * from usuario where usuario =  '" + usuario + "'";
+                    resultado = con.buscar(sql, 3);
+
+                    if (resultado[0] == null)
+                    {
+                        string sql1 = "insert into usuario values ('" + usuario + "', '" + contraseña + "','" + cargo + "')";
+                        con.IDU(sql1);
+                        Login l = new Login();
+                        l.Show();
+                        this.Hide();
+
+                    }
+
+                    else if (resultado[0].Equals(usuario))
+                    {
+                        txtusuario.Clear();
+                        txtcontraseña.Clear();
+                        txtconfirmar.Clear();
+                        radioadministrador.Checked = false;
+                        radiotrabajador.Checked = false;
+                        MessageBox.Show("El usuario ya existe");
+                    }
+
+                }
+                else
+                {
+                    txtcontraseña.Clear();
+                    txtconfirmar.Clear();
+                    MessageBox.Show("Las contraseñas no coinciden");
+                }
             }
+           
+
+            
 
         }
 
