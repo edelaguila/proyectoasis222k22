@@ -47,10 +47,6 @@ namespace LaboratorioClinico
 
                  Menu m = new Menu();
                  m.Show();
-
-               
-
-                //
                 this.Hide();
                 MessageBox.Show("Bienvenido " + usuario);
             }

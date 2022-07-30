@@ -96,6 +96,7 @@ namespace LaboratorioClinico
             this.picturelaboratorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturelaboratorio.TabIndex = 3;
             this.picturelaboratorio.TabStop = false;
+            this.picturelaboratorio.Click += new System.EventHandler(this.picturelaboratorio_Click);
             this.picturelaboratorio.MouseLeave += new System.EventHandler(this.picturelaboratorio_MouseLeave);
             this.picturelaboratorio.MouseHover += new System.EventHandler(this.lblaboratorio_MouseHover);
             // 
@@ -109,6 +110,7 @@ namespace LaboratorioClinico
             this.picturecita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturecita.TabIndex = 4;
             this.picturecita.TabStop = false;
+            this.picturecita.Click += new System.EventHandler(this.picturecita_Click);
             this.picturecita.MouseLeave += new System.EventHandler(this.picturecita_MouseLeave);
             this.picturecita.MouseHover += new System.EventHandler(this.picturecita_MouseHover);
             // 
@@ -201,6 +203,7 @@ namespace LaboratorioClinico
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturecliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturetrabajador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturedoctor)).EndInit();

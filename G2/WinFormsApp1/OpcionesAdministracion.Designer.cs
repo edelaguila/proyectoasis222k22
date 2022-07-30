@@ -36,38 +36,42 @@ namespace LaboratorioClinico
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
             this.button1.Location = new System.Drawing.Point(98, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(181, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "Crear cita";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
             this.button2.Location = new System.Drawing.Point(198, 168);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(251, 59);
             this.button2.TabIndex = 1;
             this.button2.Text = "Agregar detalles de paciente";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
             this.button3.Location = new System.Drawing.Point(403, 26);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(181, 42);
             this.button3.TabIndex = 2;
             this.button3.Text = "Crear Factura";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // OpcionesAdministracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(675, 253);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

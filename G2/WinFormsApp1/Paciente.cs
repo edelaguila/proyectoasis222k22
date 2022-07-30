@@ -275,5 +275,10 @@ namespace LaboratorioClinico
             me.Show();
             this.Hide();
         }
+
+        private void Paciente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

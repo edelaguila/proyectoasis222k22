@@ -114,5 +114,26 @@ namespace LaboratorioClinico
             picturedoctor.Size = new System.Drawing.Size(129, 109);
             lbdoctor.Location = new Point(386, 401);
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picturecita_Click(object sender, EventArgs e)
+        {
+            Cita m = new Cita();
+            m.Show();
+            this.Hide();
+            MessageBox.Show("Recuerde ");
+        }
+
+        private void picturelaboratorio_Click(object sender, EventArgs e)
+        {
+            Factura m = new Factura();
+            m.Show();
+            this.Hide();
+            MessageBox.Show("Factura");
+        }
     }
 }
