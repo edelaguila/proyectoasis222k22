@@ -11,7 +11,7 @@ public class conectar {
     public Connection conexion() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
-            conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/ptaquilla", "root", ""); //Cambiar puerto 
+            conectar = DriverManager.getConnection("jdbc:mysql://localhost:3308/ptaquilla", "root", ""); //Cambiar puerto 
            
 
         } catch (SQLException ex) {

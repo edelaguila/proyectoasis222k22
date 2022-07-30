@@ -144,7 +144,7 @@ public class ReportesMenu extends javax.swing.JFrame {
         Connection cn=cc.conexion();
         
         JasperReport reporte = null;
-        String path = "C:\\Users\\50231\\OneDrive\\Escritorio\\Proyecto Taquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes\\peliculasSemana.jasper"; //CAMBIAR UBICACION
+        String path = "C:\\Users\\ester\\Workspace\\ProyectoTaquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes\\peliculasSemana.jasper"; //CAMBIAR UBICACION
         try {
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             
@@ -210,7 +210,7 @@ public class ReportesMenu extends javax.swing.JFrame {
         Connection cn=cc.conexion();
         
         JasperReport reporte = null;
-        String path = "C:\\Users\\50231\\OneDrive\\Escritorio\\Proyecto Taquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes"; //CAMBIAR UBICACION
+        String path = "C:\\Users\\ester\\Workspace\\ProyectoTaquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes\\gananciasMes.jasper"; //CAMBIAR UBICACION
         try {
             reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
             
