@@ -8,12 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;
+
 
 public class AdministracionMenu extends javax.swing.JFrame {
 
@@ -143,24 +138,9 @@ public class AdministracionMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        conectar cc=new conectar();
-        Connection cn=cc.conexion();
-        
-        JasperReport reporte = null;
-        String path = "C:\\Users\\50231\\OneDrive\\Escritorio\\Proyecto Taquilla\\proyectoasis222k22\\G5\\Proyecto\\src\\reportes\\report1.jasper"; //CAMBIAR UBICACION
-        try {
-            reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
-            
-            JasperPrint jprint = JasperFillManager.fillReport(reporte, null, cn);
-            
-            JasperViewer view =new JasperViewer(jprint, false);
-            
-            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            
-            view.setVisible(true);
-        } catch (JRException ex) {
-            Logger.getLogger(AdministracionMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ReportesMenu form=new ReportesMenu();
+        form.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
