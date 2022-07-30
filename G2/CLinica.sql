@@ -81,6 +81,8 @@ direccion varchar(50) not null,
 foreign key (usuario) references usuario(usuario) on update
 cascade on delete cascade);
 
+use clinica;
+select * from usuario;
 
-
+insert into usuario values ('luis1234', '123', 'administrador');
 
