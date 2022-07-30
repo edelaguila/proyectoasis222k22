@@ -1,10 +1,12 @@
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -45,9 +47,9 @@ public class Cartelera extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        hora = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        peli = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -109,16 +111,16 @@ public class Cartelera extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel3.setText("Tipo formato");
 
-        jComboBox1.setBackground(new java.awt.Color(255, 186, 146));
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" }));
+        hora.setBackground(new java.awt.Color(255, 186, 146));
+        hora.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM" }));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel4.setText("Horario");
 
-        jComboBox2.setBackground(new java.awt.Color(204, 255, 204));
-        jComboBox2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cars 1", "IT (Eso)", "El hombre araña 1", "Pocahontas", " " }));
+        peli.setBackground(new java.awt.Color(204, 255, 204));
+        peli.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        peli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cars 1", "IT (Eso)", "El hombre araña 1", "Pocahontas", " " }));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel5.setText("Película");
@@ -206,9 +208,9 @@ public class Cartelera extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(peli, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
@@ -270,8 +272,8 @@ public class Cartelera extends javax.swing.JFrame {
                     .addComponent(local, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(peli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -355,6 +357,31 @@ public class Cartelera extends javax.swing.JFrame {
        Pago pa = new Pago();
        pa.setVisible(true);
        this.setVisible(false);
+       
+       conectar cc=new conectar();
+       Connection cn=cc.conexion();
+       int b = 50;
+       try{
+          
+            PreparedStatement pst=cn.prepareStatement("INSERT INTO RegVenta(id_reg,vPeli,cine,dia,formato,horario) VALUES(?,?,?,?,?,?)");
+            pst.setInt(1,700+b);
+            pst.setString(2,peli.getSelectedItem().toString());
+            pst.setString(3,local.getSelectedItem().toString());
+            pst.setString(4,dia.getSelectedItem().toString());
+            pst.setString(5,tipo.getSelectedItem().toString());
+            pst.setString(6,hora.getSelectedItem().toString());
+             b =b;
+            int a=pst.executeUpdate();
+            if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro exitoso");
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Error al agregar");
+            }
+        }catch(Exception e){
+        }
+       
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -397,10 +424,9 @@ public class Cartelera extends javax.swing.JFrame {
     private javax.swing.JButton close;
     private javax.swing.JButton close1;
     private javax.swing.JComboBox<String> dia;
+    private javax.swing.JComboBox<String> hora;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -418,6 +444,7 @@ public class Cartelera extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> local;
+    private javax.swing.JComboBox<String> peli;
     private javax.swing.JComboBox<String> tipo;
     // End of variables declaration//GEN-END:variables
 }
