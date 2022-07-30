@@ -69,7 +69,7 @@ Anotaciones int
 /*llave foranea*/
 ALTER TABLE pichichi ADD foreign key(Id_Jugador) references jugador(Id_Jugador);
 
-
+/*hola*/
 create table jornada ( 
 Id_Jornada int not null primary key auto_increment,
 NO_Jornada int,
