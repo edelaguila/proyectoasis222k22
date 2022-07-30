@@ -107,6 +107,19 @@ create table ganancias(
     fecha date
 );
 
+create table RegVenta(
+	id_reg int primary key,
+    vPeli varchar(20),
+    cine varchar(20),
+    dia varchar(15),
+	formato varchar(15),
+    Horario varchar(10),
+    Mpago varchar(20),
+    niños varchar(20),
+    adulto varchar(20),
+    mayor varchar(20)
+);
+
 
 alter table cines add constraint llave1 foreign key (Depto) references ubicaciones(No_depto);
 alter table salas add constraint llave2 foreign key (id_cine) references cines(Id_cines);
@@ -195,5 +208,6 @@ select * from peliculas;
 select * from clasificaciones;
 select * from cartelera;
 select * from usuariosadmin;
+select * from RegVenta;
 
 select * from salas s INNER JOIN cines c ON c.Id_cines = s.id_cine INNER JOIN cartelera car  ON  s.id_sala= car.salas where nombre_cine= 'Rush Mall';
