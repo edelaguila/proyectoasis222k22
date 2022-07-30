@@ -42,7 +42,7 @@
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="txtusuario" alignment="0" pref="130" max="32767" attributes="0"/>
+                                                  <Component id="usu" alignment="0" pref="130" max="32767" attributes="0"/>
                                                   <Component id="num" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -51,7 +51,7 @@
                                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="txtpermisos" min="-2" pref="130" max="-2" attributes="0"/>
+                                              <Component id="tpermi" min="-2" pref="130" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -102,9 +102,9 @@
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtusuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="usu" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtpermisos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tpermi" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="45" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="245" max="-2" attributes="0"/>
@@ -200,14 +200,14 @@
         <Property name="text" type="java.lang.String" value="Usuario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtusuario">
+    <Component class="javax.swing.JTextField" name="usu">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Permisos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtpermisos">
+    <Component class="javax.swing.JTextField" name="tpermi">
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>

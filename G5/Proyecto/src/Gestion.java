@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Gestion extends javax.swing.JFrame {
 
-    public static final String URL="jdbc:mysql://localhost:3308/ptaquilla";
+    public static final String URL="jdbc:mysql://localhost:3306/ptaquilla"; //CAMBIAR PUERTO
     public static final String USERNAME="root";
     public static final String PASSWORD="";
     PreparedStatement ps;
@@ -59,9 +59,9 @@ public class Gestion extends javax.swing.JFrame {
     
     public void agregar(){
         String id = num.getText();
-        String usuario = txtusuario.getText();
+        String usuario = usu.getText();
         String contraseña = contra.getText();
-        String permisos = txtpermisos.getText();
+        String permisos = tpermi.getText();
         
         try{
             if (id.equals("") || usuario.equals("") || contraseña.equals("") || permisos.equals("")){
@@ -73,9 +73,9 @@ public class Gestion extends javax.swing.JFrame {
                 st.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Usuario agregado");
                 num.setText("");
-                txtusuario.setText("");
+                usu.setText("");
                 contra.setText("");
-                txtpermisos.setText("");
+                tpermi.setText("");
             }
         } catch(SQLException e){
             JOptionPane.showMessageDialog(null, "Error al conectar a base de datos");
@@ -129,9 +129,9 @@ public class Gestion extends javax.swing.JFrame {
         eliminar = new javax.swing.JButton();
         buscar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtusuario = new javax.swing.JTextField();
+        usu = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtpermisos = new javax.swing.JTextField();
+        tpermi = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -213,14 +213,14 @@ public class Gestion extends javax.swing.JFrame {
                                             .addComponent(jLabel1)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(txtusuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                                    .addComponent(usu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                                                     .addComponent(num, javax.swing.GroupLayout.Alignment.LEADING))
                                                 .addGap(27, 27, 27)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(jLabel3)
                                                     .addComponent(jLabel5))
                                                 .addGap(18, 18, 18)
-                                                .addComponent(txtpermisos, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(tpermi, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2))))
@@ -256,9 +256,9 @@ public class Gestion extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(txtpermisos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tpermi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -280,21 +280,53 @@ public class Gestion extends javax.swing.JFrame {
 
     private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
          conectar cc=new conectar();
-        Connection cn=cc.conexion();
+         Connection cn=cc.conexion();
         try{
-            PreparedStatement pst=cn.prepareStatement("UPDATE usuariosadmin SET contraseña ='"+contra.getText()+"'WHERE id_usuarioadmin="+num.getText()+";");
-        int a=pst.executeUpdate();
-        if(a>0){
-            JOptionPane.showMessageDialog(null,"Registro Actualizado");
-             mostrar();
-             num.setText(null);
-             contra.setText(null);
+           if(!(usu.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE usuariosadmin SET usuario ='"+usu.getText()+"'WHERE id_usuarioadmin="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrar();
+                num.setText(null);
+                usu.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else if(!(contra.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE usuariosadmin SET contraseña ='"+contra.getText()+"'WHERE id_usuarioadmin="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrar();
+                num.setText(null);
+                contra.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else if(!(tpermi.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE usuariosadmin SET permisos ='"+tpermi.getText()+"'WHERE id_usuarioadmin="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrar();
+                num.setText(null);
+                tpermi.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else{
+                JOptionPane.showMessageDialog(null,"Ingrese Id y texto en el campo a modificar");
+            }
         }
-        else{
-             JOptionPane.showMessageDialog(null,"Error al actualizar");
-        }
-        }catch(Exception e){
-    }             
+        catch(Exception e){
+        }             
     }//GEN-LAST:event_modificarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
@@ -379,8 +411,8 @@ public class Gestion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton modificar;
     private javax.swing.JTextField num;
-    private javax.swing.JTextField txtpermisos;
-    private javax.swing.JTextField txtusuario;
+    private javax.swing.JTextField tpermi;
+    private javax.swing.JTextField usu;
     public javax.swing.JTable visor;
     // End of variables declaration//GEN-END:variables
 }

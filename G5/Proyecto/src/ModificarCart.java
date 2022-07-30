@@ -36,6 +36,10 @@ void mostrardatoscart(String valor){
         modelo.addColumn("Dia presentacion");
         modelo.addColumn("Hora");
         modelo.addColumn("Sala");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Idioma");
+        modelo.addColumn("Subtitulado");
+        modelo.addColumn("Descuent");
         
         jTable1.setModel(modelo);
         String sql="";
@@ -47,7 +51,7 @@ void mostrardatoscart(String valor){
             sql="SELECT * FROM cartelera WHERE id_pelicula='"+valor+"'";
         }  
         
-        String []datos=new String [4];
+        String []datos=new String [8];
         try{
             Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(sql);
@@ -56,6 +60,10 @@ void mostrardatoscart(String valor){
             datos[1]=rs.getString(2);
             datos[2]=rs.getString(3);
             datos[3]=rs.getString(4);
+            datos[4]=rs.getString(5);
+            datos[5]=rs.getString(6);
+            datos[6]=rs.getString(7);
+            datos[7]=rs.getString(8);
 
             
             modelo.addRow(datos);
@@ -85,16 +93,18 @@ void mostrardatoscart(String valor){
         jLabel8 = new javax.swing.JLabel();
         sala = new javax.swing.JTextField();
         fecha = new javax.swing.JTextField();
-        sub = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        idioma = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        desc = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         close = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        dia = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        desc = new javax.swing.JTextField();
+        idioma = new javax.swing.JTextField();
+        sub = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -121,13 +131,9 @@ void mostrardatoscart(String valor){
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel8.setText("Sala");
 
-        sub.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si ", "No", " " }));
-
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel11.setText("Fecha");
-
-        idioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Ingles" }));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -136,8 +142,6 @@ void mostrardatoscart(String valor){
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel12.setText("Descuento");
-
-        desc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "50%", "75%" }));
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -152,6 +156,10 @@ void mostrardatoscart(String valor){
 
         jScrollPane1.setViewportView(jTable1);
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel4.setText("Dia Presentación");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -160,53 +168,57 @@ void mostrardatoscart(String valor){
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addGap(51, 51, 51))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(num, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                        .addComponent(close)
+                        .addGap(0, 51, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(sala, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel11)
-                                        .addGap(49, 49, 49))
+                                        .addComponent(sala, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel10)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(idioma, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(idioma, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel13)
-                                        .addGap(40, 40, 40)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                        .addComponent(close)
-                        .addGap(0, 12, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(149, 149, 149)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(desc, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(modi, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addGap(51, 51, 51)
+                                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(27, 27, 27))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(desc, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(modi, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,32 +230,35 @@ void mostrardatoscart(String valor){
                     .addComponent(jLabel7)
                     .addComponent(hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(close))
-                .addGap(23, 23, 23)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(sala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(15, 15, 15)
+                    .addComponent(jLabel11)
+                    .addComponent(modi))
+                .addGap(13, 13, 13)
                 .addComponent(jLabel5)
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(idioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel13)
+                            .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(modi)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(idioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel12)
+                    .addComponent(desc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -288,15 +303,79 @@ void mostrardatoscart(String valor){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
                 mostrardatoscart("");
                 num.setText(null);
-                hora.setText(null);
+                sala.setText(null);
                 }
                  else{
                     JOptionPane.showMessageDialog(null,"Error al actualizar");
                 }
             } 
-            
-            
+            else if(!(dia.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET diapres ='"+dia.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrardatoscart("");
+                num.setText(null);
+                dia.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else if(!(fecha.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET fecha ='"+fecha.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrardatoscart("");
+                num.setText(null);
+                fecha.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else if(!(idioma.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET idioma ='"+idioma.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrardatoscart("");
+                num.setText(null);
+                idioma.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else if(!(sub.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET subtitulado ='"+sub.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrardatoscart("");
+                num.setText(null);
+                sub.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
+            else if(!(desc.getText().equals(""))){
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET descuento ='"+desc.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                int a=pst.executeUpdate();
+                if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro Actualizado");
+                mostrardatoscart("");
+                num.setText(null);
+                desc.setText(null);
+                }
+                 else{
+                    JOptionPane.showMessageDialog(null,"Error al actualizar");
+                }
+            } 
             else {
+                JOptionPane.showMessageDialog(null,"Ingrese algun el id y texto en campo para cambiar");
             }
             
         }catch(Exception e){
@@ -306,15 +385,17 @@ void mostrardatoscart(String valor){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton close;
-    private javax.swing.JComboBox<String> desc;
+    private javax.swing.JTextField desc;
+    private javax.swing.JTextField dia;
     private javax.swing.JTextField fecha;
     private javax.swing.JTextField hora;
-    private javax.swing.JComboBox<String> idioma;
+    private javax.swing.JTextField idioma;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -324,7 +405,7 @@ void mostrardatoscart(String valor){
     private javax.swing.JButton modi;
     private javax.swing.JTextField num;
     private javax.swing.JTextField sala;
-    private javax.swing.JComboBox<String> sub;
+    private javax.swing.JTextField sub;
     // End of variables declaration//GEN-END:variables
 
 }

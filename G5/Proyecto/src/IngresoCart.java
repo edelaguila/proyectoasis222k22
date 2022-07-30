@@ -235,7 +235,7 @@ public class IngresoCart extends javax.swing.JInternalFrame {
         Connection cn=cc.conexion();
    
         try{
-            PreparedStatement pst=cn.prepareStatement("INSERT INTO cartelera(id_pelicula,diapres,horapres,salas,fecha,idioma,subtitulado,id_descuento) VALUES(?,?,?,?,?,?,?,?)");
+            PreparedStatement pst=cn.prepareStatement("INSERT INTO cartelera(id_pelicula,diapres,horapres,salas,fecha,idioma,subtitulado,descuento) VALUES(?,?,?,?,?,?,?,?)");
             pst.setString(1,num.getText());
             pst.setString(2,dia.getText());
             pst.setString(3,hora.getText());
