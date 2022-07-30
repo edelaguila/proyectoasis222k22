@@ -1,7 +1,8 @@
 /* Joselyne Aracely Rivera Cifuentes
 /* carnet 0901-17-5
 /* Certificacion de cursos
- */
+/*Fallo en uso de botones 
+*/
 package asignacion.vista;
 
 import asignacion.datos.CertificacionCursoDAO;
