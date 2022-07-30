@@ -4,17 +4,27 @@
  */
 package asignacion.vista;
 
+import asignacion.datos.BitacoraDAO;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.net.UnknownHostException;
+
 /**
  *
  * @author jonat
  */
 public class MDISistemas extends javax.swing.JFrame {
-
+        
+    private Bitacora Bitacora;
+    
     /**
      * Creates new form MDISistemas
      */
     public MDISistemas() {
         initComponents();
+//        this.setTitle("Usuario: " + "[" + Login.usuarioComercial + "]" + " \t" + "IP: [" + mdi_Components.getIp() + "]");
+//        permisos.getPermisos(modulo_nombre, Login.usuarioComercial);
+
     }
 
     /**
@@ -31,21 +41,25 @@ public class MDISistemas extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
         jMenu13 = new javax.swing.JMenu();
+        btnBitacora = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 707, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 502, Short.MAX_VALUE)
         );
 
         jMenu3.setText("Login");
@@ -54,9 +68,17 @@ public class MDISistemas extends javax.swing.JFrame {
         jMenu4.setText("Mantenimientos");
 
         jMenu5.setText("Boleta_Asignacion_Curso");
+
+        jMenuItem1.setText("BoletaAsignacionCurso");
+        jMenu5.add(jMenuItem1);
+
         jMenu4.add(jMenu5);
 
         jMenu6.setText("Registro_Catedratico");
+
+        jMenuItem2.setText("RegistroCatedratico");
+        jMenu6.add(jMenuItem2);
+
         jMenu4.add(jMenu6);
 
         jMenuBar2.add(jMenu4);
@@ -64,6 +86,15 @@ public class MDISistemas extends javax.swing.JFrame {
         jMenu12.setText("Informe");
 
         jMenu13.setText("Bitacora");
+
+        btnBitacora.setText("Bitacora");
+        btnBitacora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBitacoraActionPerformed(evt);
+            }
+        });
+        jMenu13.add(btnBitacora);
+
         jMenu12.add(jMenu13);
 
         jMenuBar2.add(jMenu12);
@@ -83,6 +114,31 @@ public class MDISistemas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBitacoraActionPerformed
+        // TODO add your handling code here:
+         Bitacora form=new Bitacora();
+           form.setVisible(true);
+           this.dispose();
+           
+        Bitacora = new Bitacora();
+
+        Bitacora.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+//        Insertar.setId_Usuario(Login./*usuarioComercial*/);
+//        Insertar.setAccion("Acceso ");
+
+    
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+        //    Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnBitacoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,6 +177,7 @@ public class MDISistemas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btnBitacora;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu13;
     private javax.swing.JMenu jMenu3;
@@ -128,6 +185,8 @@ public class MDISistemas extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
