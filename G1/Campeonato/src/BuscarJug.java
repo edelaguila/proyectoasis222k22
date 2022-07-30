@@ -34,7 +34,7 @@ public class BuscarJug extends javax.swing.JFrame {
         String sql="";
         if (valor.equals(""))
         {
-            sql="SELECT * FROM jugador";
+            sql="SELECT jugador.Id_Jugador,jugador.Nombre,jugador.Apellido,jugador.Año_Nacimiento,jugador.Numero_Camisola,equipos.Nombre FROM jugador INNER JOIN equipos USING(Id_Equipo)";
         }
         else{
             sql="SELECT * FROM jugador WHERE (Id_Jugador='"+valor+"'  OR Nombre='"+valor+"')";

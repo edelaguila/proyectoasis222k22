@@ -26,18 +26,22 @@ public class buscarequipo extends javax.swing.JFrame {
        
         modelo.addColumn("Id_Equipo");
         modelo.addColumn("Nombre");
-        modelo.addColumn("Id_Deporte");
+        modelo.addColumn("Deporte");
         
           
         jTable1.setModel(modelo);
         String sql="";
         if (valor.equals(""))
         {
-            sql="SELECT * FROM equipos";
+            sql="SELECT equipos.Id_Equipo,equipos.Nombre, deportes.Descripcion FROM equipos INNER JOIN deportes USING(Id_Deporte)";
            // sql="SELECT Descripcion from deportes D JOIN equipos E ON D.Id_Deporte = E.Id_Equipo";
         }
         else{
-            sql="SELECT * FROM equipos WHERE (Id_Equipo='"+valor+"'  OR Nombre='"+valor+"')";
+            
+            sql="SELECT equipos.Id_Equipo,equipos.Nombre, deportes.Descripcion FROM equipos INNER JOIN deportes USING(Id_Deporte)  WHERE (Descripcion='"+valor+"'  OR Nombre='"+valor+"') ";
+            
+            /*
+            sql="SELECT * FROM equipos WHERE (Id_Equipo='"+valor+"'  OR Nombre='"+valor+"')";*/
         }  
         
         String []datos=new String [3];

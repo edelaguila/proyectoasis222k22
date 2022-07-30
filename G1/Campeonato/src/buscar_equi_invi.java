@@ -33,18 +33,22 @@ public class buscar_equi_invi extends javax.swing.JFrame {
        
         modelo.addColumn("Id_Equipo");
         modelo.addColumn("Nombre");
-        modelo.addColumn("Id_Deporte");
+        modelo.addColumn("Deporte");
         
           
         jTable1.setModel(modelo);
         String sql="";
-        if (valor.equals(""))
+       if (valor.equals(""))
         {
-            sql="SELECT * FROM equipos";
+            sql="SELECT equipos.Id_Equipo,equipos.Nombre, deportes.Descripcion FROM equipos INNER JOIN deportes USING(Id_Deporte)";
            // sql="SELECT Descripcion from deportes D JOIN equipos E ON D.Id_Deporte = E.Id_Equipo";
         }
         else{
-            sql="SELECT * FROM equipos WHERE (Id_Deporte='"+valor+"'  OR Nombre='"+valor+"')";
+            
+            sql="SELECT equipos.Id_Equipo,equipos.Nombre, deportes.Descripcion FROM equipos INNER JOIN deportes USING(Id_Deporte)  WHERE (Descripcion='"+valor+"'  OR Nombre='"+valor+"') ";
+            
+            /*
+            sql="SELECT * FROM equipos WHERE (Id_Equipo='"+valor+"'  OR Nombre='"+valor+"')";*/
         }  
         
         String []datos=new String [3];
@@ -157,7 +161,7 @@ public class buscar_equi_invi extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel3.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
-        jLabel3.setText("NOMBRE DE EQUIPO O ID DEL DEPORTE");
+        jLabel3.setText("NOMBRE DE EQUIPO DEL DEPORTE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,9 +177,9 @@ public class buscar_equi_invi extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(31, 31, 31)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()

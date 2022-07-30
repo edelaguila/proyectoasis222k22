@@ -26,11 +26,11 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-  void mostrardatos(String valor){
+  void autentificacon(String valor){
         conectar cc=new conectar();
         java.sql.Connection cn=cc.conexion();
         
-       
+       int resultado = 0;
        
         String sql="";
         if (valor.equals(""))
@@ -51,9 +51,7 @@ public class Login extends javax.swing.JFrame {
             datos[2]=rs.getString(3);
             datos[3]=rs.getString(4);
             
-            
-            
-            
+
             if(datos[1].equals(jusuario.getText()) && datos[2].equals(jcontraseña.getText())){
               Menu generar = new Menu();
               generar.setVisible(true);  
@@ -70,6 +68,93 @@ public class Login extends javax.swing.JFrame {
         }
     }
     
+  
+  void autentificaconTorneo(String valor){
+        conectar cc=new conectar();
+        java.sql.Connection cn=cc.conexion();
+        
+       int resultado = 0;
+       
+        String sql="";
+        if (valor.equals(""))
+        {
+            sql="SELECT * FROM AdminTorneo";
+        }
+        else{
+            sql="SELECT * FROM AdminTorneo WHERE (Nombre='"+valor+"'  AND Contraseña='"+valor+"')";
+        }  
+        
+        String []datos=new String [4];
+        try{
+            Statement st=cn.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            while(rs.next()){
+            datos[0]=rs.getString(1);
+            datos[1]=rs.getString(2);
+            datos[2]=rs.getString(3);
+            datos[3]=rs.getString(4);
+            
+
+            if(datos[1].equals(jusuario.getText()) && datos[2].equals(jcontraseña.getText())){
+              menuTorneo generar = new menuTorneo();
+              generar.setVisible(true);  
+            }
+           
+             
+         //agergar mensaje 
+            
+            
+            }
+           
+        }catch(SQLException ex){
+            Logger.getLogger(datos.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
+  
+  
+  
+  void autentificaconEquipo(String valor){
+        conectar cc=new conectar();
+        java.sql.Connection cn=cc.conexion();
+        
+       int resultado = 0;
+       
+        String sql="";
+        if (valor.equals(""))
+        {
+            sql="SELECT * FROM AdminEquipo";
+        }
+        else{
+            sql="SELECT * FROM AdminEquipo WHERE (Nombre='"+valor+"'  AND Contraseña='"+valor+"')";
+        }  
+        
+        String []datos=new String [4];
+        try{
+            Statement st=cn.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            while(rs.next()){
+            datos[0]=rs.getString(1);
+            datos[1]=rs.getString(2);
+            datos[2]=rs.getString(3);
+            datos[3]=rs.getString(4);
+            
+
+            if(datos[1].equals(jusuario.getText()) && datos[2].equals(jcontraseña.getText())){
+              MenuEquipo generar = new MenuEquipo();
+              generar.setVisible(true);  
+            }
+           
+             
+         //agergar mensaje 
+            
+            
+            }
+           
+        }catch(SQLException ex){
+            Logger.getLogger(datos.class.getName()).log(Level.SEVERE,null,ex);
+        }
+    }
+  
     
     
     @SuppressWarnings("unchecked")
@@ -256,9 +341,9 @@ public class Login extends javax.swing.JFrame {
 
     private void btingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btingresarActionPerformed
         
-         mostrardatos("");
-        
-        
+         autentificacon("");
+        autentificaconTorneo("");
+        autentificaconEquipo("");
  
            
     }//GEN-LAST:event_btingresarActionPerformed
