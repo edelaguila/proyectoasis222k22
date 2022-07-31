@@ -172,5 +172,12 @@ namespace LaboratorioClinico
             this.Hide();
             MessageBox.Show("Bienvenido a Factura");
         }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login l = new Login();
+            l.Show();
+        }
     }
 }
