@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BsA7+Qmvt2igg7Wqsoqo8Gp/XTOsEzIh4nyYORyugGmDp54WHk+zxSs6yMgCcSK8skCbQB52bBV1e4qIqH3PLg==",
+  "dgSpecHash": "3iUyoVlY7LUYbA704UXP1C/g5VkCpS96hEcGX6iBfXN1zXLhYgzOXdkrQxz9kfTUmD9kp4IMjG9XBiDSZyuZCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kuht_saal\\Desktop\\Prototipo_con_BaseData\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
+  "projectFilePath": "C:\\Users\\Kuht_saal\\Desktop\\Prototipo_Inicial_BD\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kuht_saal\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Kuht_saal\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
