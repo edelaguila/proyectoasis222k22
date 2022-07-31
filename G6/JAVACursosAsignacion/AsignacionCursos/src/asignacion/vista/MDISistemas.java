@@ -14,10 +14,19 @@ import java.net.UnknownHostException;
  * @author jonat
  */
 public class MDISistemas extends javax.swing.JFrame {
-        
+
     private Bitacora Bitacora;
-     private RegistroCatedratico RegistroCatedratico;
-    
+    private RegistroCatedratico RegistroCatedratico;
+    private Listadoalumnoscurso Listadoalumnoscurso;
+    private Pensum Pensum;
+    private Listadoalumnoscarreraporcarrera Listadoalumnoscarreraporcarrera;
+    private CursosCatedraticos CursosCatedraticos;
+    private Listadoalumnoscarreraporcarrera ListadoAlumnoCarrera;
+    private Listadoalumnoscurso Listaalumnoscurso;
+    private AsignacionDeCursos AsignacionDeCursos;
+    private CertificacionCursos CertificacionCursos;
+    private Login Login;
+
     /**
      * Creates new form MDISistemas
      */
@@ -43,6 +52,7 @@ public class MDISistemas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
+        itemLogin = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         itemRegistroCatedratico = new javax.swing.JMenuItem();
@@ -51,6 +61,7 @@ public class MDISistemas extends javax.swing.JFrame {
         itemListado_Alumno_Carrera = new javax.swing.JMenuItem();
         itemListado_Alumno_Curso = new javax.swing.JMenuItem();
         itemListado_Alumno_Seccion = new javax.swing.JMenuItem();
+        itemListadoCarreraAlumno = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         itemBoletaAsignacionCurso = new javax.swing.JMenuItem();
         itemAsignacion_Cursos = new javax.swing.JMenuItem();
@@ -81,6 +92,15 @@ public class MDISistemas extends javax.swing.JFrame {
         );
 
         jMenu3.setText("Login");
+
+        itemLogin.setText("Login");
+        itemLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemLoginActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itemLogin);
+
         jMenuBar2.add(jMenu3);
 
         jMenu4.setText("Mantenimientos");
@@ -104,9 +124,19 @@ public class MDISistemas extends javax.swing.JFrame {
         jMenu5.add(itemCursohabilitadoAlumno);
 
         itemListadoAlumnoCursoCatedratico.setText("Listado_Alumno_Curso_Catedratico");
+        itemListadoAlumnoCursoCatedratico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListadoAlumnoCursoCatedraticoActionPerformed(evt);
+            }
+        });
         jMenu5.add(itemListadoAlumnoCursoCatedratico);
 
         itemListado_Alumno_Carrera.setText("Listado_Alumno_Carrera");
+        itemListado_Alumno_Carrera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListado_Alumno_CarreraActionPerformed(evt);
+            }
+        });
         jMenu5.add(itemListado_Alumno_Carrera);
 
         itemListado_Alumno_Curso.setText("Listado_Alumno_Curso");
@@ -125,20 +155,48 @@ public class MDISistemas extends javax.swing.JFrame {
         });
         jMenu5.add(itemListado_Alumno_Seccion);
 
+        itemListadoCarreraAlumno.setText("Listado Alumno_Carrera");
+        itemListadoCarreraAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListadoCarreraAlumnoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(itemListadoCarreraAlumno);
+
         jMenu4.add(jMenu5);
 
         jMenu11.setText("Procesos");
 
         itemBoletaAsignacionCurso.setText("BoletaAsignacionCurso");
+        itemBoletaAsignacionCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBoletaAsignacionCursoActionPerformed(evt);
+            }
+        });
         jMenu11.add(itemBoletaAsignacionCurso);
 
         itemAsignacion_Cursos.setText("Asignacion_Cursos");
+        itemAsignacion_Cursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemAsignacion_CursosActionPerformed(evt);
+            }
+        });
         jMenu11.add(itemAsignacion_Cursos);
 
         itemPensum.setText("Pensum");
+        itemPensum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemPensumActionPerformed(evt);
+            }
+        });
         jMenu11.add(itemPensum);
 
         itemCertificacion_Curso.setText("Certificacion_Curso");
+        itemCertificacion_Curso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCertificacion_CursoActionPerformed(evt);
+            }
+        });
         jMenu11.add(itemCertificacion_Curso);
 
         jMenu4.add(jMenu11);
@@ -179,10 +237,10 @@ public class MDISistemas extends javax.swing.JFrame {
 
     private void btnBitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBitacoraActionPerformed
         // TODO add your handling code here:
-         Bitacora form=new Bitacora();
-           form.setVisible(true);
-           this.dispose();
-           
+        Bitacora form = new Bitacora();
+        form.setVisible(true);
+        this.dispose();
+
         Bitacora = new Bitacora();
 
         Bitacora.setVisible(true);
@@ -190,52 +248,232 @@ public class MDISistemas extends javax.swing.JFrame {
         BitacoraDAO BitacoraDAO = new BitacoraDAO();
 
         Bitacora Insertar = new Bitacora();
-//        Insertar.setId_Usuario(Login./*usuarioComercial*/);
-//        Insertar.setAccion("Acceso ");
-
-    
-
         try {
             BitacoraDAO.insert(Insertar);
         } catch (UnknownHostException ex) {
-        //    Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+            //    Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBitacoraActionPerformed
 
     private void itemListado_Alumno_CursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_CursoActionPerformed
         // TODO add your handling code here:
+        Listadoalumnoscurso = new Listadoalumnoscurso();
+        Listadoalumnoscurso.show();
+        Listadoalumnoscurso.setVisible(true);
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+        Bitacora Insertar = new Bitacora();
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_itemListado_Alumno_CursoActionPerformed
 
     private void itemCursohabilitadoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCursohabilitadoAlumnoActionPerformed
         // TODO add your handling code here:
+//          Listadoalumnoscurso = new Listadoalumnoscurso();
+//
+//        Listadoalumnoscurso.show();
+//       
+//        Listadoalumnoscurso.setVisible(true);
+//
+//        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+//
+//        Bitacora Insertar = new Bitacora();
+//      //  Insertar.setId_Usuario(Login.usuarioComercial);
+//   //     Insertar.setAccion("Acceso ");
+//
+//        
+//
+//        try {
+//            BitacoraDAO.insert(Insertar);
+//        } catch (UnknownHostException ex) {
+//            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+//        }  
     }//GEN-LAST:event_itemCursohabilitadoAlumnoActionPerformed
 
     private void itemListado_Alumno_SeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_SeccionActionPerformed
         // TODO add your handling code here:
+        Listaalumnoscurso = new Listadoalumnoscurso();
+        Listaalumnoscurso.show();
+        Listaalumnoscurso.setVisible(true);
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+        Bitacora Insertar = new Bitacora();
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_itemListado_Alumno_SeccionActionPerformed
 
     private void itemRegistroCatedraticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemRegistroCatedraticoActionPerformed
         RegistroCatedratico = new RegistroCatedratico();
-
-      
         RegistroCatedratico.show();
-       
         RegistroCatedratico.setVisible(true);
-
         BitacoraDAO BitacoraDAO = new BitacoraDAO();
 
         Bitacora Insertar = new Bitacora();
-      //  Insertar.setId_Usuario(Login.usuarioComercial);
-   //     Insertar.setAccion("Acceso ");
-
-        
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
 
         try {
             BitacoraDAO.insert(Insertar);
         } catch (UnknownHostException ex) {
             //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
-        }       
+        }
     }//GEN-LAST:event_itemRegistroCatedraticoActionPerformed
+
+    private void itemPensumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPensumActionPerformed
+        // TODO add your handling code here:
+        Pensum = new Pensum();
+        Pensum.show();
+        Pensum.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemPensumActionPerformed
+
+    private void itemListadoCarreraAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListadoCarreraAlumnoActionPerformed
+        // TODO add your handling code here:
+        Listadoalumnoscarreraporcarrera form = new Listadoalumnoscarreraporcarrera();
+        form.setVisible(true);
+        this.dispose();
+        ListadoAlumnoCarrera.show();
+
+        ListadoAlumnoCarrera.setVisible(true);
+        Bitacora = new Bitacora();
+
+        Bitacora.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //    Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_itemListadoCarreraAlumnoActionPerformed
+
+    private void itemListadoAlumnoCursoCatedraticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListadoAlumnoCursoCatedraticoActionPerformed
+        // TODO add your handling code here:
+        CursosCatedraticos = new CursosCatedraticos();
+
+        CursosCatedraticos.show();
+
+        CursosCatedraticos.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemListadoAlumnoCursoCatedraticoActionPerformed
+
+    private void itemListado_Alumno_CarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_CarreraActionPerformed
+        // TODO add your handling code here:
+        ListadoAlumnoCarrera = new Listadoalumnoscarreraporcarrera();
+
+        ListadoAlumnoCarrera.show();
+
+        ListadoAlumnoCarrera.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemListado_Alumno_CarreraActionPerformed
+
+    private void itemBoletaAsignacionCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBoletaAsignacionCursoActionPerformed
+        // TODO add your handling code here:
+        AsignacionDeCursos = new AsignacionDeCursos();
+
+        AsignacionDeCursos.show();
+
+        AsignacionDeCursos.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemBoletaAsignacionCursoActionPerformed
+
+    private void itemAsignacion_CursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAsignacion_CursosActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_itemAsignacion_CursosActionPerformed
+
+    private void itemCertificacion_CursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCertificacion_CursoActionPerformed
+        // TODO add your handling code here:
+        CertificacionCursos = new CertificacionCursos();
+
+        CertificacionCursos.show();
+
+        CertificacionCursos.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemCertificacion_CursoActionPerformed
+
+    private void itemLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemLoginActionPerformed
+        // TODO add your handling code here:
+        Login = new Login();
+
+        Login.show();
+
+        Login.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,9 +518,11 @@ public class MDISistemas extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemCertificacion_Curso;
     private javax.swing.JMenuItem itemCursohabilitadoAlumno;
     private javax.swing.JMenuItem itemListadoAlumnoCursoCatedratico;
+    private javax.swing.JMenuItem itemListadoCarreraAlumno;
     private javax.swing.JMenuItem itemListado_Alumno_Carrera;
     private javax.swing.JMenuItem itemListado_Alumno_Curso;
     private javax.swing.JMenuItem itemListado_Alumno_Seccion;
+    private javax.swing.JMenuItem itemLogin;
     private javax.swing.JMenuItem itemPensum;
     private javax.swing.JMenuItem itemRegistroCatedratico;
     private javax.swing.JMenu jMenu1;
