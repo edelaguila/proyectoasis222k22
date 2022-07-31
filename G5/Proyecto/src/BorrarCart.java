@@ -193,7 +193,7 @@ void mostrardatoscart(String valor){
           conectar cc=new conectar();
           Connection cn=cc.conexion();
         try{
-            PreparedStatement pst=cn.prepareStatement("DELETE FROM cartelera WHERE id_pelicula="+num.getText()+";");
+            PreparedStatement pst=cn.prepareStatement("DELETE FROM cartelera WHERE id_cartelera="+num.getText()+";");
         int a=pst.executeUpdate();
         if(a>0){
             JOptionPane.showMessageDialog(null,"Registro Eliminado");
