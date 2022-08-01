@@ -1,4 +1,3 @@
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,7 +11,7 @@ public class conectar {
     public Connection conexion() {
         try {
             Class.forName("org.gjt.mm.mysql.Driver");
-            conectar = DriverManager.getConnection("jdbc:mysql://localhost/polideportivo", "root", "");
+            conectar = DriverManager.getConnection("jdbc:mysql://analisisprueba.mysql.database.azure.com:3306/polideportivo", "administrador", "Pabloartur728");
             
 
         } catch (SQLException ex) {
