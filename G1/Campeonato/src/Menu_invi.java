@@ -31,7 +31,6 @@ public class Menu_invi extends javax.swing.JFrame {
         btestadis = new javax.swing.JButton();
         btjornadas = new javax.swing.JButton();
         btdeportes = new javax.swing.JButton();
-        btpichichi = new javax.swing.JButton();
         btequipos = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -75,15 +74,6 @@ public class Menu_invi extends javax.swing.JFrame {
             }
         });
 
-        btpichichi.setBackground(new java.awt.Color(0, 153, 153));
-        btpichichi.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
-        btpichichi.setText("PICHICHI");
-        btpichichi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btpichichiActionPerformed(evt);
-            }
-        });
-
         btequipos.setBackground(new java.awt.Color(0, 153, 153));
         btequipos.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
         btequipos.setText("EQUIPOS");
@@ -103,7 +93,6 @@ public class Menu_invi extends javax.swing.JFrame {
                     .addComponent(btestadis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btjornadas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btdeportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btpichichi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btequipos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -112,13 +101,11 @@ public class Menu_invi extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(btdeportes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(50, 50, 50)
                 .addComponent(btequipos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btpichichi, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btestadis, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(59, 59, 59)
                 .addComponent(btjornadas, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -248,11 +235,13 @@ public class Menu_invi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btestadisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btestadisActionPerformed
-        // TODO add your handling code here:
+        Estadisticas generar = new Estadisticas();
+        generar.setVisible(true);
     }//GEN-LAST:event_btestadisActionPerformed
 
     private void btjornadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjornadasActionPerformed
-        // TODO add your handling code here:
+        Jornadas generar = new Jornadas();
+        generar.setVisible(true);
     }//GEN-LAST:event_btjornadasActionPerformed
 
     private void btdeportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btdeportesActionPerformed
@@ -267,10 +256,6 @@ public class Menu_invi extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void btpichichiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpichichiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btpichichiActionPerformed
 
     private void btequiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btequiposActionPerformed
        buscar_equi_invi generar = new buscar_equi_invi();
@@ -320,7 +305,6 @@ public class Menu_invi extends javax.swing.JFrame {
     private javax.swing.JButton btequipos;
     private javax.swing.JButton btestadis;
     private javax.swing.JButton btjornadas;
-    private javax.swing.JButton btpichichi;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;

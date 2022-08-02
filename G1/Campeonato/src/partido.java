@@ -111,7 +111,6 @@ public class partido extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jButton30 = new javax.swing.JButton();
@@ -143,20 +142,12 @@ public class partido extends javax.swing.JFrame {
         btmostrar1 = new javax.swing.JButton();
         jTextField9 = new javax.swing.JTextField();
         btbuscar = new javax.swing.JButton();
+        BTINGRESAR2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-
-        jButton5.setBackground(new java.awt.Color(0, 153, 153));
-        jButton5.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
-        jButton5.setText("Regresar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Showcard Gothic", 3, 36)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/36535849-jugador-de-fútbol-de-dibujos-animados.jpg"))); // NOI18N
@@ -167,19 +158,15 @@ public class partido extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(251, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69))
+                .addGap(218, 218, 218))
         );
 
         jPanel17.setBackground(new java.awt.Color(102, 102, 102));
@@ -230,7 +217,7 @@ public class partido extends javax.swing.JFrame {
         jLabel9.setText("Goles");
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 2, 14)); // NOI18N
-        jLabel2.setText("Id partido");
+        jLabel2.setText("Jornada");
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 2, 14)); // NOI18N
         jLabel7.setText("Id TorneoE");
@@ -258,7 +245,7 @@ public class partido extends javax.swing.JFrame {
 
         BTINGRESAR1.setBackground(new java.awt.Color(0, 153, 153));
         BTINGRESAR1.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
-        BTINGRESAR1.setText("INGRESAR");
+        BTINGRESAR1.setText("ACTUALIZAR");
         BTINGRESAR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTINGRESAR1ActionPerformed(evt);
@@ -306,6 +293,15 @@ public class partido extends javax.swing.JFrame {
             }
         });
 
+        BTINGRESAR2.setBackground(new java.awt.Color(0, 153, 153));
+        BTINGRESAR2.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
+        BTINGRESAR2.setText("CREAR");
+        BTINGRESAR2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTINGRESAR2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -336,16 +332,11 @@ public class partido extends javax.swing.JFrame {
                                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(50, 50, 50)
-                                        .addComponent(BTINGRESAR1)
-                                        .addGap(119, 119, 119)
-                                        .addComponent(btmostrar))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(35, 35, 35)
                                         .addComponent(BTINGRESAR)
                                         .addGap(28, 28, 28)
@@ -353,7 +344,15 @@ public class partido extends javax.swing.JFrame {
                                             .addComponent(btmostrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(btbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(BTINGRESAR2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(BTINGRESAR1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btmostrar)
+                                        .addGap(32, 32, 32))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -439,7 +438,8 @@ public class partido extends javax.swing.JFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BTINGRESAR1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btmostrar))
+                    .addComponent(btmostrar)
+                    .addComponent(BTINGRESAR2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -447,23 +447,19 @@ public class partido extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
         setVisible(false);
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        // TODO add your handling code here:
+      JOptionPane.showMessageDialog(null," En este Menú se agregaran los datos y estadísticas del partido en que se enfrentaron los equipos ");
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void BTINGRESARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTINGRESARActionPerformed
         conectar cc=new conectar();
         java.sql.Connection cn=cc.conexion();
         try{
-            PreparedStatement pst=cn.prepareStatement("INSERT INTO partidos(Id_Partido, Id_ET, Id_EquipoLO, Gol_lo, Id_EquipoVI, Gol_VI) VALUES(?,?,?,?,?,?)");
+            PreparedStatement pst=cn.prepareStatement("INSERT INTO partidos(Jornada, Id_ET, Id_EquipoLO, Gol_lo, Id_EquipoVI, Gol_VI) VALUES(?,?,?,?,?,?)");
             FileInputStream archivofoto;
             pst.setString(1,jTextField1.getText());
             pst.setString(2,jTextField3.getText());
@@ -523,6 +519,34 @@ public class partido extends javax.swing.JFrame {
         mostrardatosequi(jTextField9.getText());
     }//GEN-LAST:event_btbuscarActionPerformed
 
+    private void BTINGRESAR2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTINGRESAR2ActionPerformed
+        
+        conectar cc=new conectar();
+        java.sql.Connection cn=cc.conexion();
+        try{
+            PreparedStatement pst=cn.prepareStatement("INSERT INTO goles (Id_Jugador, Goles) values (?,?);");
+            FileInputStream archivofoto;
+            pst.setString(1,jTextField5.getText());
+            pst.setString(2,jTextField6.getText());
+
+            int a=pst.executeUpdate();
+
+            if(a>0){
+                JOptionPane.showMessageDialog(null,"Registro exitoso");
+
+                jTextField5.setText(null);
+                jTextField6.setText(null);
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Error al agregar");
+            }
+        }catch(Exception e){
+        }
+        
+        
+    }//GEN-LAST:event_BTINGRESAR2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -561,12 +585,12 @@ public class partido extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTINGRESAR;
     private javax.swing.JButton BTINGRESAR1;
+    private javax.swing.JButton BTINGRESAR2;
     private javax.swing.JButton btbuscar;
     private javax.swing.JButton btmostrar;
     private javax.swing.JButton btmostrar1;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

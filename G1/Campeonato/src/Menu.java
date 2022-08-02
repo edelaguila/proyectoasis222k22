@@ -1,6 +1,8 @@
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -22,6 +24,13 @@ public class Menu extends javax.swing.JFrame {
         Date myDate = new Date();
 
 
+      String timeStamp = new SimpleDateFormat(" HH:mm").format(Calendar.getInstance().getTime());
+
+       
+        
+       lbhora.setText(timeStamp);
+        
+        
       lbfecha.setText(new SimpleDateFormat("dd-MM-yyyy").format(myDate));
     }
 
@@ -40,7 +49,7 @@ public class Menu extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lbfecha = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lbhora = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -98,8 +107,7 @@ public class Menu extends javax.swing.JFrame {
 
         lbfecha.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
-        jLabel3.setText("11:57 AM");
+        lbhora.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Showcard Gothic", 3, 36)); // NOI18N
         jLabel5.setText("CAMPEONATO");
@@ -130,7 +138,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(395, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbhora, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -149,7 +157,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(289, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbhora, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(48, 48, 48)))
         );
 
@@ -274,7 +282,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"En este menu se despliegan 5 botones a otros submenús para editar los datos");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -331,12 +339,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbfecha;
+    private javax.swing.JLabel lbhora;
     // End of variables declaration//GEN-END:variables
 }

@@ -114,7 +114,8 @@ ALTER TABLE EquipoTorneo ADD FOREIGN KEY (Equipo15) references equipos (Id_Equip
 ALTER TABLE EquipoTorneo ADD FOREIGN KEY (Equipo16) references equipos (Id_Equipo);
 
 CREATE TABLE partidos (
-Id_Partido int not null primary key,
+Id_Partido int not null primary key auto_increment,
+Jornada int,
 Id_ET int not null,
 Id_EquipoLO int not null,
 Gol_lo int,
@@ -124,7 +125,14 @@ Gol_VI int
 ALTER TABLE partidos ADD FOREIGN KEY (Id_ET) references EquipoTorneo (Id_ET);
 ALTER TABLE partidos ADD FOREIGN KEY (Id_EquipoLO) references equipos (Id_Equipo);
 ALTER TABLE partidos ADD FOREIGN KEY (Id_EquipoVI) references equipos (Id_Equipo);
+select * from partidos;
+SELECT partidos.Id_EquipoLO,partidos.Gol_lo,partidos.Gol_VI,partidos.Id_EquipoVI FROM partidos;
 
+
+
+
+
+SELECT equipos.Id_EquipoLO from partidos INNER JOIN equipos USING(Id_Equipo);
 CREATE TABLE goles (
 Id_gol int not null primary key auto_increment,
 Id_Jugador int not null,
@@ -155,4 +163,8 @@ SELECT * from goles;
 END;//
 call sumar_goles (3,5);
 select * from goles;
+
+
+
+
 

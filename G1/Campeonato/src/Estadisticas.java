@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -208,15 +211,17 @@ public class Estadisticas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null," Este menú despliega 3 botones, cada uno lleva a un menú diferente en el cual se podrá ver el pichichi, jornadas y Resultados.");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btjornadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjornadasActionPerformed
-        
+        Jornadas generar = new Jornadas();
+        generar.setVisible(true);
     }//GEN-LAST:event_btjornadasActionPerformed
 
     private void btresultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btresultadosActionPerformed
-
+        resultados generar = new resultados();
+        generar.setVisible(true);
         
     }//GEN-LAST:event_btresultadosActionPerformed
 

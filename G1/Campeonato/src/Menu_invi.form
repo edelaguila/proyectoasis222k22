@@ -63,7 +63,6 @@
                       <Component id="btestadis" alignment="0" max="32767" attributes="0"/>
                       <Component id="btjornadas" alignment="1" max="32767" attributes="0"/>
                       <Component id="btdeportes" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btpichichi" alignment="1" max="32767" attributes="0"/>
                       <Component id="btequipos" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -75,13 +74,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="btdeportes" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="btequipos" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="btpichichi" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btestadis" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   <Component id="btjornadas" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
@@ -129,20 +126,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btdeportesActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btpichichi">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Mongolian Baiti" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="PICHICHI"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btpichichiActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btequipos">

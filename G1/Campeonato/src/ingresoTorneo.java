@@ -459,7 +459,7 @@ public class ingresoTorneo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "En este menú se ingresarán todos los equipos que participarán en el torneo colocando su id de equipo y el id del torneo");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void BTINGRESARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTINGRESARActionPerformed

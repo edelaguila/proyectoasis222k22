@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -222,7 +225,7 @@ public class deportes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null," Este menú despliega 4 botones, cada uno lleva a un menú diferente en el cual se podrán ver, ingresar, editar, eliminar o buscar datos.");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void BTINGRESARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTINGRESARActionPerformed
