@@ -46,13 +46,17 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
-            "Microsoft.ReportingServices.ReportViewerControl.WebForms": {
+            "CrystalReports": {
               "target": "Package",
-              "version": "[150.1484.0, )"
+              "version": "[13.0.5.891, )"
             },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.30, )"
+            },
+            "System.Data.Common": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

@@ -187,5 +187,12 @@ namespace LaboratorioClinico
            
             con.IDU(sql2);
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Bitacora bi = new Bitacora();
+            bi.Show();
+        }
     }
 }
