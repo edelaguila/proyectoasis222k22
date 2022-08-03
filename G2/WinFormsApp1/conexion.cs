@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace LaboratorioClinico
 {
@@ -68,7 +69,9 @@ namespace LaboratorioClinico
                 {
                     for (int x = 0; x < columna; x++)
                     {
-                        cadena[x] = leer.GetString(x);
+
+                       cadena[x] = leer.GetString(x);
+                                             
 
                     }
 
@@ -105,5 +108,27 @@ namespace LaboratorioClinico
             }
 
         }
+
+        public DataTable Busqueda(string sql)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, con);        
+                MySqlDataAdapter adapatador = new MySqlDataAdapter();
+                adapatador.SelectCommand = cmd;
+                DataTable tabla = new DataTable();
+                adapatador.Fill(tabla);
+
+                return tabla;
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e);
+                return null;
+
+            }
+        }
+
+        
     }
 }
