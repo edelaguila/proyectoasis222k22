@@ -2,6 +2,67 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "CrystalReports/13.0.5.891": {
+        "type": "package",
+        "compile": {
+          "lib/net40/CRVsPackageLib.dll": {},
+          "lib/net40/CrystalDecisions.CrystalReports.Design.dll": {},
+          "lib/net40/CrystalDecisions.CrystalReports.Engine.dll": {},
+          "lib/net40/CrystalDecisions.CrystalReports.TemplateEngine.dll": {},
+          "lib/net40/CrystalDecisions.Data.AdoDotNetInterop.dll": {},
+          "lib/net40/CrystalDecisions.Enterprise.Viewing.ReportSource.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.ClientDoc.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CommLayer.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CommonControls.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.Controllers.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.DataDefModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.Prompting.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {},
+          "lib/net40/CrystalDecisions.ReportSource.dll": {},
+          "lib/net40/CrystalDecisions.Shared.dll": {},
+          "lib/net40/CrystalDecisions.VSDesigner.dll": {},
+          "lib/net40/CrystalDecisions.Web.dll": {},
+          "lib/net40/CrystalDecisions.Windows.Forms.dll": {},
+          "lib/net40/FlashControlV71.dll": {},
+          "lib/net40/SAPBusinessObjects.WPF.Viewer.dll": {},
+          "lib/net40/SAPBusinessObjects.WPF.ViewerShared.dll": {},
+          "lib/net40/ShockwaveFlashObjects.dll": {}
+        },
+        "runtime": {
+          "lib/net40/CRVsPackageLib.dll": {},
+          "lib/net40/CrystalDecisions.CrystalReports.Design.dll": {},
+          "lib/net40/CrystalDecisions.CrystalReports.Engine.dll": {},
+          "lib/net40/CrystalDecisions.CrystalReports.TemplateEngine.dll": {},
+          "lib/net40/CrystalDecisions.Data.AdoDotNetInterop.dll": {},
+          "lib/net40/CrystalDecisions.Enterprise.Viewing.ReportSource.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.ClientDoc.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CommLayer.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CommonControls.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.Controllers.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.DataDefModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.Prompting.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {},
+          "lib/net40/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {},
+          "lib/net40/CrystalDecisions.ReportSource.dll": {},
+          "lib/net40/CrystalDecisions.Shared.dll": {},
+          "lib/net40/CrystalDecisions.VSDesigner.dll": {},
+          "lib/net40/CrystalDecisions.Web.dll": {},
+          "lib/net40/CrystalDecisions.Windows.Forms.dll": {},
+          "lib/net40/FlashControlV71.dll": {},
+          "lib/net40/SAPBusinessObjects.WPF.Viewer.dll": {},
+          "lib/net40/SAPBusinessObjects.WPF.ViewerShared.dll": {},
+          "lib/net40/ShockwaveFlashObjects.dll": {}
+        }
+      },
       "Google.Protobuf/3.19.4": {
         "type": "package",
         "compile": {
@@ -429,6 +490,44 @@
     }
   },
   "libraries": {
+    "CrystalReports/13.0.5.891": {
+      "sha512": "gY9USVBCGJlZn5KyvC4N6DaSk/hHiBALM3eYWBkecQSxo/kYBtq5VDtee6Cx6ihBcQIGM5OYS7d60itGXOM8xA==",
+      "type": "package",
+      "path": "crystalreports/13.0.5.891",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "crystalreports.13.0.5.891.nupkg.sha512",
+        "crystalreports.nuspec",
+        "lib/net40/CRVsPackageLib.dll",
+        "lib/net40/CrystalDecisions.CrystalReports.Design.dll",
+        "lib/net40/CrystalDecisions.CrystalReports.Engine.dll",
+        "lib/net40/CrystalDecisions.CrystalReports.TemplateEngine.dll",
+        "lib/net40/CrystalDecisions.Data.AdoDotNetInterop.dll",
+        "lib/net40/CrystalDecisions.Enterprise.Viewing.ReportSource.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.ClientDoc.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.CommLayer.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.CommonControls.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.CommonObjectModel.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.Controllers.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.CubeDefModel.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.DataDefModel.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.DataSetConversion.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.ObjectFactory.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.Prompting.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.ReportDefModel.dll",
+        "lib/net40/CrystalDecisions.ReportAppServer.XmlSerialize.dll",
+        "lib/net40/CrystalDecisions.ReportSource.dll",
+        "lib/net40/CrystalDecisions.Shared.dll",
+        "lib/net40/CrystalDecisions.VSDesigner.dll",
+        "lib/net40/CrystalDecisions.Web.dll",
+        "lib/net40/CrystalDecisions.Windows.Forms.dll",
+        "lib/net40/FlashControlV71.dll",
+        "lib/net40/SAPBusinessObjects.WPF.Viewer.dll",
+        "lib/net40/SAPBusinessObjects.WPF.ViewerShared.dll",
+        "lib/net40/ShockwaveFlashObjects.dll"
+      ]
+    },
     "Google.Protobuf/3.19.4": {
       "sha512": "fd07/ykL4O4FhqrZIELm5lmiyOHfdPg9+o+hWr6tcfRdS7tHXnImg/2wtogLzlW2eEmr0J7j6ZrZvaWOLiJbxQ==",
       "type": "package",
@@ -1864,6 +1963,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "CrystalReports >= 13.0.5.891",
       "MySql.Data >= 8.0.30",
       "System.Data.Common >= 4.3.0"
     ]
@@ -1915,6 +2015,10 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
+          "CrystalReports": {
+            "target": "Package",
+            "version": "[13.0.5.891, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.30, )"
@@ -1945,5 +2049,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"CrystalReports 13.0.5.891\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "CrystalReports",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

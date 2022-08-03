@@ -46,6 +46,10 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "CrystalReports": {
+              "target": "Package",
+              "version": "[13.0.5.891, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.30, )"
