@@ -110,7 +110,7 @@ public class BitacoraDAO {
                 String Modulo = rs.getString("PK_id_Modulo");
 
                 usuario = new Bitacora();
-//                usuario.setId_Bitacora(id_bitacora);
+                usuario.setId_Bitacora(id_bitacora);
 //                usuario.setId_Usuario(id_usuario);
 //                usuario.setFecha(fecha);
 //                usuario.setHora(hora);

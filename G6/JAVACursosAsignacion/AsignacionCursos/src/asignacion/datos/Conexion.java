@@ -15,7 +15,7 @@ import java.sql.*;
 public class Conexion {
       // Estas constantes deben cambiarse temporalmente para probarlo localmente
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost/AsignacionCursos";
+    private static final String JDBC_URL = "jdbc:mysql://localhost/AsignacionCurso2";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASS = "";
 

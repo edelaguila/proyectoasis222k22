@@ -6,7 +6,7 @@ package asignacion.vista;
 
 
 
-import asignacion.datos.conexionSQL;
+import asignacion.datos.Conexion;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.Statement;
@@ -19,8 +19,8 @@ import java.sql.ResultSet;
  */
 public class Recuperacion extends javax.swing.JFrame {
     
-    conexionSQL cc=new conexionSQL();
-    Connection con=cc.Conexion();
+    Conexion cc=new Conexion();
+  //  Connection con=cc.Conexion();
     
     
     public Recuperacion() {
@@ -106,24 +106,24 @@ public class Recuperacion extends javax.swing.JFrame {
       String SQL="select * from usuarios where usuario='"+usuario+"' and cod='"+cod+"'  ";  
         
       try {
-        Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery(SQL);
+       // Statement st=con.createStatement();
+      //  ResultSet rs=st.executeQuery(SQL);
         
-        if(rs.next()) {
-          
-          resultado=1;
-          
-          if(resultado ==1) {
-           
-           Usuario form=new Usuario();
-           form.setVisible(true);
-           this.dispose();
-          }
-          
-          
-        }else{
-             JOptionPane.showMessageDialog(null, "Error al ingresar");
-        }
+//        if(rs.next()) {
+//          
+//          resultado=1;
+//          
+//          if(resultado ==1) {
+//           
+//           Usuario form=new Usuario();
+//           form.setVisible(true);
+//           this.dispose();
+//          }
+//          
+//          
+//        }else{
+//             JOptionPane.showMessageDialog(null, "Error al ingresar");
+//        }
 
         
       

@@ -32,7 +32,8 @@ public class MDISistemas extends javax.swing.JFrame {
      */
     public MDISistemas() {
         initComponents();
-//        this.setTitle("Usuario: " + "[" + Login.usuarioComercial + "]" + " \t" + "IP: [" + mdi_Components.getIp() + "]");
+
+//          this.setTitle("Usuario: " + "[" + Login.usuarioComercial + "]" + " \t" + "IP: [" + mdi_Components.getIp() + "]");
 //        permisos.getPermisos(modulo_nombre, Login.usuarioComercial);
 
     }

@@ -7,7 +7,7 @@ package asignacion.vista;
 
 
 //import asignacion.datos.MDISistema;
-import asignacion.datos.conexionSQL;
+import asignacion.datos.Conexion;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.Statement;
@@ -20,9 +20,9 @@ import java.sql.ResultSet;
  */
 public class Login extends javax.swing.JFrame {
     
-    conexionSQL cc=new conexionSQL();
-    Connection con=cc.Conexion();
-    
+    Conexion cc=new Conexion();
+//    Connection con=cc.Conexion();
+//    
     
     public Login() {
         initComponents();
@@ -120,36 +120,36 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtolvideActionPerformed
 
     public void validarUsuario(){
-      int resultado= 0;
-      String pass=String.valueOf(txtPass.getPassword());
-      String usuario=txtUsuario.getText();
-      String SQL="select * from usuarios where usuario='"+usuario+"' and pass='"+pass+"'  ";  
-        
-      try {
-        Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery(SQL);
-        
-        if(rs.next()) {
-          
-          resultado=1;
-          
-          if(resultado ==1) {
-           
-           //MDISistema form=new MDISistema (mod);
-        //   form.setVisible(true);
-           this.dispose();
-          }
-          
-          
-        }else{
-             JOptionPane.showMessageDialog(null, "El usuario o contraseña son incorrectos");
-        }
-
-        
-      
-    } catch(Exception e){
-           JOptionPane.showMessageDialog(null, "Error" + e.getMessage());
-    }
+//      int resultado= 0;
+//      String pass=String.valueOf(txtPass.getPassword());
+//      String usuario=txtUsuario.getText();
+//      String SQL="select * from usuarios where usuario='"+usuario+"' and pass='"+pass+"'  ";  
+//        
+//      try {
+////        Statement st=con.createStatement();
+////        ResultSet rs=st.executeQuery(SQL);
+//        
+////        if(rs.next()) {
+//          
+//          resultado=1;
+//          
+//          if(resultado ==1) {
+//           
+//           //MDISistema form=new MDISistema (mod);
+//        //   form.setVisible(true);
+//           this.dispose();
+//          }
+//          
+//          
+//        }else{
+//             JOptionPane.showMessageDialog(null, "El usuario o contraseña son incorrectos");
+//        }
+//
+//        
+//      
+//    } catch(Exception e){
+//           JOptionPane.showMessageDialog(null, "Error" + e.getMessage());
+//    }
     
 }
     
