@@ -28,7 +28,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json.": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
@@ -46,9 +47,13 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2022.2.16, )"
+            },
             "MySql.Data": {
               "target": "Package",
-              "version": "[8.0.29, )"
+              "version": "[8.0.30, )"
             }
           },
           "imports": [

@@ -175,9 +175,17 @@ namespace LaboratorioClinico
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
+            conexion con = new conexion();
+            string[] a;
             this.Hide();
             Login l = new Login();
             l.Show();
+            string sql = "SELECT MAX(id_bitacora) from bitacora";
+            a = con.buscar(sql, 1);
+            
+            string sql2 = "UPDATE bitacora set hora_fin =  '"+ DateTime.Now.ToString("hh:mm:ss") + "' WHERE id_bitacora = "+ a[0] +"";
+           
+            con.IDU(sql2);
         }
     }
 }

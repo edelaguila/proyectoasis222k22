@@ -17,10 +17,15 @@ namespace LaboratorioClinico
             try
             {
                 MySqlConnectionStringBuilder b = new MySqlConnectionStringBuilder();
-                b.Server = "b3jnhmjenwsvvibvoljt-mysql.services.clever-cloud.com";
+               /* b.Server = "b3jnhmjenwsvvibvoljt-mysql.services.clever-cloud.com";
                 b.UserID = "uoek6asd7jjostvb";//cambiar el usuario
                 b.Password = "FdMipYrOneL8uzBTDoVB";//cambiar contraseña
-                b.Database = "b3jnhmjenwsvvibvoljt";
+                b.Database = "b3jnhmjenwsvvibvoljt";*/
+
+                b.Server = "localhost";
+                b.UserID = "admin";//cambiar el usuario
+                b.Password = "admin12345";//cambiar contraseña
+                b.Database = "clinica";
                 con = new MySqlConnection(b.ToString());
             }
             catch (MySqlException e)
@@ -80,6 +85,25 @@ namespace LaboratorioClinico
 
 
             return cadena;
+        }
+
+
+        public void IDU2(String sql)//funcion para insercion, eliminacion y actualizacion en base de datos
+        {
+            try
+            {
+                MySqlCommand cmd = this.con.CreateCommand();
+                cmd.CommandText = sql;
+                this.con.Open();
+                cmd.ExecuteNonQuery();
+                this.con.Close();
+                
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e);
+            }
+
         }
     }
 }
