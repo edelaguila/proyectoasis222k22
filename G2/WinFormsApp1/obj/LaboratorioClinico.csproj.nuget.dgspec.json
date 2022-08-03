@@ -46,9 +46,13 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "Microsoft.ReportingServices.ReportViewerControl.WebForms": {
+              "target": "Package",
+              "version": "[150.1484.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
-              "version": "[8.0.29, )"
+              "version": "[8.0.30, )"
             }
           },
           "imports": [

@@ -37,7 +37,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
-
+            detallebitacora d = new detallebitacora();
+            d.agregar("Empleado");
 
 
             tabla.Rows[n].Cells[0].Value = txtid.Text;
@@ -61,6 +62,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.eliminar("Empleado");
 
             tabla.Rows.RemoveAt(tabla.CurrentRow.Index);
         }
@@ -104,6 +107,8 @@ namespace LaboratorioClinico
             "'," + telefono + ",'" + correo + "','" + direccion + "')";
 
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.actualizar("Empleado");
 
 
         }
@@ -119,7 +124,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             empleado = con.buscar(sql, 7);
-            
+            detallebitacora d = new detallebitacora();
+            d.busqueda("Empleado");
 
 
             tabla.Rows[n].Cells[0].Value = empleado[0];

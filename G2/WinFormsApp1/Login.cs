@@ -53,6 +53,8 @@ namespace LaboratorioClinico
                     m.Show();
                     this.Hide();
                     MessageBox.Show("Bienvenido " + usuario);
+                    string sql2 = "insert into bitacora (usuario, fecha, hora_inicio) values ('" + usuario + "','" + DateTime.Now.Date.ToString("yyyyMMdd") + "','" + DateTime.Now.ToString("hh:mm:ss") + "')";
+                    con.IDU(sql2);
                 }
                 else if (resultado[2].Equals("trabajador"))
                 {
@@ -60,6 +62,8 @@ namespace LaboratorioClinico
                     m.Show();
                     this.Hide();
                     MessageBox.Show("Bienvenido " + usuario);
+                    string sql2 = "insert into bitacora (usuario, fecha, hora_inicio) values ('"+usuario+"','"+DateTime.Now.Date.ToString("yyyyMMdd") +"','"+DateTime.Now.ToString("hh:mm:ss") +"')";
+                    con.IDU(sql2);
                 }
                 else
                 {
@@ -111,6 +115,40 @@ namespace LaboratorioClinico
         {
             btncrear.BackColor = Color.FromArgb(49, 101, 244);
             btncrear.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        private void lbolvido_Click(object sender, EventArgs e)
+        {
+
+            if(txtusuario.Text.Length == 0)
+            {
+                MessageBox.Show("Introduzca un usuario");
+                txtusuario.Focus();
+            }
+            else
+            {
+                string sql = "select * from empleado where usuario = '" + txtusuario.Text + "'";
+
+                string[] empleado = new string[7];
+                conexion con = new conexion();
+                empleado = con.buscar(sql, 7);
+
+
+                if(empleado[1] == null)
+                {
+                    MessageBox.Show("No hay ningun registro con ese usuario");
+                }
+                else
+                {
+                    Recuperar re = new Recuperar();
+                    this.Hide();
+                    re.Show();
+                    
+                }
+                
+            }
+
+            
         }
     }
 }
