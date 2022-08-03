@@ -8,30 +8,14 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Gestion extends javax.swing.JFrame {
-
-    public static final String URL="jdbc:mysql://localhost:3306/ptaquilla"; //CAMBIAR PUERTO
-    public static final String USERNAME="root";
-    public static final String PASSWORD="";
-    PreparedStatement ps;
-    ResultSet rs;
-
-    public static Connection getConection(){
-        Connection con=null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=(Connection)DriverManager.getConnection(URL,USERNAME,PASSWORD);
-        } catch (ClassNotFoundException | SQLException e){
-            System.out.println(e);
-        }return con;
-    }
-    
     public Gestion() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
     
     public void mostrar(){
-        Connection con=getConection();
+        conectar cc=new conectar();
+        Connection cn=cc.conexion();
         String sql = "select * from usuariosadmin";
         System.out.println(sql);
         DefaultTableModel model = new DefaultTableModel();
@@ -43,7 +27,7 @@ public class Gestion extends javax.swing.JFrame {
         
         String [] datos = new String[4];
         try{
-            Statement st=con.createStatement();
+            Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(sql);
             while(rs.next()){
                 datos[0]=rs.getString(1);
@@ -67,9 +51,10 @@ public class Gestion extends javax.swing.JFrame {
             if (id.equals("") || usuario.equals("") || contraseña.equals("") || permisos.equals("")){
                 JOptionPane.showMessageDialog(null, "Faltan ingresar datos");
             } else{
-                Connection con=getConection();
+                conectar cc=new conectar();
+                Connection cn=cc.conexion();
                 String sql = "insert into usuariosadmin values ('"+id+"', '"+usuario+"','"+contraseña+"','"+permisos+"')";
-                Statement st=con.createStatement();
+                Statement st=cn.createStatement();
                 st.executeUpdate(sql);
                 JOptionPane.showMessageDialog(null, "Usuario agregado");
                 num.setText("");
@@ -83,7 +68,8 @@ public class Gestion extends javax.swing.JFrame {
         }
     }
         public void buscar(String valor){
-        Connection con=getConection();
+         conectar cc=new conectar();
+         Connection cn=cc.conexion();
         String sql = "select * from usuariosadmin";
         System.out.println(sql);
         DefaultTableModel model = new DefaultTableModel();
@@ -95,7 +81,7 @@ public class Gestion extends javax.swing.JFrame {
         sql="SELECT * FROM usuariosadmin WHERE id_usuarioadmin='"+valor+"'";
         String [] datos = new String[4];
         try{
-            Statement st=con.createStatement();
+            Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(sql);
             while(rs.next()){
                 datos[0]=rs.getString(1);
@@ -415,4 +401,5 @@ public class Gestion extends javax.swing.JFrame {
     private javax.swing.JTextField usu;
     public javax.swing.JTable visor;
     // End of variables declaration//GEN-END:variables
+
 }

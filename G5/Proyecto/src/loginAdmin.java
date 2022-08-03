@@ -4,31 +4,12 @@
  * and open the template in the editor.
  */
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class loginAdmin extends javax.swing.JFrame {
-    
-    public static final String URL="jdbc:mysql://localhost:3306/ptaquilla"; //Cambiar Puerto
-    public static final String USERNAME="root";
-    public static final String PASSWORD="";
-    PreparedStatement ps;
-    ResultSet rs;
-
-    public static Connection getConection(){
-        Connection con=null;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con=(Connection)DriverManager.getConnection(URL,USERNAME,PASSWORD);
-        } catch (ClassNotFoundException | SQLException e){
-            System.out.println(e);
-        }return con;
-    }
-    
+        
     public loginAdmin() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -36,12 +17,13 @@ public class loginAdmin extends javax.swing.JFrame {
     
     public void validarAdmin(){
         int resultado=0;
-        Connection con=getConection();
+        conectar cc=new conectar();
+        Connection cn=cc.conexion();
             try{
                 String usuario=txtUsuario.getText();
                 String password=String.valueOf(contraseña.getPassword());
                 String sql="SELECT * FROM usuariosadmin WHERE usuario='"+usuario+"'and contraseña='"+password+"'";
-                Statement st=con.createStatement();
+                Statement st=cn.createStatement();
                 ResultSet rs=st.executeQuery(sql);
                 
                 if (rs.next()){
