@@ -27,6 +27,7 @@ public class GestionF extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
+        close = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Inpelicula = new javax.swing.JMenuItem();
@@ -43,15 +44,30 @@ public class GestionF extends javax.swing.JFrame {
 
         escritorio.setBackground(new java.awt.Color(51, 51, 51));
 
+        close.setText("Close");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
+
+        escritorio.setLayer(close, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorioLayout.createSequentialGroup()
+                .addContainerGap(745, Short.MAX_VALUE)
+                .addComponent(close)
+                .addContainerGap())
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGroup(escritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(close)
+                .addContainerGap(412, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Ingresar");
@@ -173,6 +189,10 @@ public class GestionF extends javax.swing.JFrame {
         form.show();
     }//GEN-LAST:event_eliminarcartActionPerformed
 
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_closeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -214,6 +234,7 @@ public class GestionF extends javax.swing.JFrame {
     private javax.swing.JMenuItem Inpelicula;
     private javax.swing.JMenuItem Modificar;
     private javax.swing.JMenuItem buscarpeli;
+    private javax.swing.JButton close;
     private javax.swing.JMenuItem eliminarcart;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
