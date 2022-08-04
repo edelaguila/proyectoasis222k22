@@ -28,5 +28,17 @@ namespace LaboratorioClinico
             Login l = new Login();
             l.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ExamenR m = new ExamenR();
+            m.Show();
+            this.Hide();
+        }
     }
 }
