@@ -27,11 +27,27 @@ public class reproductor extends javax.swing.JFrame {
     }
  
     public String buscarVideo(){
-        JFileChooser archivo = new JFileChooser();
-        int resultado = archivo.showOpenDialog(this);
-        
-        if(resultado != JFileChooser.CANCEL_OPTION){
-            return archivo.getSelectedFile().getAbsolutePath().replace("\\", "/");
+        Eleccion ee = new Eleccion();
+        String pel = ee.pelicula;
+        if(pel=="Pocahontas"){
+        String ruta ="C:\\Users\\Home\\Desktop\\ORIGEN\\proyectoasis222k22\\G5\\CineUsuario\\src\\Trailers\\200.mp4";
+        return ruta;
+        }
+        else if(pel=="Spider man 1"){
+        String ruta ="C:\\Users\\Home\\Desktop\\ORIGEN\\proyectoasis222k22\\G5\\CineUsuario\\src\\Trailers\\201.webm";
+        return ruta;
+        }
+        else if(pel=="It (Eso)"){
+        String ruta ="C:\\Users\\Home\\Desktop\\ORIGEN\\proyectoasis222k22\\G5\\CineUsuario\\src\\Trailers\\202.mp4";
+        return ruta;
+        }
+        else if(pel=="Cars"){
+        String ruta ="C:\\Users\\Home\\Desktop\\ORIGEN\\proyectoasis222k22\\G5\\CineUsuario\\src\\Trailers\\205.mp4";
+        return ruta;
+        }
+        else if(pel=="Halloween"){
+        String ruta ="C:\\Users\\Home\\Desktop\\ORIGEN\\proyectoasis222k22\\G5\\CineUsuario\\src\\Trailers\\206.mp4";
+        return ruta;
         }
         return null;
     }
@@ -49,7 +65,7 @@ public class reproductor extends javax.swing.JFrame {
         titulo = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
@@ -99,7 +115,6 @@ public class reproductor extends javax.swing.JFrame {
         titulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Play.jpg"))); // NOI18N
-        jButton4.setActionCommand("");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -138,7 +153,6 @@ public class reproductor extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,7 +162,7 @@ public class reproductor extends javax.swing.JFrame {
                                 .addGap(1, 1, 1)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
