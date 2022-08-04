@@ -24,9 +24,17 @@ namespace LaboratorioClinico
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
+            conexion con = new conexion();
+            string[] a;
             this.Hide();
             Login l = new Login();
             l.Show();
+            string sql = "SELECT MAX(id_bitacora) from bitacora";
+            a = con.buscar(sql, 1);
+
+            string sql2 = "UPDATE bitacora set hora_fin =  '" + DateTime.Now.ToString("hh:mm:ss") + "' WHERE id_bitacora = " + a[0] + "";
+
+            con.IDU(sql2);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,6 +50,18 @@ namespace LaboratorioClinico
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Bitacora b = new Bitacora();
+            b.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
 
         }

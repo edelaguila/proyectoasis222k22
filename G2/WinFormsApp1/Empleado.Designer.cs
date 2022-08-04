@@ -398,6 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(909, 541);
+            this.ControlBox = false;
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.tabla);
             this.Controls.Add(this.btnbuscar);

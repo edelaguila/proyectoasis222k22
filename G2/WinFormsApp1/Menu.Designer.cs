@@ -288,6 +288,7 @@ namespace LaboratorioClinico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(848, 728);
+            this.ControlBox = false;
             this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
