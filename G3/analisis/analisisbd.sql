@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admin` (
+  `idadmin` int NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(45) NOT NULL,
+  `contraseña` varchar(45) NOT NULL,
+  PRIMARY KEY (`idadmin`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admin`
+--
+
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'admin','pass');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `clientes`
 --
 
@@ -28,7 +53,7 @@ CREATE TABLE `clientes` (
   `dpi` varchar(45) NOT NULL,
   `telefono` varchar(45) NOT NULL,
   PRIMARY KEY (`idmembresia`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +62,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Raul','55-5553-5','41875599'),(2,'jean paulo','555-459-899','41189700'),(3,'Carlos','4566-777-8999','3985258'),(11,'Steve','111-9879-566','44398700');
+INSERT INTO `clientes` VALUES (1,'Raul','55-5553-5','41875599'),(2,'jean paulo','555-459-899','41189700'),(3,'Carlos','4566-777-8999','3985258'),(11,'Steve','111-9879-566','44398700'),(12,'Mario','343','22334455');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,7 +163,7 @@ CREATE TABLE `rentas` (
   KEY `idcodpelicula_idx` (`idcodpelicula`),
   CONSTRAINT `idcodpelicula` FOREIGN KEY (`idcodpelicula`) REFERENCES `pelis` (`idcodpelicula`),
   CONSTRAINT `idmembresia` FOREIGN KEY (`idmembresia`) REFERENCES `clientes` (`idmembresia`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +172,7 @@ CREATE TABLE `rentas` (
 
 LOCK TABLES `rentas` WRITE;
 /*!40000 ALTER TABLE `rentas` DISABLE KEYS */;
-INSERT INTO `rentas` VALUES (1,11,997,'2022-07-10','2022-07-15'),(2,2,998,'2022-07-01','2022-07-11');
+INSERT INTO `rentas` VALUES (1,11,997,'2022-07-10','2022-07-15'),(2,2,998,'2022-07-01','2022-07-11'),(3,12,999,'2022-07-30','2022-08-05');
 /*!40000 ALTER TABLE `rentas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,4 +255,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-30 17:47:09
+-- Dump completed on 2022-08-04 17:06:36
