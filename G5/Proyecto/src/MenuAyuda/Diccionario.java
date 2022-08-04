@@ -41,32 +41,45 @@ public class Diccionario extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel1.setText("Diccionario de Conceptos");
 
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel2.setText("Software Administrativo");
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setText("Es un sistema que ayuda a las empresas a tener las herramientas necesarias");
 
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setText("para aumentar sus ventas, controlar sus costos, ser más competitivas, brindar");
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setText("un mejor servicio al cliente, consolidar operaciones, ser más productivas y");
 
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setText("adaptarse a nuevas tecnologías.");
 
+        jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel7.setText("Reporte");
 
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel8.setText("Es un documento informativo que sirve para comunicar información que sea");
 
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel9.setText("relevante, este puede ser un material creado por una empresa, organización o un");
 
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel10.setText("trabajo de clases que sirve para dar mayor información sobre un tema en específico.");
 
+        jLabel11.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel11.setText("Usuario Administrativo");
 
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel12.setText("Son responsables de implementar y mantener servicios de seguridad, como agregar");
 
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel13.setText("usuarios, crear perfiles o gestionar la administración de planta general.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -144,7 +157,7 @@ public class Diccionario extends javax.swing.JPanel {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

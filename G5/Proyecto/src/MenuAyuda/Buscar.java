@@ -40,30 +40,42 @@ public class Buscar extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel1.setText("Buscar un registro en cartelera");
 
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel2.setText("1. En la esquina superior izquierda encontrará la pestaña Buscar, haga click");
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setText("2. Haga click en Buscar Cartelera");
 
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setText("3. Ingrese el ID del registro que quiere buscar");
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setText("4. Haga click en el botón Buscar");
 
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setText("Si quiere visulizar todos los registros en películas haga click en el botón Buscar sin poner un ID ");
 
+        jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel7.setText("Buscar un registro en Películas");
 
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel8.setText("1. En la esquina superior izquierda encontrará la pestaña Buscar, haga click");
 
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel9.setText("2. Haga click en Buscar Película");
 
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel10.setText("3. Ingrese el ID del registro que quiere buscar");
 
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel11.setText("4. Haga click en el botón Buscar");
 
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel12.setText("Si quiere visulizar todos los registros en cartelera haga click en el botón Buscar sin poner un ID ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -119,12 +131,12 @@ public class Buscar extends javax.swing.JPanel {
                 .addComponent(jLabel11)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel6)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(187, 187, 187)
                     .addComponent(jLabel12)
-                    .addContainerGap(347, Short.MAX_VALUE)))
+                    .addContainerGap(346, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -1,29 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD JasperReport//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-
-<jasperReport name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-    <background>
-        <band/>
-    </background>
-    <title>
-        <band height="79"/>
-    </title>
-    <pageHeader>
-        <band height="35"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="61"/>
-    </columnHeader>
-    <detail>
-        <band height="125"/>
-    </detail>
-    <columnFooter>
-        <band height="45"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="54"/>
-    </pageFooter>
-    <summary>
-        <band height="42"/>
-    </summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c04367e-a038-4b25-8517-27b0fd5ea6dd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select id_ganancias, ventas.totcant, iva, der_autor, ganancia, distribuidor, productor, ganancias.fecha from ventas, ganancias where month(ganancias.fecha) = month(now()) and ganancias.id_ventas = ventas.id_ventas;
+]]>
+	</queryString>
+	<field name="id_ganancias" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totcant" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="iva" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="der_autor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ganancia" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="distribuidor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productor" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="92" y="31" width="385" height="36" uuid="db845a19-d2db-4b1f-9a5e-29f7ff7b782c"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de ganancias de este mes]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="436" y="11" width="100" height="20" uuid="cb806345-cbb0-4542-a6c1-eeace720924e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="48" height="20" uuid="648b876e-2bc6-458a-9773-3bcfe4bb6bee"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="0" width="65" height="20" uuid="bcb8e275-ea7b-4a66-815b-79669d8bbd24"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="0" width="42" height="20" uuid="a6479992-d45f-4fa9-819d-1745aea11902"/>
+				<text><![CDATA[IVA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="0" width="100" height="20" uuid="900cabac-dcc2-473f-951d-65cf06d99a95"/>
+				<text><![CDATA[Derecho de Autor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="0" width="76" height="20" uuid="5a23f4a0-2967-4ae0-8039-609d8b64ec9f"/>
+				<text><![CDATA[Ganancia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="0" width="80" height="20" uuid="6cb3fc63-349b-4264-a87d-71aec0583c77"/>
+				<text><![CDATA[Distribuidor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="0" width="66" height="20" uuid="84d6d8e2-84a3-4247-9a75-94b55e0e2ff8"/>
+				<text><![CDATA[Productor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="477" y="0" width="78" height="20" uuid="f9d091d8-5dbe-41c7-8d0e-3a23611cbc55"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="48" height="20" uuid="dd49a8a5-9b32-4fd8-b2b8-f39a32af7c9c"/>
+				<textFieldExpression><![CDATA[$F{id_ganancias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="0" width="65" height="20" uuid="5bee8096-a3c6-4c80-baf2-655157313c1d"/>
+				<textFieldExpression><![CDATA[$F{totcant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="0" width="42" height="20" uuid="cb2b16bb-0f73-48b2-b63d-119b53064d7a"/>
+				<textFieldExpression><![CDATA[$F{iva}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="0" width="100" height="20" uuid="0ce453c3-ffb4-441c-9c24-509c3b90ccb2"/>
+				<textFieldExpression><![CDATA[$F{der_autor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="0" width="76" height="20" uuid="6371a734-58a5-43a6-9fe1-a57acc55c78d"/>
+				<textFieldExpression><![CDATA[$F{ganancia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="80" height="20" uuid="a2c434ae-7cba-42c4-bf23-d5eb2f30a735"/>
+				<textFieldExpression><![CDATA[$F{distribuidor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="0" width="66" height="20" uuid="23975730-6cac-432e-84b1-9f90b90e669c"/>
+				<textFieldExpression><![CDATA[$F{productor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="0" width="78" height="20" uuid="bcac2646-7d09-417c-bd92-e4462fa5b3e9"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="194" y="24" width="80" height="20" uuid="ade57937-d38e-448a-97d5-dc32f7060124"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="274" y="24" width="40" height="20" uuid="deea2875-5144-493d-82f7-6654c5c45daf"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
 </jasperReport>

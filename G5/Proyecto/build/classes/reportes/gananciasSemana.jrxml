@@ -4,8 +4,8 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString>
-		<![CDATA[select id_ganancias, ventas.totcant, iva, der_autor, ganancia, distribuidor, productor, ganancias.fecha 
-from ventas, ganancias where week(ganancias.fecha) = week(now()) and ventas.Id_ventas = ganancias.id_ventas;]]>
+		<![CDATA[select id_ganancias, ventas.totcant, iva, der_autor, ganancia, distribuidor, productor, ganancias.fecha from ventas, ganancias where week(ganancias.fecha) = week(now()) and ganancias.id_ventas = ventas.id_ventas;
+]]>
 	</queryString>
 	<field name="id_ganancias" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>

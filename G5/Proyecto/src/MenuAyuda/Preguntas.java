@@ -42,34 +42,48 @@ public class Preguntas extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel1.setText("Preguntas Frecuentes");
 
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel2.setText("1. ¿Por qúe no puede ingresar al menú de gestión de usuarios y permisos?");
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setText("El usuario con el que esta ingresando no cuentacon los permisos adecuados para ingresar. ");
 
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel4.setText("2. ¿Qué hago si me sale Error de conexión a la base de datos?");
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setText("Reporte el problema al servicio técnico. Ellos comprobaran si la conexión a la base de ");
 
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setText("datos es correcta.");
 
+        jLabel7.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel7.setText("3. ¿Puedo modificar más campos que Cartelera y Películas?");
 
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel8.setText("No, el software no cuenta con la opción de modificar más campos adiconales a los que");
 
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel9.setText("se encuentra en el menú administrativo. Si desea modificar más campos informele al");
 
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel10.setText("Administrador de Base de Datos. ");
 
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel11.setText("4. ¿Puedo guardar e imprimir un reporte?");
 
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel12.setText("Sí, cuando le aparece el reporte en pantalla en la esquina superior izquierda cuenta con");
 
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel13.setText("las opciones tanto de guardar el archivo en el formato que prefiera, como tambien de");
 
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel14.setText("imprimir el reporte.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -153,7 +167,7 @@ public class Preguntas extends javax.swing.JPanel {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

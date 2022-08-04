@@ -31,8 +31,10 @@ precio_tot float
 
 create table ventas(
 Id_ventas int primary key,
-id_factura int,
-id_bol int
+id_peli int,
+totventas int,
+totcant int,
+fecha date
 );
 
 create table boletos(
@@ -76,7 +78,8 @@ id_usuario int primary key,
 nombreUsu varchar(45),
 apellidos varchar(45),
 fecha_nac date,
-sexo varchar(15)
+sexo varchar(15),
+puntos int
 );
 
 create table usuariosadmin(
@@ -93,12 +96,25 @@ create table descuentos(
     codigo varchar(10)
 );
 
+create table ganancias(
+	id_ganancias int primary key,
+    id_ventas int,
+    iva decimal,
+    der_autor decimal,
+    ganancia decimal,
+    distribuidor decimal,
+    productor decimal,
+    fecha date
+);
 
 alter table cines add constraint llave1 foreign key (Depto) references ubicaciones(No_depto);
 alter table salas add constraint llave2 foreign key (id_cine) references cines(Id_cines);
 alter table cartelera add constraint llave3 foreign key (id_pelicula) references peliculas(id_peli);
 alter table peliculas add constraint llave4 foreign key (clasificacion) references clasificaciones(id_clas);
 alter table cartelera add constraint llave5 foreign key (salas) references salas(Id_sala);
+alter table ventas add constraint llave6 foreign key (id_peli) references peliculas(id_peli);
+alter table ganancias add constraint llave7 foreign key (id_ventas) references ventas(id_ventas);
+
 /*alter table cartelera add constraint llave6 foreign key (id_descuento) references descuentos(id_descuento);*/
 -- alter table cines add constraint llave5 foreign key (Depto) references ubicaciones(No_depto);
 
@@ -142,11 +158,11 @@ insert into cartelera values ();
 insert into cartelera values ();
 insert into cartelera values ();
 
-insert into usuarios values (401,"Ester","Lopez","2001-05-09","Femenino");
-insert into usuarios values (402,"Joshua","Barrios","2001-06-30","Masculino");
-insert into usuarios values (403,"Velvet","Samayoa","2000-05-01","Femenino");
-insert into usuarios values (404,"Ricardo","Miranda","2001-02-26","Masculino");
-insert into usuarios values (405,"Paola","Reyes","2002-08-15","Femenino");
+insert into usuarios values (401,"Ester","Lopez","2001-05-09","Femenino","100");
+insert into usuarios values (402,"Joshua","Barrios","2001-06-30","Masculino", "200");
+insert into usuarios values (403,"Velvet","Samayoa","2000-05-01","Femenino","300");
+insert into usuarios values (404,"Ricardo","Miranda","2001-02-26","Masculino","150");
+insert into usuarios values (405,"Paola","Reyes","2002-08-15","Femenino","50");
 
 insert into descuentos values();
 
@@ -156,6 +172,16 @@ insert into boletos values ();
 insert into boletos values ();
 insert into boletos values ();
 insert into boletos values ();
+
+insert into ventas values (301,200,1500,75000,"2022-08-03");
+insert into ventas values (302,201,1000,70000,"2022-08-02");
+insert into ventas values (303,202,985,65000,"2022-08-25");
+insert into ventas values (304,203,1250,63000,"2022-08-26");
+
+insert into ganancias values (600, 301, 425.00, 75.00, 1000.00, 500.00, 500.00, "2022-08-03");
+insert into ganancias values (601, 302, 1275.00, 225.00, 3000.00, 1500.00, 1500.00, "2022-08-02");
+insert into ganancias values (602, 303, 1190.00, 210.00, 2800.00, 1400.00, 1400.00, "2022-08-25");
+insert into ganancias values (603, 304, 1020.00, 180.00, 2400.00, 1200.00, 1200.00, "2022-08-28");
 
 select * from cines;
 select * from salas;
@@ -173,4 +199,10 @@ drop table clasificaciones;
 drop table peliculas;
 drop table cartelera; 
 drop table descuentos;
+
+select * from usuarios order by puntos desc;
+select Id_ventas, peliculas.nombrePeli, totventas, totcant, fecha from ventas, peliculas where week(ventas.fecha) = week(now()) and ventas.id_peli = peliculas.id_peli order by ventas.totventas desc;
+select Id_ventas, peliculas.nombrePeli, totventas, totcant, fecha from ventas, peliculas where month(ventas.fecha) = month(now())  and ventas.id_peli = peliculas.id_peli order by ventas.totventas desc;
+select id_ganancias, ventas.totcant, iva, der_autor, ganancia, distribuidor, productor, ganancias.fecha from ventas, ganancias where week(ganancias.fecha) = week(now()) and ganancias.id_ventas = ventas.id_ventas;
+select id_ganancias, ventas.totcant, iva, der_autor, ganancia, distribuidor, productor, ganancias.fecha from ventas, ganancias where month(ganancias.fecha) = month(now()) and ganancias.id_ventas = ventas.id_ventas;
 select * from salas s INNER JOIN cines c ON c.Id_cines = s.id_cine INNER JOIN cartelera car  ON  s.id_sala= car.salas where nombre_cine= 'Rush Mall';
