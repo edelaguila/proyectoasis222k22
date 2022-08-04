@@ -167,4 +167,60 @@ select * from goles;
 
 
 
+SELECT
+     equipotorneo.`Id_ET` AS equipotorneo_Id_ET,
+     equipotorneo.`Id_Torneo` AS equipotorneo_Id_Torneo,
+     equipotorneo.`Equipo1` AS equipotorneo_Equipo1,
+     equipotorneo.`Equipo2` AS equipotorneo_Equipo2,
+     equipotorneo.`Equipo3` AS equipotorneo_Equipo3,
+     equipotorneo.`Equipo4` AS equipotorneo_Equipo4,
+     equipotorneo.`Equipo5` AS equipotorneo_Equipo5,
+     equipotorneo.`Equipo6` AS equipotorneo_Equipo6,
+     equipotorneo.`Equipo7` AS equipotorneo_Equipo7,
+     equipotorneo.`Equipo8` AS equipotorneo_Equipo8,
+     equipos.`Nombre` AS equipos_Nombre
+FROM
+     `equipotorneo` equipotorneo INNER JOIN `equipos` equipos ON equipotorneo.`Equipo1` = equipos.`Id_Equipo`
 
+
+SELECT
+     equipos.`Id_Equipo` AS equipos_Id_Equipo,
+     equipos.`Nombre` AS equipos_Nombre,
+     jugador.`Id_Jugador` AS jugador_Id_Jugador,
+     jugador.`Nombre` AS jugador_Nombre,
+     jugador.`Apellido` AS jugador_Apellido,
+     jugador.`Año_Nacimiento` AS jugador_Año_Nacimiento,
+     jugador.`Numero_Camisola` AS jugador_Numero_Camisola
+FROM
+     `equipos` equipos INNER JOIN `jugador` jugador ON equipos.`Id_Equipo` = jugador.`Id_Equipo`
+     
+     
+     
+     
+     
+     SELECT
+     equipos.`Id_Equipo` AS equipos_Id_Equipo,
+     equipos.`Nombre` AS equipos_Nombre,
+     jugador.`Id_Jugador` AS jugador_Id_Jugador,
+     jugador.`Nombre` AS jugador_Nombre,
+     jugador.`Apellido` AS jugador_Apellido,
+     jugador.`Año_Nacimiento` AS jugador_Año_Nacimiento,
+     jugador.`Numero_Camisola` AS jugador_Numero_Camisola
+FROM
+     `equipos` equipos INNER JOIN `jugador` jugador ON equipos.`Id_Equipo` = jugador.`Id_Equipo`
+WHERE equipos.Nombre="Barcelona"
+
+
+
+
+ SELECT
+     equipos.`Id_Equipo` AS equipos_Id_Equipo,
+     equipos.`Nombre` AS equipos_Nombre,
+     jugador.`Id_Jugador` AS jugador_Id_Jugador,
+     jugador.`Nombre` AS jugador_Nombre,
+     jugador.`Apellido` AS jugador_Apellido,
+     jugador.`Año_Nacimiento` AS jugador_Año_Nacimiento,
+     jugador.`Numero_Camisola` AS jugador_Numero_Camisola
+FROM
+     `equipos` equipos INNER JOIN `jugador` jugador ON equipos.`Id_Equipo` = jugador.`Id_Equipo`
+WHERE equipos.Nombre="Barcelona"

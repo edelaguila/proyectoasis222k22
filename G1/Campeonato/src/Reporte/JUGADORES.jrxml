@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="54442aa5-a7e9-48af-bf35-5d381a207726">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[ SELECT
+     equipos.`Id_Equipo` AS equipos_Id_Equipo,
+     equipos.`Nombre` AS equipos_Nombre,
+     jugador.`Id_Jugador` AS jugador_Id_Jugador,
+     jugador.`Nombre` AS jugador_Nombre,
+     jugador.`Apellido` AS jugador_Apellido,
+     jugador.`Año_Nacimiento` AS jugador_Año_Nacimiento,
+     jugador.`Numero_Camisola` AS jugador_Numero_Camisola
+FROM
+     `equipos` equipos INNER JOIN `jugador` jugador ON equipos.`Id_Equipo` = jugador.`Id_Equipo`
+]]>
+	</queryString>
+	<field name="equipos_Id_Equipo" class="java.lang.Integer"/>
+	<field name="equipos_Nombre" class="java.lang.String"/>
+	<field name="jugador_Id_Jugador" class="java.lang.Integer"/>
+	<field name="jugador_Nombre" class="java.lang.String"/>
+	<field name="jugador_Apellido" class="java.lang.String"/>
+	<field name="jugador_Año_Nacimiento" class="java.lang.Integer"/>
+	<field name="jugador_Numero_Camisola" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="10" width="340" height="54" uuid="53ce2d02-702e-4243-ae8f-2a3adf15e0ce"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE JUGADORES]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="10" width="79" height="54" uuid="689df14e-edea-40be-baed-2a935ceee650"/>
+				<imageExpression><![CDATA["C:\\Users\\marro\\OneDrive\\Documentos\\UMG\\8° SEMESTRE\\Análisis de Sistemas II\\Proyecto 1 Grupal\\Repositorio Lic\\proyectoasis222k22\\G1\\Campeonato\\src\\imagenes\\36535849-jugador-de-fútbol-de-dibujos-animados.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="460" y="18" width="100" height="20" uuid="11ef72be-260b-46d3-a466-20a2d17f327f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="38" height="20" uuid="b9d39f70-efe1-4cd9-854e-c46ce9209749"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="2" width="100" height="20" uuid="7c048c07-8706-44f9-973c-f08882076b4d"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="2" width="35" height="20" uuid="b5d13a62-fc84-4ad1-accb-f56b0535b6d1"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="173" y="2" width="100" height="20" uuid="907f8e1d-20b2-4586-a611-b51c32125e65"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="2" width="100" height="20" uuid="5fae6471-20f3-4006-a095-322a0ac19fff"/>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="2" width="100" height="20" uuid="9fa1aeb3-4295-44e0-b0bd-806fde987147"/>
+				<text><![CDATA[NACIMINETO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="2" width="100" height="20" uuid="6ecb942b-0d82-44b1-9e5d-71a11bdb38ce"/>
+				<text><![CDATA[NUMERO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="38" height="20" uuid="70942b3f-f9d9-4b71-81ce-1f3059fbf90e"/>
+				<textFieldExpression><![CDATA[$F{equipos_Id_Equipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="0" width="100" height="20" uuid="5a7e4c95-2385-46ff-92d5-b75988ff937d"/>
+				<textFieldExpression><![CDATA[$F{equipos_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="35" height="20" uuid="7f9a30a6-4e8f-4c28-a306-67eae12417d8"/>
+				<textFieldExpression><![CDATA[$F{jugador_Id_Jugador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="0" width="100" height="20" uuid="4542b17f-dff1-43f5-939b-3f6b1b3755b1"/>
+				<textFieldExpression><![CDATA[$F{jugador_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="0" width="100" height="20" uuid="55486ccc-05e3-4e83-9a4f-6786cf8dca2e"/>
+				<textFieldExpression><![CDATA[$F{jugador_Apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="0" width="100" height="20" uuid="3835b380-f7eb-4959-a708-e0227e660206"/>
+				<textFieldExpression><![CDATA[$F{jugador_Año_Nacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="0" width="100" height="20" uuid="a1625aee-c9ce-4cb9-9a26-d223ada703d4"/>
+				<textFieldExpression><![CDATA[$F{jugador_Numero_Camisola}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

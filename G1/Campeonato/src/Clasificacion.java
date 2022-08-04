@@ -30,28 +30,39 @@ public final class Clasificacion extends javax.swing.JFrame {
         conectar cc=new conectar();
         Connection cn=cc.conexion();
         DefaultTableModel modelo=new DefaultTableModel();
-       
-        modelo.addColumn("Id");
-        modelo.addColumn("Deporte");
-          
+
+        modelo.addColumn("Id_Clasificacion");
+        modelo.addColumn("Equipo");
+        modelo.addColumn("Ganados");
+        modelo.addColumn("Perdidos");
+        modelo.addColumn("Empatados");
+        modelo.addColumn("Partidos Jugados");
+        modelo.addColumn("Puntaje");
+
         jTable1.setModel(modelo);
         String sql="";
         if (valor.equals(""))
         {
-            sql="SELECT * FROM deportes";
+            sql="SELECT Id_Posicion, equipos.Nombre, Ganados, Perdidos, Empatados, Pj, Puntos FROM partidos_ge INNER JOIN equipos USING(Id_Equipo) ORDER BY Puntos DESC";
         }
         else{
-            sql="SELECT * FROM deportes WHERE (Id_Deporte='"+valor+"'  OR Descripcion='"+valor+"')";
-        }  
-        
-        String []datos=new String [2];
+            sql="SELECT Id_Posicion, equipos.Nombre, Ganados, Perdidos, Empatados, Pj, Puntos FROM partidos_ge INNER JOIN equipos USING(Id_Equipo) WHERE (Id_Posicion='"+valor+"') ORDER BY Puntos";
+        }
+
+        String []datos=new String [7];
         try{
             Statement st=cn.createStatement();
             ResultSet rs=st.executeQuery(sql);
             while(rs.next()){
             datos[0]=rs.getString(1);
             datos[1]=rs.getString(2);
-            
+            datos[2]=rs.getString(3);
+            datos[3]=rs.getString(4);
+            datos[4]=rs.getString(5);
+            datos[5]=rs.getString(6);
+            datos[6]=rs.getString(7);
+
+
             modelo.addRow(datos);
             }
             jTable1.setModel(modelo);
