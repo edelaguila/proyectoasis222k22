@@ -31,8 +31,10 @@ precio_tot float
 
 create table ventas(
 Id_ventas int primary key,
-id_factura int,
-id_bol int
+id_peli int,
+totventas int,
+totcant int,
+fecha date
 );
 
 create table boletos(
@@ -76,7 +78,8 @@ id_usuario int primary key,
 nombreUsu varchar(45),
 apellidos varchar(45),
 fecha_nac date,
-sexo varchar(15)
+sexo varchar(15),
+puntos int
 );
 
 create table usuariosadmin(
@@ -99,6 +102,7 @@ alter table salas add constraint llave2 foreign key (id_cine) references cines(I
 alter table cartelera add constraint llave3 foreign key (id_pelicula) references peliculas(id_peli);
 alter table peliculas add constraint llave4 foreign key (clasificacion) references clasificaciones(id_clas);
 alter table cartelera add constraint llave5 foreign key (salas) references salas(Id_sala);
+alter table ventas add constraint llave6 foreign key (id_peli) references peliculas(id_peli);
 /*alter table cartelera add constraint llave6 foreign key (id_descuento) references descuentos(id_descuento);*/
 -- alter table cines add constraint llave5 foreign key (Depto) references ubicaciones(No_depto);
 
@@ -142,11 +146,11 @@ insert into cartelera values ();
 insert into cartelera values ();
 insert into cartelera values ();
 
-insert into usuarios values (401,"Ester","Lopez","2001-05-09","Femenino");
-insert into usuarios values (402,"Joshua","Barrios","2001-06-30","Masculino");
-insert into usuarios values (403,"Velvet","Samayoa","2000-05-01","Femenino");
-insert into usuarios values (404,"Ricardo","Miranda","2001-02-26","Masculino");
-insert into usuarios values (405,"Paola","Reyes","2002-08-15","Femenino");
+insert into usuarios values (401,"Ester","Lopez","2001-05-09","Femenino","100");
+insert into usuarios values (402,"Joshua","Barrios","2001-06-30","Masculino", "200");
+insert into usuarios values (403,"Velvet","Samayoa","2000-05-01","Femenino","300");
+insert into usuarios values (404,"Ricardo","Miranda","2001-02-26","Masculino","150");
+insert into usuarios values (405,"Paola","Reyes","2002-08-15","Femenino","50");
 
 insert into descuentos values();
 
@@ -156,6 +160,11 @@ insert into boletos values ();
 insert into boletos values ();
 insert into boletos values ();
 insert into boletos values ();
+
+insert into ventas values (301,200,1500,75000,"2022-08-03");
+insert into ventas values (302,201,1000,70000,"2022-08-02");
+insert into ventas values (303,202,985,65000,"2022-08-25");
+insert into ventas values (304,203,1250,63000,"2022-08-26");
 
 select * from cines;
 select * from salas;
@@ -173,4 +182,6 @@ drop table clasificaciones;
 drop table peliculas;
 drop table cartelera; 
 drop table descuentos;
+
+select * from usuarios order by puntos desc;
 select * from salas s INNER JOIN cines c ON c.Id_cines = s.id_cine INNER JOIN cartelera car  ON  s.id_sala= car.salas where nombre_cine= 'Rush Mall';
