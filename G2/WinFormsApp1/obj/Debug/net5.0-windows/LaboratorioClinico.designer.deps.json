@@ -6,118 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "CrystalReports/13.0.5.891": {
-        "runtime": {
-          "lib/net40/CRVsPackageLib.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.CrystalReports.Design.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.CrystalReports.Engine.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.CrystalReports.TemplateEngine.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.Data.AdoDotNetInterop.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "14.0.2005.891"
-          },
-          "lib/net40/CrystalDecisions.Enterprise.Viewing.ReportSource.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.ClientDoc.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.CommLayer.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.CommonControls.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.CommonObjectModel.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.Controllers.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.CubeDefModel.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.DataDefModel.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.DataSetConversion.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.ObjectFactory.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.Prompting.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.ReportDefModel.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportAppServer.XmlSerialize.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.ReportSource.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.Shared.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.VSDesigner.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.Web.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/CrystalDecisions.Windows.Forms.dll": {
-            "assemblyVersion": "13.0.2000.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/FlashControlV71.dll": {
-            "assemblyVersion": "1.0.3187.32366",
-            "fileVersion": "1.0.3187.32366"
-          },
-          "lib/net40/SAPBusinessObjects.WPF.Viewer.dll": {
-            "assemblyVersion": "13.0.3500.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/SAPBusinessObjects.WPF.ViewerShared.dll": {
-            "assemblyVersion": "13.0.3500.0",
-            "fileVersion": "13.0.5.891"
-          },
-          "lib/net40/ShockwaveFlashObjects.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Google.Protobuf/3.19.4": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -477,13 +365,6 @@
     }
   },
   "libraries": {
-    "CrystalReports/13.0.5.891": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gY9USVBCGJlZn5KyvC4N6DaSk/hHiBALM3eYWBkecQSxo/kYBtq5VDtee6Cx6ihBcQIGM5OYS7d60itGXOM8xA==",
-      "path": "crystalreports/13.0.5.891",
-      "hashPath": "crystalreports.13.0.5.891.nupkg.sha512"
-    },
     "Google.Protobuf/3.19.4": {
       "type": "package",
       "serviceable": true,

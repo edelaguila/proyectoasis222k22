@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "N8FvrVfmBJeG54Hn5iKKduYKOf+jqGQnkMJZHeKj5kc3OG5Glr7guHr2GfEx1lI6202gk/HE8/TqtxiEp/cGqg==",
+  "dgSpecHash": "ieHlxIeZimvNPbSLbN9Y+huqk0kVzUtmKjxB6Uxscw/IWOSLwuV/v8Lb18XQFXQOYXaWKsKxOcEyZ1qmx4bhKA==",
   "success": true,
   "projectFilePath": "C:\\Users\\luist\\OneDrive\\Universidad\\8semestre\\Analisis2\\proyecto1\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\luist\\.nuget\\packages\\crystalreports\\13.0.5.891\\crystalreports.13.0.5.891.nupkg.sha512",
     "C:\\Users\\luist\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\luist\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\luist\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
@@ -38,16 +37,5 @@
     "C:\\Users\\luist\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\luist\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"CrystalReports 13.0.5.891\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "libraryId": "CrystalReports",
-      "targetGraphs": [
-        "net5.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
