@@ -50,7 +50,6 @@ public class loginAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         contraseña = new javax.swing.JPasswordField();
@@ -59,23 +58,14 @@ public class loginAdmin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        logbtn = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setBackground(new java.awt.Color(26, 56, 73));
-        jButton1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INGRESAR");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 390, 40));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(26, 56, 73));
@@ -108,6 +98,42 @@ public class loginAdmin extends javax.swing.JFrame {
         bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 390, 10));
         bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 322, 390, 10));
 
+        logbtn.setBackground(new java.awt.Color(26, 56, 73));
+
+        jButton1.setBackground(new java.awt.Color(26, 56, 73));
+        jButton1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("INGRESAR");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout logbtnLayout = new javax.swing.GroupLayout(logbtn);
+        logbtn.setLayout(logbtnLayout);
+        logbtnLayout.setHorizontalGroup(
+            logbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logbtnLayout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(42, 42, 42))
+        );
+        logbtnLayout.setVerticalGroup(
+            logbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logbtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+
+        bg.add(logbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 210, 50));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Administración.png"))); // NOI18N
+        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,7 +149,7 @@ public class loginAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        validarAdmin();
+       validarAdmin();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -169,8 +195,10 @@ public class loginAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPanel logbtn;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
