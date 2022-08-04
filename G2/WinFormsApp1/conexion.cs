@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace LaboratorioClinico
 {
@@ -63,7 +64,9 @@ namespace LaboratorioClinico
                 {
                     for (int x = 0; x < columna; x++)
                     {
-                        cadena[x] = leer.GetString(x);
+
+                       cadena[x] = leer.GetString(x);
+                                             
 
                     }
 
@@ -81,5 +84,46 @@ namespace LaboratorioClinico
 
             return cadena;
         }
+
+
+        public void IDU2(String sql)//funcion para insercion, eliminacion y actualizacion en base de datos
+        {
+            try
+            {
+                MySqlCommand cmd = this.con.CreateCommand();
+                cmd.CommandText = sql;
+                this.con.Open();
+                cmd.ExecuteNonQuery();
+                this.con.Close();
+                
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e);
+            }
+
+        }
+
+        public DataTable Busqueda(string sql)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, con);        
+                MySqlDataAdapter adapatador = new MySqlDataAdapter();
+                adapatador.SelectCommand = cmd;
+                DataTable tabla = new DataTable();
+                adapatador.Fill(tabla);
+
+                return tabla;
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Error: " + e);
+                return null;
+
+            }
+        }
+
+        
     }
 }

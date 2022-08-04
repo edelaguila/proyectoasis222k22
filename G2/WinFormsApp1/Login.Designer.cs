@@ -39,6 +39,7 @@ namespace LaboratorioClinico
             this.btncrear = new System.Windows.Forms.Button();
             this.checkver = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbolvido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,12 +160,24 @@ namespace LaboratorioClinico
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // lbolvido
+            // 
+            this.lbolvido.AutoSize = true;
+            this.lbolvido.Font = new System.Drawing.Font("Georgia", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lbolvido.Location = new System.Drawing.Point(364, 337);
+            this.lbolvido.Name = "lbolvido";
+            this.lbolvido.Size = new System.Drawing.Size(171, 15);
+            this.lbolvido.TabIndex = 15;
+            this.lbolvido.Text = "¿Has olvidado la contraseña?";
+            this.lbolvido.Click += new System.EventHandler(this.lbolvido_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(550, 361);
+            this.Controls.Add(this.lbolvido);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkver);
             this.Controls.Add(this.btncrear);
@@ -197,5 +210,6 @@ namespace LaboratorioClinico
         private System.Windows.Forms.Button btncrear;
         private System.Windows.Forms.CheckBox checkver;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbolvido;
     }
 }
