@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\luist\\OneDrive\\Universidad\\8semestre\\Analisis2\\proyecto1\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\luist\\OneDrive\\Universidad\\8semestre\\Analisis2\\proyecto1\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\luist\\OneDrive\\Universidad\\8semestre\\Analisis2\\proyecto1\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
-        "projectName": "LaboratorioClinico",
-        "projectPath": "C:\\Users\\luist\\OneDrive\\Universidad\\8semestre\\Analisis2\\proyecto1\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
-        "packagesPath": "C:\\Users\\luist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luist\\OneDrive\\Universidad\\8semestre\\Analisis2\\proyecto1\\proyectoasis222k22\\G2\\WinFormsApp1\\obj\\",
-=======
     "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {}
   },
   "projects": {
@@ -25,17 +12,14 @@
         "projectPath": "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
         "packagesPath": "C:\\Users\\Kuht_saal\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\obj\\",
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\luist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kuht_saal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows7.0"
@@ -71,8 +55,6 @@
             "System.Data.Common": {
               "target": "Package",
               "version": "[4.3.0, )"
-<<<<<<< HEAD
-=======
             },
             "iTextSharp": {
               "target": "Package",
@@ -81,7 +63,6 @@
             "itext7": {
               "target": "Package",
               "version": "[7.2.3, )"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
             }
           },
           "imports": [
@@ -102,7 +83,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

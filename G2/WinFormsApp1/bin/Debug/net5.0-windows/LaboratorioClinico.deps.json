@@ -8,23 +8,16 @@
     ".NETCoreApp,Version=v5.0": {
       "LaboratorioClinico/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
-          "MySql.Data": "8.0.30",
-          "System.Data.Common": "4.3.0"
-=======
           "Adobe.DocumentServices.PDFTools": "1.3.1",
           "MySql.Data": "8.0.30",
           "System.Data.Common": "4.3.0",
           "iTextSharp": "5.5.13.3",
           "itext7": "7.2.3"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         },
         "runtime": {
           "LaboratorioClinico.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
       "Adobe.DocumentServices.PDFTools/1.3.1": {
         "dependencies": {
           "Microsoft.AspNetCore.WebUtilities": "2.2.0",
@@ -45,7 +38,6 @@
         }
       },
       "BouncyCastle/1.8.9": {},
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "Google.Protobuf/3.19.4": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -306,9 +298,6 @@
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
-<<<<<<< HEAD
-      "Microsoft.NETCore.Targets/1.1.0": {},
-=======
       "Microsoft.NETCore.Targets/1.1.3": {},
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
@@ -329,7 +318,6 @@
           "System.Runtime.InteropServices": "4.3.0"
         }
       },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
@@ -361,8 +349,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "NETStandard.Library/1.6.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -427,7 +413,6 @@
           }
         }
       },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "Portable.BouncyCastle/1.9.0": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -436,8 +421,6 @@
           }
         }
       },
-<<<<<<< HEAD
-=======
       "RestSharp/106.15.0": {
         "runtime": {
           "lib/netstandard2.0/RestSharp.dll": {
@@ -499,17 +482,10 @@
           "System.Runtime": "4.3.1"
         }
       },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "System.Buffers/4.5.1": {},
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
         }
@@ -539,14 +515,11 @@
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {},
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "System.Configuration.ConfigurationManager/4.4.1": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "4.4.0"
         }
       },
-<<<<<<< HEAD
-=======
       "System.Console/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -556,21 +529,12 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "System.Data.Common/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
           "System.Globalization": "4.3.0",
           "System.IO": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
-<<<<<<< HEAD
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
-        }
-      },
-=======
           "System.Runtime": "4.3.1",
           "System.Runtime.Extensions": "4.3.0",
           "System.Text.RegularExpressions": "4.3.1",
@@ -632,20 +596,12 @@
           "System.Runtime": "4.3.1"
         }
       },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
       "System.Drawing.Common/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.Win32.SystemEvents": "4.7.0"
         }
       },
-<<<<<<< HEAD
-      "System.Globalization/4.3.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-=======
       "System.Dynamic.Runtime/4.0.11": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -688,33 +644,17 @@
           "System.Runtime": "4.3.1",
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.IO/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1",
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
           "System.Text.Encoding": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
         }
       },
-<<<<<<< HEAD
-      "System.Memory/4.5.4": {},
-      "System.Reflection/4.3.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.IO": "4.3.0",
-          "System.Reflection.Primitives": "4.3.0",
-          "System.Runtime": "4.3.0"
-=======
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -891,16 +831,11 @@
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Reflection": "4.3.0",
           "System.Runtime": "4.3.1"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
         }
@@ -909,24 +844,11 @@
         "dependencies": {
           "System.Reflection": "4.3.0",
           "System.Runtime": "4.3.1"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Resources.ResourceManager/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Globalization": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.Runtime/4.3.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0"
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Globalization": "4.3.0",
           "System.Reflection": "4.3.0",
@@ -937,17 +859,12 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.NETCore.Targets": "1.1.3"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
         }
@@ -1008,7 +925,6 @@
         "dependencies": {
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.1"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -1151,13 +1067,8 @@
       "System.Text.Encoding/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Text.Encoding.CodePages/4.4.0": {
@@ -1165,11 +1076,6 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
-<<<<<<< HEAD
-      "System.Text.RegularExpressions/4.3.0": {
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-=======
       "System.Text.Encoding.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1188,16 +1094,11 @@
         "dependencies": {
           "System.Runtime": "4.3.1",
           "System.Threading.Tasks": "4.3.0"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-<<<<<<< HEAD
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-=======
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
         }
@@ -1225,7 +1126,6 @@
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
         }
       },
       "System.Windows.Extensions/4.7.0": {
@@ -1301,8 +1201,6 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< HEAD
-=======
     "Adobe.DocumentServices.PDFTools/1.3.1": {
       "type": "package",
       "serviceable": true,
@@ -1317,7 +1215,6 @@
       "path": "bouncycastle/1.8.9",
       "hashPath": "bouncycastle.1.8.9.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "Google.Protobuf/3.19.4": {
       "type": "package",
       "serviceable": true,
@@ -1451,14 +1348,6 @@
       "path": "microsoft.netcore.platforms/3.1.0",
       "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-    "Microsoft.NETCore.Targets/1.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
-      "path": "microsoft.netcore.targets/1.1.0",
-      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
-=======
     "Microsoft.NETCore.Targets/1.1.3": {
       "type": "package",
       "serviceable": true,
@@ -1479,7 +1368,6 @@
       "sha512": "sha512-Lw1/VwLH1yxz6SfFEjVRCN0pnflLEsWgnV4qsdJ512/HhTwnKXUG+zDQ4yTO3K/EJQemGoNaBHX5InISNKTzUQ==",
       "path": "microsoft.win32.registry/4.3.0",
       "hashPath": "microsoft.win32.registry.4.3.0.nupkg.sha512"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     },
     "Microsoft.Win32.SystemEvents/4.7.0": {
       "type": "package",
@@ -1495,8 +1383,6 @@
       "path": "mysql.data/8.0.30",
       "hashPath": "mysql.data.8.0.30.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "NETStandard.Library/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -1518,15 +1404,12 @@
       "path": "polly/7.1.0",
       "hashPath": "polly.7.1.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
       "path": "portable.bouncycastle/1.9.0",
       "hashPath": "portable.bouncycastle.1.9.0.nupkg.sha512"
-<<<<<<< HEAD
-=======
     },
     "RestSharp/106.15.0": {
       "type": "package",
@@ -1653,7 +1536,6 @@
       "sha512": "sha512-fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "path": "system.appcontext/4.3.0",
       "hashPath": "system.appcontext.4.3.0.nupkg.sha512"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -1669,8 +1551,6 @@
       "path": "system.collections/4.3.0",
       "hashPath": "system.collections.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Collections.Concurrent/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1692,7 +1572,6 @@
       "path": "system.componentmodel.annotations/4.5.0",
       "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Configuration.ConfigurationManager/4.4.1": {
       "type": "package",
       "serviceable": true,
@@ -1700,8 +1579,6 @@
       "path": "system.configuration.configurationmanager/4.4.1",
       "hashPath": "system.configuration.configurationmanager.4.4.1.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Console/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1709,7 +1586,6 @@
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Data.Common/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1717,8 +1593,6 @@
       "path": "system.data.common/4.3.0",
       "hashPath": "system.data.common.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1754,7 +1628,6 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Drawing.Common/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -1762,8 +1635,6 @@
       "path": "system.drawing.common/4.7.0",
       "hashPath": "system.drawing.common.4.7.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Dynamic.Runtime/4.0.11": {
       "type": "package",
       "serviceable": true,
@@ -1771,7 +1642,6 @@
       "path": "system.dynamic.runtime/4.0.11",
       "hashPath": "system.dynamic.runtime.4.0.11.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Globalization/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1779,8 +1649,6 @@
       "path": "system.globalization/4.3.0",
       "hashPath": "system.globalization.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Globalization.Calendars/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1795,7 +1663,6 @@
       "path": "system.globalization.extensions/4.3.0",
       "hashPath": "system.globalization.extensions.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.IO/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1803,8 +1670,6 @@
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.IO.Compression/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1847,7 +1712,6 @@
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Memory/4.5.4": {
       "type": "package",
       "serviceable": true,
@@ -1855,8 +1719,6 @@
       "path": "system.memory/4.5.4",
       "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Net.Http/4.3.4": {
       "type": "package",
       "serviceable": true,
@@ -1885,7 +1747,6 @@
       "path": "system.objectmodel/4.3.0",
       "hashPath": "system.objectmodel.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Reflection/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1893,8 +1754,6 @@
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Reflection.Emit/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1923,7 +1782,6 @@
       "path": "system.reflection.extensions/4.3.0",
       "hashPath": "system.reflection.extensions.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Reflection.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1931,8 +1789,6 @@
       "path": "system.reflection.primitives/4.3.0",
       "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Reflection.TypeExtensions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1940,7 +1796,6 @@
       "path": "system.reflection.typeextensions/4.3.0",
       "hashPath": "system.reflection.typeextensions.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Resources.ResourceManager/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1948,21 +1803,12 @@
       "path": "system.resources.resourcemanager/4.3.0",
       "hashPath": "system.resources.resourcemanager.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-    "System.Runtime/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
-      "path": "system.runtime/4.3.0",
-      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
-=======
     "System.Runtime/4.3.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-abhfv1dTK6NXOmu4bgHIONxHyEqFjW8HwXPmpY9gmll+ix9UNo4XDcmzJn6oLooftxNssVHdJC1pGT9jkSynQg==",
       "path": "system.runtime/4.3.1",
       "hashPath": "system.runtime.4.3.1.nupkg.sha512"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",
@@ -1978,8 +1824,6 @@
       "path": "system.runtime.extensions/4.3.0",
       "hashPath": "system.runtime.extensions.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Runtime.Handles/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2029,7 +1873,6 @@
       "path": "system.runtime.serialization.primitives/4.3.0",
       "hashPath": "system.runtime.serialization.primitives.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Security.AccessControl/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -2121,14 +1964,6 @@
       "path": "system.text.encoding.codepages/4.4.0",
       "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-    "System.Text.RegularExpressions/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
-      "path": "system.text.regularexpressions/4.3.0",
-      "hashPath": "system.text.regularexpressions.4.3.0.nupkg.sha512"
-=======
     "System.Text.Encoding.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2156,7 +1991,6 @@
       "sha512": "sha512-VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "path": "system.threading/4.3.0",
       "hashPath": "system.threading.4.3.0.nupkg.sha512"
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",
@@ -2165,8 +1999,6 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
-=======
     "System.Threading.Tasks.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2195,7 +2027,6 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
->>>>>>> 1c770622490b3cf5a98d1505c15ee1d3f3e05f1d
     "System.Windows.Extensions/4.7.0": {
       "type": "package",
       "serviceable": true,

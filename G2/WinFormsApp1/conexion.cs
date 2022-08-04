@@ -18,15 +18,10 @@ namespace LaboratorioClinico
             try
             {
                 MySqlConnectionStringBuilder b = new MySqlConnectionStringBuilder();
-               /* b.Server = "b3jnhmjenwsvvibvoljt-mysql.services.clever-cloud.com";
+                b.Server = "b3jnhmjenwsvvibvoljt-mysql.services.clever-cloud.com";
                 b.UserID = "uoek6asd7jjostvb";//cambiar el usuario
                 b.Password = "FdMipYrOneL8uzBTDoVB";//cambiar contraseña
-                b.Database = "b3jnhmjenwsvvibvoljt";*/
-
-                b.Server = "localhost";
-                b.UserID = "admin";//cambiar el usuario
-                b.Password = "admin12345";//cambiar contraseña
-                b.Database = "clinica";
+                b.Database = "b3jnhmjenwsvvibvoljt";
                 con = new MySqlConnection(b.ToString());
             }
             catch (MySqlException e)
