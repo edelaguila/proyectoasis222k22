@@ -56,6 +56,8 @@ namespace LaboratorioClinico
            "','" + enfermedad + "','" + recomendacion + "')";
 
             con.IDU(sql2);
+            detallebitacora d = new detallebitacora();
+            d.agregar("Paciente");
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
@@ -96,6 +98,8 @@ namespace LaboratorioClinico
             conexion con = new conexion();
            cliente =  con.buscar(sql, 7);
            paciente=  con.buscar(sql2, 6);
+            detallebitacora d = new detallebitacora();
+            d.busqueda("Paciente");
 
 
             tabla.Rows[n].Cells[0].Value = cliente[0];
@@ -127,6 +131,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.eliminar("Paciente");
 
             tabla.Rows.RemoveAt(tabla.CurrentRow.Index);
         }
@@ -195,6 +201,8 @@ namespace LaboratorioClinico
            "','" + enfermedad + "','" + recomendacion + "')";
 
             con.IDU(sql2);
+            detallebitacora d = new detallebitacora();
+            d.actualizar("Paciente");
         }
 
         private void btnagregar_MouseHover(object sender, EventArgs e)

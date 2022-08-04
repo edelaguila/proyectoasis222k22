@@ -398,6 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(909, 541);
+            this.ControlBox = false;
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.tabla);
             this.Controls.Add(this.btnbuscar);
@@ -410,6 +411,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Empleado";
             this.Text = "Empleado";
+            this.Load += new System.EventHandler(this.Empleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();

@@ -58,6 +58,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.agregar("Examen");
 
 
         }
@@ -82,6 +84,8 @@ namespace LaboratorioClinico
                "('" + ID + "','" + paciente + "','" + name + "','" + tipo +
                "'," + precio + ")";
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.actualizar("Examen");
 
         }
 
@@ -96,12 +100,15 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             examen = con.buscar(sql, 5);
+            detallebitacora d = new detallebitacora();
+            d.busqueda("Examen");
 
             table4.Rows[n].Cells[0].Value = examen[0];
             table4.Rows[n].Cells[1].Value = examen[1];
             table4.Rows[n].Cells[2].Value = examen[2];
             table4.Rows[n].Cells[3].Value = examen[3];
             table4.Rows[n].Cells[4].Value = examen[4];
+
 
         }
 
@@ -113,8 +120,11 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.eliminar("Examen");
 
             table4.Rows.RemoveAt(table4.CurrentRow.Index);
+            
         }
 
         private void Examen_Load(object sender, EventArgs e)

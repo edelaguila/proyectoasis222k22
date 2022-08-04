@@ -48,6 +48,7 @@ namespace LaboratorioClinico
             this.btnregresar = new System.Windows.Forms.Button();
             this.list = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnreporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,18 +112,24 @@ namespace LaboratorioClinico
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(73, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 39;
             this.label1.Text = "inicial";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(119)))), ((int)(((byte)(255)))));
+            this.label2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(73, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 15);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 40;
             this.label2.Text = "Final";
             // 
@@ -212,7 +219,7 @@ namespace LaboratorioClinico
             this.btnregresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
             this.btnregresar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnregresar.ForeColor = System.Drawing.Color.White;
-            this.btnregresar.Location = new System.Drawing.Point(625, 484);
+            this.btnregresar.Location = new System.Drawing.Point(647, 484);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(98, 27);
             this.btnregresar.TabIndex = 49;
@@ -222,6 +229,7 @@ namespace LaboratorioClinico
             // 
             // list
             // 
+            this.list.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.list.FormattingEnabled = true;
             this.list.ItemHeight = 15;
             this.list.Location = new System.Drawing.Point(563, 57);
@@ -243,11 +251,27 @@ namespace LaboratorioClinico
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnreporte
+            // 
+            this.btnreporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(101)))), ((int)(((byte)(244)))));
+            this.btnreporte.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnreporte.ForeColor = System.Drawing.Color.White;
+            this.btnreporte.Location = new System.Drawing.Point(25, 246);
+            this.btnreporte.Name = "btnreporte";
+            this.btnreporte.Size = new System.Drawing.Size(98, 27);
+            this.btnreporte.TabIndex = 52;
+            this.btnreporte.Text = "Reporte";
+            this.btnreporte.UseVisualStyleBackColor = false;
+            this.btnreporte.Click += new System.EventHandler(this.btnreporte_Click);
+            // 
             // Bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(195)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(757, 518);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnreporte);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.list);
             this.Controls.Add(this.btnregresar);
@@ -267,6 +291,8 @@ namespace LaboratorioClinico
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label8);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Bitacora";
             this.Text = "Bitacora";
             this.Load += new System.EventHandler(this.Bitacora_Load);
@@ -297,5 +323,6 @@ namespace LaboratorioClinico
         private System.Windows.Forms.Button btnregresar;
         private System.Windows.Forms.ListBox list;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnreporte;
     }
 }

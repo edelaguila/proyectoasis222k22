@@ -58,12 +58,16 @@ namespace LaboratorioClinico
             txtTest.Clear();
             txtTotal.Clear();
             txtBuscar.Clear();
+            txtPrice.Clear();
+            rdbCheck.Checked = false;
+            rdbCredit.Checked = false;
+            rdbMoney.Checked = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string ID, cliente, cita, examen;
-            float Total;
+            string ID, cliente, cita, examen, tipo = " ";
+            float Total = 0, precio;
             String fecha;
 
             ID = txtID.Text;
@@ -71,7 +75,40 @@ namespace LaboratorioClinico
             cliente = txtClient.Text;
             cita = txtCita.Text;
             examen = txtTest.Text;
-            Total = float.Parse(txtTotal.Text);
+            precio = float.Parse(txtPrice.Text);
+
+            if (rdbMoney.Checked == true)
+            {
+                tipo = "Efectivo";
+            }
+            if (rdbCheck.Checked == true)
+            {
+                tipo = "Cheque";
+
+            }
+            if (rdbCredit.Checked == true)
+            {
+                tipo = "Crédito";
+            }
+
+
+
+            if (tipo.Equals("Efectivo"))
+            {
+                Total = precio;
+            }
+            if (tipo.Equals("Cheque"))
+            {
+                Total = precio;
+            }
+            if (tipo.Equals("Crédito"))
+            {
+                Total = ((float)(precio * 1.05));
+            }
+            string total2;
+            total2 = Total.ToString();
+            txtTotal.Enabled = true;
+            txtTotal.Text = total2;
 
             string sql3 = "delete from factura where id_factura = '" + ID + "'";
 
@@ -79,7 +116,7 @@ namespace LaboratorioClinico
             con.IDU(sql3);
 
             string sql = "insert into factura values" +
-               "('" + ID + "','" + fecha + "','" + cliente + "'," + Total + ")";
+                "('" + ID + "','" + fecha + "','" + cliente + "','" + tipo + "'," + Total + ")";
 
             con.IDU(sql);
 
@@ -87,6 +124,8 @@ namespace LaboratorioClinico
                 "('" + ID + "','" + ID + "','" + cita + "','" + examen + "')";
 
             con.IDU(sql2);
+            detallebitacora d = new detallebitacora();
+            d.actualizar("Factura");
 
         }
 
@@ -98,14 +137,16 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.eliminar("Factura");
 
             tabla3.Rows.RemoveAt(tabla3.CurrentRow.Index);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string ID, cliente, cita, examen;
-            float Total;
+            string ID, cliente, cita, examen, tipo= " ";
+            float Total=0, precio;
             String fecha;
 
             ID = txtID.Text;
@@ -113,10 +154,43 @@ namespace LaboratorioClinico
             cliente = txtClient.Text;
             cita = txtCita.Text;
             examen = txtTest.Text;
-            Total = float.Parse(txtTotal.Text);
+            precio = float.Parse(txtPrice.Text);
+
+            if (rdbMoney.Checked == true)
+            {
+                tipo = "Efectivo";
+            }
+            if (rdbCheck.Checked == true)
+            {
+                tipo = "Cheque";
+
+            }
+            if (rdbCredit.Checked == true)
+            {
+                tipo = "Crédito";
+            }
+
+
+
+            if (tipo.Equals("Efectivo"))
+            {
+                Total = precio;
+            }
+            if (tipo.Equals("Cheque"))
+            {
+                Total = precio;
+            }
+            if (tipo.Equals("Crédito"))
+            {
+                Total = ((float)(precio * 1.05));
+            }
+            string total2;
+            total2 = Total.ToString();
+            txtTotal.Enabled = true;
+            txtTotal.Text = total2;
 
             string sql = "insert into factura values" +
-                "('" + ID + "','" + fecha + "','" + cliente + "'," + Total + ")";
+                "('" + ID + "','" + fecha + "','" + cliente + "','" + tipo + "'," + Total + ")";
 
             conexion con = new conexion();
             con.IDU(sql);
@@ -125,6 +199,8 @@ namespace LaboratorioClinico
                 "('" + ID + "','" + ID + "','" + cita + "','" + examen + "')";
 
             con.IDU(sql2);
+            detallebitacora d = new detallebitacora();
+            d.agregar("Factura");
 
 
         }
@@ -132,7 +208,7 @@ namespace LaboratorioClinico
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string buscar = txtBuscar.Text;
-            string[] factura = new string[3];
+            string[] factura = new string[4];
             string[] detalle = new string[3];
             int n = tabla3.Rows.Add();
 
@@ -140,8 +216,10 @@ namespace LaboratorioClinico
             string sql2 = "select * from detalle where id_detalle = '" + buscar + "'";
 
             conexion con = new conexion();
-            factura = con.buscar(sql, 4);
+            factura = con.buscar(sql, 5);
             detalle = con.buscar(sql2, 4);
+            detallebitacora d = new detallebitacora();
+            d.busqueda("Factura");
 
             tabla3.Rows[n].Cells[0].Value = factura[0];
             tabla3.Rows[n].Cells[1].Value = factura[1];
@@ -149,6 +227,17 @@ namespace LaboratorioClinico
             tabla3.Rows[n].Cells[3].Value = detalle[2];
             tabla3.Rows[n].Cells[4].Value = detalle[3];
             tabla3.Rows[n].Cells[5].Value = factura[3];
+            tabla3.Rows[n].Cells[6].Value = factura[4];
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
