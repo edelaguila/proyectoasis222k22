@@ -523,7 +523,7 @@ public class partido extends javax.swing.JFrame {
 
             int a=pst.executeUpdate();
 
-            if(a>0){
+            if(a<0){
                 JOptionPane.showMessageDialog(null,"Registro exitoso");
 
                 jTextField5.setText(null);
