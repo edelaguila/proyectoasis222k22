@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {}
+    "C:\\Users\\Kuht_saal\\Desktop\\Final\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {
+    "C:\\Users\\Kuht_saal\\Desktop\\Final\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
+        "projectUniqueName": "C:\\Users\\Kuht_saal\\Desktop\\Final\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
         "projectName": "LaboratorioClinico",
-        "projectPath": "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
+        "projectPath": "C:\\Users\\Kuht_saal\\Desktop\\Final\\proyectoasis222k22\\G2\\WinFormsApp1\\LaboratorioClinico.csproj",
         "packagesPath": "C:\\Users\\Kuht_saal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kuht_saal\\Desktop\\Torres\\proyectoasis222k22\\G2\\WinFormsApp1\\obj\\",
+        "outputPath": "C:\\Users\\Kuht_saal\\Desktop\\Final\\proyectoasis222k22\\G2\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,13 +52,13 @@
               "target": "Package",
               "version": "[8.0.30, )"
             },
+            "PdfiumViewer.Native.x86.no_v8-no_xfa": {
+              "target": "Package",
+              "version": "[2018.4.8.256, )"
+            },
             "System.Data.Common": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "iTextSharp": {
-              "target": "Package",
-              "version": "[5.5.13.3, )"
             },
             "itext7": {
               "target": "Package",

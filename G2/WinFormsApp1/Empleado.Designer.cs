@@ -410,6 +410,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Empleado";
             this.Text = "Empleado";
+            this.Load += new System.EventHandler(this.Empleado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();

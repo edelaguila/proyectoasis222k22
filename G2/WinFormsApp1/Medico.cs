@@ -79,6 +79,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.agregar("Medico");
 
         }
 
@@ -128,6 +130,8 @@ namespace LaboratorioClinico
                 + email + "','" + adress + "','" + ocupation + "')";
 
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.actualizar("Medico");
 
         }
 
@@ -139,6 +143,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             con.IDU(sql);
+            detallebitacora d = new detallebitacora();
+            d.eliminar("Medico");
 
             table5.Rows.RemoveAt(table5.CurrentRow.Index);
         }
@@ -154,6 +160,8 @@ namespace LaboratorioClinico
 
             conexion con = new conexion();
             medico = con.buscar(sql, 8);
+            detallebitacora d = new detallebitacora();
+            d.busqueda("Medico");
 
             table5.Rows[n].Cells[0].Value = medico[0];
             table5.Rows[n].Cells[1].Value = medico[1];
