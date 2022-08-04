@@ -231,5 +231,10 @@ namespace LaboratorioClinico
             m.Show();
             this.Hide();
         }
+
+        private void Empleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

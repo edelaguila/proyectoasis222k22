@@ -12,10 +12,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace LaboratorioClinico
 {
@@ -29,6 +31,10 @@ namespace LaboratorioClinico
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             crearPDF();
+
+            
+
+
 
         }
         private void crearPDF()
@@ -65,8 +71,7 @@ namespace LaboratorioClinico
 
             while (reader.Read())
             {
-                for (int x=1; x <100; x++)
-                {
+                
 
                 
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["id_examen"].ToString()).SetFont(fontContenido)));
@@ -74,7 +79,7 @@ namespace LaboratorioClinico
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["nombre"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["tipo"].ToString()).SetFont(fontContenido)));
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["precio"].ToString()).SetFont(fontContenido)));
-                }
+                
             }
 
             documento.Add(tabla);
@@ -82,7 +87,7 @@ namespace LaboratorioClinico
 
             var logo = new iText.Layout.Element.Image(ImageDataFactory.Create("C:/Users/Kuht_saal/Desktop/Torres/proyectoasis222k22/G2/WinFormsApp1/img/Examenes.png")).SetWidth(50);
             var plogo = new Paragraph("").Add(logo);
-            var titulo = new Paragraph("Reporte de productos");
+            var titulo = new Paragraph("Reporte de Examenes");
             titulo.SetTextAlignment(TextAlignment.CENTER);
             titulo.SetFontSize(12);
 
@@ -111,5 +116,19 @@ namespace LaboratorioClinico
             }
             doc.Close();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MenuTrabajador m = new MenuTrabajador();
+            m.Show();
+            this.Hide();
+        }
+
+        private void ExamenR_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

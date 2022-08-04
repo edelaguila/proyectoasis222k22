@@ -19,6 +19,9 @@
     <Compile Update="Factura.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FacturaR.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Laboratorio.cs">
       <SubType>Form</SubType>
     </Compile>
