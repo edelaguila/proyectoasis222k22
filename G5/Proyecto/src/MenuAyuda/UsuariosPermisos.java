@@ -43,36 +43,51 @@ public class UsuariosPermisos extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel1.setText("1. Se le pdide usuario y contraseña. Tiene que tener los permisos adecuados para poder ingresar");
 
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel2.setText("Mostrar todos");
 
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setText("1. Haga click en el botón Mostrar todos ");
 
+        jLabel4.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel4.setText("Modificar un registro");
 
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setText("1. Ingrese los datos correspondientes en el formulario");
 
+        jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setText("2. Haga click en el botón Modificar");
 
+        jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel7.setText("Eliminar registro");
 
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel8.setText("1. Ingrese el ID del registro que desea eliminar");
 
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel9.setText("2. Haga click en el botón Eliminar");
 
+        jLabel10.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel10.setText("Buscar un registro");
 
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel11.setText("1. Ingrese el ID del registro que desea buscar");
 
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel12.setText("2. Haga click en el botón buscar");
 
+        jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel13.setText("Ingresar un nuevo registro");
 
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel14.setText("1. Ingrese los datos correspondientes en el formulario");
 
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel15.setText("2. Haga click en el botón Ingresar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -132,7 +147,7 @@ public class UsuariosPermisos extends javax.swing.JPanel {
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

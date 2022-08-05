@@ -285,7 +285,7 @@ void mostrardatoscart(String valor){
         Connection cn=cc.conexion();
         try{
             if(!(hora.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET horapres ='"+hora.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET horapres ='"+hora.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
@@ -298,7 +298,7 @@ void mostrardatoscart(String valor){
                 }
             } 
             else if(!(sala.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET salas ='"+sala.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET salas ='"+sala.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
@@ -311,7 +311,7 @@ void mostrardatoscart(String valor){
                 }
             } 
             else if(!(dia.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET diapres ='"+dia.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET diapres ='"+dia.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
@@ -324,7 +324,7 @@ void mostrardatoscart(String valor){
                 }
             } 
             else if(!(fecha.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET fecha ='"+fecha.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET fecha ='"+fecha.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
@@ -337,7 +337,7 @@ void mostrardatoscart(String valor){
                 }
             } 
             else if(!(idioma.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET idioma ='"+idioma.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET idioma ='"+idioma.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
@@ -350,7 +350,7 @@ void mostrardatoscart(String valor){
                 }
             } 
             else if(!(sub.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET subtitulado ='"+sub.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET subtitulado ='"+sub.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
@@ -363,7 +363,7 @@ void mostrardatoscart(String valor){
                 }
             } 
             else if(!(desc.getText().equals(""))){
-                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET descuento ='"+desc.getText()+"'WHERE id_pelicula="+num.getText()+";");
+                PreparedStatement pst=cn.prepareStatement("UPDATE cartelera SET descuento ='"+desc.getText()+"'WHERE id_cartelera="+num.getText()+";");
                 int a=pst.executeUpdate();
                 if(a>0){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado");
