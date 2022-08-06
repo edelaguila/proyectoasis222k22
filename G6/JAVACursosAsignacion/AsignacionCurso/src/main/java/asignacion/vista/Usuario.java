@@ -4,6 +4,8 @@
  */
 package asignacion.vista;
 
+import asignacion.datos.usuarios;
+
 /**
  *
  * @author jonat
@@ -15,6 +17,10 @@ public class Usuario extends javax.swing.JFrame {
      */
     public Usuario() {
         initComponents();
+    }
+
+    Usuario(usuarios mod) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -97,6 +103,20 @@ public class Usuario extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

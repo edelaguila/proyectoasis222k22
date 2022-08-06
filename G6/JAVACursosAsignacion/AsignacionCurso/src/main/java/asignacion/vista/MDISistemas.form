@@ -64,6 +64,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemCursohabilitadoAlumnoActionPerformed"/>
                   </Events>
                 </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="itemCursohabilitadoAlumno1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cursos_Catedratico"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemCursohabilitadoAlumno1ActionPerformed"/>
+                  </Events>
+                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="itemListadoAlumnoCursoCatedratico">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Listado_Alumno_Curso_Catedratico"/>

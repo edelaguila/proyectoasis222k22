@@ -6,17 +6,26 @@ package asignacion.datos;
 
 /**
  *
- * @author jonat
+ * @author jonathan
  */
 public class usuarios {
     private int id;
     private String usuario;
-    private String pass;
-    private String cod;
+    private String password;
     private String nombre;
-    private String id_tipo;
+    private String correo;
+    private String last_session;
+    private int id_tipo;
     private String nombre_tipo;
-            
+
+    public String getNombre_tipo() {
+        return nombre_tipo;
+    }
+
+    public void setNombre_tipo(String nombre_tipo) {
+        this.nombre_tipo = nombre_tipo;
+    }
+
     public int getId() {
         return id;
     }
@@ -33,20 +42,12 @@ public class usuarios {
         this.usuario = usuario;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getCod() {
-        return cod;
-    }
-
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNombre() {
@@ -57,22 +58,31 @@ public class usuarios {
         this.nombre = nombre;
     }
 
-    public String getId_tipo() {
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getLast_session() {
+        return last_session;
+    }
+
+    public void setLast_session(String last_session) {
+        this.last_session = last_session;
+    }
+
+    public int getId_tipo() {
         return id_tipo;
     }
 
-    public void setId_tipo(String id_tipo) {
+    public void setId_tipo(int id_tipo) {
         this.id_tipo = id_tipo;
     }
 
-    public String getNombre_tipo() {
-        return nombre_tipo;
-    }
-
-    public void setNombre_tipo(String nombre_tipo) {
-        this.nombre_tipo = nombre_tipo;
-    }
-
+ 
     
     
 }

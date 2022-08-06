@@ -18,9 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Listadoalumnoscarreraporcarrera extends javax.swing.JInternalFrame {
 
-    private static List<Listadoalumnoscarreraporcarrera> select(){
-        throw new UnsupportedOperationException("not supported yet, ");
-    }
+   
 
     public void llenadoDeTablas(){
     DefaultTableModel modelo = new DefaultTableModel();

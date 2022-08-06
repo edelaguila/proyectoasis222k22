@@ -86,7 +86,7 @@ public class BitacoraDAO {
              *
              * conecion con sql de selecccion
              */
-            conn = (Connection) Conexion.getConnection();
+            conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {

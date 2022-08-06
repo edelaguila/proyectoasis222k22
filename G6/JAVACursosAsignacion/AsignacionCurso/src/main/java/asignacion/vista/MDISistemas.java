@@ -5,6 +5,7 @@
 package asignacion.vista;
 
 import asignacion.datos.BitacoraDAO;
+import asignacion.datos.usuarios;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.net.UnknownHostException;
@@ -14,9 +15,10 @@ import java.net.UnknownHostException;
  * @author jonat
  */
 public class MDISistemas extends javax.swing.JFrame {
-
+    usuarios mod;
     private Bitacora Bitacora;
-    private RegistroCatedratico RegistroCatedratico;
+    private RegistoCatedratico RegistoCatedratico;
+
     private Listadoalumnoscurso Listadoalumnoscurso;
     private Pensum Pensum;
     private Listadoalumnoscarreraporcarrera Listadoalumnoscarreraporcarrera;
@@ -32,12 +34,17 @@ public class MDISistemas extends javax.swing.JFrame {
      */
     public MDISistemas() {
         initComponents();
+        
 
 //          this.setTitle("Usuario: " + "[" + Login.usuarioComercial + "]" + " \t" + "IP: [" + mdi_Components.getIp() + "]");
 //        permisos.getPermisos(modulo_nombre, Login.usuarioComercial);
+    
 
     }
-
+    
+    public MDISistemas (usuarios mod) {
+        this.mod = mod;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +65,7 @@ public class MDISistemas extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         itemRegistroCatedratico = new javax.swing.JMenuItem();
         itemCursohabilitadoAlumno = new javax.swing.JMenuItem();
+        itemCursohabilitadoAlumno1 = new javax.swing.JMenuItem();
         itemListadoAlumnoCursoCatedratico = new javax.swing.JMenuItem();
         itemListado_Alumno_Carrera = new javax.swing.JMenuItem();
         itemListado_Alumno_Curso = new javax.swing.JMenuItem();
@@ -123,6 +131,14 @@ public class MDISistemas extends javax.swing.JFrame {
             }
         });
         jMenu5.add(itemCursohabilitadoAlumno);
+
+        itemCursohabilitadoAlumno1.setText("Cursos_Catedratico");
+        itemCursohabilitadoAlumno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCursohabilitadoAlumno1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(itemCursohabilitadoAlumno1);
 
         itemListadoAlumnoCursoCatedratico.setText("Listado_Alumno_Curso_Catedratico");
         itemListadoAlumnoCursoCatedratico.addActionListener(new java.awt.event.ActionListener() {
@@ -243,11 +259,10 @@ public class MDISistemas extends javax.swing.JFrame {
         this.dispose();
 
         Bitacora = new Bitacora();
-
+        this.add(Bitacora);
         Bitacora.setVisible(true);
-
+        
         BitacoraDAO BitacoraDAO = new BitacoraDAO();
-
         Bitacora Insertar = new Bitacora();
         try {
             BitacoraDAO.insert(Insertar);
@@ -272,25 +287,23 @@ public class MDISistemas extends javax.swing.JFrame {
 
     private void itemCursohabilitadoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCursohabilitadoAlumnoActionPerformed
         // TODO add your handling code here:
-//          Listadoalumnoscurso = new Listadoalumnoscurso();
-//
-//        Listadoalumnoscurso.show();
-//       
-//        Listadoalumnoscurso.setVisible(true);
-//
-//        BitacoraDAO BitacoraDAO = new BitacoraDAO();
-//
-//        Bitacora Insertar = new Bitacora();
-//      //  Insertar.setId_Usuario(Login.usuarioComercial);
-//   //     Insertar.setAccion("Acceso ");
-//
-//        
-//
-//        try {
-//            BitacoraDAO.insert(Insertar);
-//        } catch (UnknownHostException ex) {
-//            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
-//        }  
+//       RegistoCatedratico = new RegistoCatedratico();
+
+        RegistoCatedratico.show();
+
+        RegistoCatedratico.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_itemCursohabilitadoAlumnoActionPerformed
 
     private void itemListado_Alumno_SeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_SeccionActionPerformed
@@ -298,7 +311,8 @@ public class MDISistemas extends javax.swing.JFrame {
         Listaalumnoscurso = new Listadoalumnoscurso();
         Listaalumnoscurso.show();
         Listaalumnoscurso.setVisible(true);
-        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+        
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();   
         Bitacora Insertar = new Bitacora();
         try {
             BitacoraDAO.insert(Insertar);
@@ -308,9 +322,12 @@ public class MDISistemas extends javax.swing.JFrame {
     }//GEN-LAST:event_itemListado_Alumno_SeccionActionPerformed
 
     private void itemRegistroCatedraticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemRegistroCatedraticoActionPerformed
-        RegistroCatedratico = new RegistroCatedratico();
-        RegistroCatedratico.show();
-        RegistroCatedratico.setVisible(true);
+       RegistoCatedratico = new RegistoCatedratico();
+
+        RegistoCatedratico.show();
+
+        RegistoCatedratico.setVisible(true);
+
         BitacoraDAO BitacoraDAO = new BitacoraDAO();
 
         Bitacora Insertar = new Bitacora();
@@ -389,11 +406,11 @@ public class MDISistemas extends javax.swing.JFrame {
 
     private void itemListado_Alumno_CarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListado_Alumno_CarreraActionPerformed
         // TODO add your handling code here:
-        ListadoAlumnoCarrera = new Listadoalumnoscarreraporcarrera();
+        Listadoalumnoscarreraporcarrera = new Listadoalumnoscarreraporcarrera();
 
-        ListadoAlumnoCarrera.show();
+        Listadoalumnoscarreraporcarrera.show();
 
-        ListadoAlumnoCarrera.setVisible(true);
+        Listadoalumnoscarreraporcarrera.setVisible(true);
 
         BitacoraDAO BitacoraDAO = new BitacoraDAO();
 
@@ -406,6 +423,8 @@ public class MDISistemas extends javax.swing.JFrame {
         } catch (UnknownHostException ex) {
             //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
     }//GEN-LAST:event_itemListado_Alumno_CarreraActionPerformed
 
     private void itemBoletaAsignacionCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBoletaAsignacionCursoActionPerformed
@@ -476,6 +495,27 @@ public class MDISistemas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_itemLoginActionPerformed
 
+    private void itemCursohabilitadoAlumno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCursohabilitadoAlumno1ActionPerformed
+        // TODO add your handling code here:
+        CursosCatedraticos = new CursosCatedraticos();
+
+        CursosCatedraticos.show();
+
+        CursosCatedraticos.setVisible(true);
+
+        BitacoraDAO BitacoraDAO = new BitacoraDAO();
+
+        Bitacora Insertar = new Bitacora();
+        //  Insertar.setId_Usuario(Login.usuarioComercial);
+        //     Insertar.setAccion("Acceso ");
+
+        try {
+            BitacoraDAO.insert(Insertar);
+        } catch (UnknownHostException ex) {
+            //Logger.getLogger(Aplicacion_Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_itemCursohabilitadoAlumno1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -518,6 +558,7 @@ public class MDISistemas extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemBoletaAsignacionCurso;
     private javax.swing.JMenuItem itemCertificacion_Curso;
     private javax.swing.JMenuItem itemCursohabilitadoAlumno;
+    private javax.swing.JMenuItem itemCursohabilitadoAlumno1;
     private javax.swing.JMenuItem itemListadoAlumnoCursoCatedratico;
     private javax.swing.JMenuItem itemListadoCarreraAlumno;
     private javax.swing.JMenuItem itemListado_Alumno_Carrera;

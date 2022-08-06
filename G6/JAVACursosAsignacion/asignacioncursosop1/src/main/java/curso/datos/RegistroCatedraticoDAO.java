@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package asignacion.datos;
+package curso.datos;
 
-import asignacion.dominio.RegistroCatedratico;
+import curso.dominio.RegistroCatedratico;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -172,27 +172,5 @@ public class RegistroCatedraticoDAO {
 
         //return empleados;  // Si se utiliza un ArrayList
         return registrocatedratico;
-    }
-     public int delete(RegistroCatedratico registrocatedratico) {
-
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        int rows = 0;
-
-        try {
-            conn = Conexion.getConnection();
-            //System.out.println("Ejecutando query:" + SQL_DELETE);
-            stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setString(1, registrocatedratico.getIdCat());
-            rows = stmt.executeUpdate();
-            //System.out.println("Registros eliminados:" + rows);
-        } catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-        } finally {
-            Conexion.close(stmt);
-            Conexion.close(conn);
-        }
-
-        return rows;
     }
 }

@@ -6,12 +6,20 @@ package asignacion.vista;
 
 
 
-//import asignacion.datos.MDISistema;
-import asignacion.datos.Conexion;
+
+import asignacion.datos.SQLUsuarios;
+import asignacion.datos.conexionSQL;
+import asignacion.datos.hash;
+import asignacion.datos.usuarios;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.Statement;
 import java.sql.ResultSet;
+
+import java.sql.PreparedStatement;
+
+
+
 
 
 /**
@@ -20,12 +28,14 @@ import java.sql.ResultSet;
  */
 public class Login extends javax.swing.JFrame {
     
-    Conexion cc=new Conexion();
-//    Connection con=cc.Conexion();
-//    
+    
+    conexionSQL cc=new conexionSQL();
+    Connection con=cc.Conexion();
+    
     
     public Login() {
         initComponents();
+ 
     }
 
     /**
@@ -40,7 +50,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtPass = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
         txtolvide = new javax.swing.JButton();
 
@@ -77,7 +87,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel2))
@@ -98,7 +108,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresar)
@@ -110,7 +120,35 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-     validarUsuario();
+   
+        SQLUsuarios modSql = new SQLUsuarios();
+        usuarios mod = new usuarios();
+        
+        String pass = new String (txtPassword.getPassword());
+        
+        if(!txtUsuario.getText().equals("") && !pass.equals(""))
+            
+        {
+            String nuevoPass = hash.sha1(pass);
+            
+            mod.setUsuario(txtUsuario.getText());
+            mod.setPassword(nuevoPass);
+            
+            if(modSql.login(mod)){
+                
+           MDISistema form=new MDISistema (mod);
+           form.setVisible(true);
+          this.dispose();
+                
+            }else {
+                JOptionPane.showMessageDialog(null,"Datos incorrectos");
+            } 
+        }else {
+                    JOptionPane.showMessageDialog(null,"NO hay datos");
+                   }
+            
+       
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void txtolvideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtolvideActionPerformed
@@ -119,39 +157,7 @@ public class Login extends javax.swing.JFrame {
            this.dispose();
     }//GEN-LAST:event_txtolvideActionPerformed
 
-    public void validarUsuario(){
-//      int resultado= 0;
-//      String pass=String.valueOf(txtPass.getPassword());
-//      String usuario=txtUsuario.getText();
-//      String SQL="select * from usuarios where usuario='"+usuario+"' and pass='"+pass+"'  ";  
-//        
-//      try {
-////        Statement st=con.createStatement();
-////        ResultSet rs=st.executeQuery(SQL);
-//        
-////        if(rs.next()) {
-//          
-//          resultado=1;
-//          
-//          if(resultado ==1) {
-//           
-//           //MDISistema form=new MDISistema (mod);
-//        //   form.setVisible(true);
-//           this.dispose();
-//          }
-//          
-//          
-//        }else{
-//             JOptionPane.showMessageDialog(null, "El usuario o contraseña son incorrectos");
-//        }
-//
-//        
-//      
-//    } catch(Exception e){
-//           JOptionPane.showMessageDialog(null, "Error" + e.getMessage());
-//    }
-    
-}
+  
     
     
     
@@ -186,6 +192,12 @@ public class Login extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -199,7 +211,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JButton txtolvide;
     // End of variables declaration//GEN-END:variables

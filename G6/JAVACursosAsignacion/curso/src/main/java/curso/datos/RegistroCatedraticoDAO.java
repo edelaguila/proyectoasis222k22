@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package asignacion.datos;
+package curso.datos;
 
-import asignacion.dominio.RegistroCatedratico;
+import curso.dominio.RegistroCatedratico;
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,7 +26,7 @@ public class RegistroCatedraticoDAO {
     private static final String SQL_QUERY = "SELECT idCat, nombres, apellidos, dpi, idDir, idCorreo, idTel FROM catedratico WHERE idCat=?";
     private static final String SQL_DELETE = "DELETE FROM catedratico WHERE idCat=?";
 
-    public List <RegistroCatedratico> select() {
+    public List<RegistroCatedratico> select() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -139,10 +139,10 @@ public class RegistroCatedraticoDAO {
             conn = Conexion.getConnection();
             System.out.println("Ejecutando query:" + SQL_QUERY);
             stmt = conn.prepareStatement(SQL_QUERY);
-            //stmt.setString(1, registrocatedratico.getIdCat());
+            stmt.setString(1, registrocatedratico.getIdCat());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                String IDcatedratico = rs.getString("idCat");
+                String getIdCat = rs.getString("getIdCat");
                 String nombres = rs.getString("nombres");
                 String apellidos = rs.getString("apellidos");
                 String dpi = rs.getString("dpi");
@@ -172,27 +172,5 @@ public class RegistroCatedraticoDAO {
 
         //return empleados;  // Si se utiliza un ArrayList
         return registrocatedratico;
-    }
-     public int delete(RegistroCatedratico registrocatedratico) {
-
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        int rows = 0;
-
-        try {
-            conn = Conexion.getConnection();
-            //System.out.println("Ejecutando query:" + SQL_DELETE);
-            stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setString(1, registrocatedratico.getIdCat());
-            rows = stmt.executeUpdate();
-            //System.out.println("Registros eliminados:" + rows);
-        } catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-        } finally {
-            Conexion.close(stmt);
-            Conexion.close(conn);
-        }
-
-        return rows;
     }
 }
