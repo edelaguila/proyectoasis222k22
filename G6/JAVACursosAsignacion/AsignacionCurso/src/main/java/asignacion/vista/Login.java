@@ -136,11 +136,10 @@ public class Login extends javax.swing.JFrame {
             
             if(modSql.login(mod)){
                 
-<<<<<<< HEAD:G6/JAVACursosAsignacion/AsignacionCursos/src/asignacion/vista/Login.java
-           MDISistemas form=new MDISistemas(mod);
-=======
+          
+
            MDISistema form=new MDISistema (mod);
->>>>>>> actualizaciones:G6/JAVACursosAsignacion/AsignacionCurso/src/main/java/asignacion/vista/Login.java
+
            form.setVisible(true);
           this.dispose();
                 
@@ -151,14 +150,9 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"NO hay datos");
                    }
             
-<<<<<<< HEAD:G6/JAVACursosAsignacion/AsignacionCursos/src/asignacion/vista/Login.java
-            
-   
-        
-        
-=======
+
        
->>>>>>> actualizaciones:G6/JAVACursosAsignacion/AsignacionCurso/src/main/java/asignacion/vista/Login.java
+
         
     }//GEN-LAST:event_btnIngresarActionPerformed
 
@@ -205,13 +199,12 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-<<<<<<< HEAD:G6/JAVACursosAsignacion/AsignacionCursos/src/asignacion/vista/Login.java
-=======
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
->>>>>>> actualizaciones:G6/JAVACursosAsignacion/AsignacionCurso/src/main/java/asignacion/vista/Login.java
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
