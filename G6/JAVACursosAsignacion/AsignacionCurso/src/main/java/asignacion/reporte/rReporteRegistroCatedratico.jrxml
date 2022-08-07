@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c1b9e59-f3b1-441e-96aa-ad48df9c450b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM asignacioncursos.catedratico;]]>
+	</queryString>
+	<field name="idCat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dpi" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idDir" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idCorreo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idTel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="139" y="29" width="227" height="35" uuid="e196b9ea-8a0d-4933-a752-ac976680fc12"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO CATEDRATICO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="71" height="20" uuid="7ccb4b07-d7f9-44d2-b55e-6843760ddb12"/>
+				<text><![CDATA[idCat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="0" width="68" height="20" uuid="4e0f23c0-6e5f-40f0-8446-db3460579b6b"/>
+				<text><![CDATA[nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="2" width="68" height="20" uuid="ea160120-d6be-4a8e-8035-abca9cdf70a4"/>
+				<text><![CDATA[apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="2" width="67" height="20" uuid="912b73af-8707-4abe-b122-694e4c54cae2"/>
+				<text><![CDATA[dpi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="2" width="72" height="20" uuid="62913e79-e8af-4ed9-82f1-7bd9ce24ad2a"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="2" width="72" height="20" uuid="e1915d59-20f5-48f5-a892-82d9a6de561a"/>
+				<text><![CDATA[idCorreo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="2" width="100" height="20" uuid="8063d133-a4d0-4a63-932f-317cbd376107"/>
+				<text><![CDATA[idTel]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="71" height="20" uuid="89fb0149-04a1-4f7a-9bb7-42af71000804"/>
+				<textFieldExpression><![CDATA[$F{idCat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="0" width="68" height="20" uuid="a0a8ad44-9b76-4e2d-8c3a-d76680e308f3"/>
+				<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="68" height="20" uuid="c9f21320-7938-4c72-8081-23eb38f7406b"/>
+				<textFieldExpression><![CDATA[$F{apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="0" width="67" height="20" uuid="3162cd9f-cd6e-449f-9225-82bc64fa4bdb"/>
+				<textFieldExpression><![CDATA[$F{dpi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="0" width="74" height="20" uuid="2fa443e2-31a3-44fa-9dc1-b77e0dfbf7b9"/>
+				<textFieldExpression><![CDATA[$F{idDir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="0" width="72" height="20" uuid="9ddb3aba-7744-44f3-9660-38a6d93f9679"/>
+				<textFieldExpression><![CDATA[$F{idCorreo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="0" width="100" height="20" uuid="8abcf22b-5aad-48b0-995e-93eea9d91b3b"/>
+				<textFieldExpression><![CDATA[$F{idTel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
