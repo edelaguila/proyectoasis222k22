@@ -3,6 +3,7 @@ package asignacion.dominio;
 
 
 public class Pensum {
+    
     String facultad;
     String yearP;
     String CarreraP;
