@@ -136,7 +136,10 @@ public class Login extends javax.swing.JFrame {
             
             if(modSql.login(mod)){
                 
+          
+
            MDISistema form=new MDISistema (mod);
+
            form.setVisible(true);
           this.dispose();
                 
@@ -147,7 +150,9 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"NO hay datos");
                    }
             
+
        
+
         
     }//GEN-LAST:event_btnIngresarActionPerformed
 
@@ -194,10 +199,12 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
