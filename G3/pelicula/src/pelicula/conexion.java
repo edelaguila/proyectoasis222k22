@@ -265,8 +265,72 @@ public class conexion extends javax.swing.JFrame {
         }
     }
         
-        
+    public void Rellenaconsqldevolucion(String tabla, JTable visor)
+    {
+        String sql = "Select * from " + tabla;
+        Statement st;
+        conexion conn = new conexion();
+        Connection conexion = conn.conectar();
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("iddevolucion");
+        model.addColumn("idrentas");
+        model.addColumn("fechaactual");
+        model.addColumn("mora");
+         
+        visor.setModel(model);
+        String [] dato = new String[4];
+        try{
+            st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next())
+            {      
+                dato[0] = rs.getString(1);
+                dato[1] = rs.getString(2);
+                dato[2] = rs.getString(3);
+                dato[3] = rs.getString(4);
+ 
+
+                model.addRow(dato);
+            }
+        }catch(SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    public void Procedimientoinsertdevolucion(JTextField idrenta, JTextField fecha_retorno, JTextField Mora)
+    {
+        try{
+            Connection conecta = conectar();
+            CallableStatement proc = conecta.prepareCall(" CALL agregar_devolucion(?,?,?)");
+            
+
+            proc.setString(1, idrenta.getText());
+            proc.setString(2, fecha_retorno.getText());
+            proc.setString(3, Mora.getText());
+            proc.execute();
+            
+            JOptionPane.showMessageDialog(null, "Se ha añadido una nueva devolucion!");
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
     
+            public void Eliminadevolucion(String id)
+    {
+        String sql = "delete from devolucion where iddevolucion = " + id;
+        Statement st;
+        Connection conexion = conectar();
+        try
+        {
+            st = conexion.createStatement();
+            int rs = st.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, "Registro eliminado!");
+        }catch(SQLException e)
+        {
+            System.out.println(e);
+        }
+    }
 
 }
 
