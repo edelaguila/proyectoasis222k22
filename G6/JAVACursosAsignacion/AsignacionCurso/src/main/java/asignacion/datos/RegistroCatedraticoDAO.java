@@ -38,7 +38,7 @@ public class RegistroCatedraticoDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                String idCat = rs.getString("idCat");;
+                int idCat = rs.getInt("idCat");;
                 String nombres = rs.getString("nombres");
                 String apellidos = rs.getString("apellidos");
                 String dpi = rs.getString("dpi");
@@ -76,7 +76,7 @@ public class RegistroCatedraticoDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, registrocatedratico.getIdCat());
+            stmt.setInt(1, registrocatedratico.getIdCat());
             stmt.setString(2, registrocatedratico.getNombres());
             stmt.setString(3, registrocatedratico.getApellidos());
             stmt.setString(4, registrocatedratico.getDpi());
@@ -107,7 +107,7 @@ public class RegistroCatedraticoDAO {
             conn = Conexion.getConnection();
             System.out.println("ejecutando query: " + SQL_UPDATE);
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, registrocatedratico.getIdCat());
+            stmt.setInt(1, registrocatedratico.getIdCat());
             stmt.setString(2, registrocatedratico.getNombres());
             stmt.setString(3, registrocatedratico.getApellidos());
             stmt.setString(4, registrocatedratico.getDpi());
@@ -142,7 +142,7 @@ public class RegistroCatedraticoDAO {
             //stmt.setString(1, registrocatedratico.getIdCat());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                String IDcatedratico = rs.getString("idCat");
+                int IDcatedratico = rs.getInt("idCat");
                 String nombres = rs.getString("nombres");
                 String apellidos = rs.getString("apellidos");
                 String dpi = rs.getString("dpi");
@@ -183,7 +183,7 @@ public class RegistroCatedraticoDAO {
             conn = Conexion.getConnection();
             //System.out.println("Ejecutando query:" + SQL_DELETE);
             stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setString(1, registrocatedratico.getIdCat());
+            stmt.setInt(1, registrocatedratico.getIdCat());
             rows = stmt.executeUpdate();
             //System.out.println("Registros eliminados:" + rows);
         } catch (SQLException ex) {
