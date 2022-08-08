@@ -16,6 +16,8 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
     public registro_devolucion_1() {
         initComponents();
         setLocationRelativeTo(null);
+        conexion conn = new conexion();
+        conn.Rellenaconsqldevolucion("devolucion", jTable1);
     }
 
     /**
@@ -31,8 +33,7 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        eliminardev = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,16 +54,18 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Codigo", "Membresia", "Devolucion", "Numero"
+                "No. Devolucion", "No. Renta", "Fecha Entregada", "Mora"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setText("Modificar");
-        jButton2.setEnabled(false);
-
-        jButton3.setText("Eliminar");
-        jButton3.setEnabled(false);
+        eliminardev.setText("Eliminar");
+        eliminardev.setEnabled(false);
+        eliminardev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminardevActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,11 +79,9 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(eliminardev, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,16 +90,14 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(0, 217, Short.MAX_VALUE))
+                        .addComponent(eliminardev)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -110,6 +109,13 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void eliminardevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminardevActionPerformed
+        String id=jTable1.getValueAt(jTable1.getSelectedRow(),0).toString();
+        conexion conn=new conexion();
+        conn.Eliminadevolucion(id);
+        conn.Rellenaconsqldevolucion("devolucion", jTable1);
+    }//GEN-LAST:event_eliminardevActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,9 +153,8 @@ public class registro_devolucion_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton eliminardev;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
