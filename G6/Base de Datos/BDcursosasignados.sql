@@ -133,7 +133,7 @@ CREATE TABLE `catedratico` (
   `dpi`  varchar(50) NOT NULL,
   `idDir` varchar(50) NOT NULL,
   `idCorreo` varchar(50) NOT NULL,
-  `idTel` varchar(50) NOT NULL,
+  `idTel` varchar (50)  NOT NULL,
   PRIMARY KEY (`idCat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

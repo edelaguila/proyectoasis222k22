@@ -10,7 +10,7 @@ package asignacion.dominio;
  * @author Diana
  */
 public class RegistroCatedratico {
-    String idCat;
+    int idCat;
     String nombres;
     String apellidos;
     String dpi;
@@ -18,13 +18,14 @@ public class RegistroCatedratico {
     String idCorreo;
     String idTel;
 
-    public String getIdCat() {
+    public int getIdCat() {
         return idCat;
     }
 
-    public void setIdCat(String idCat) {
+    public void setIdCat(int idCat) {
         this.idCat = idCat;
     }
+
 
     public String getNombres() {
         return nombres;

@@ -5,6 +5,7 @@
  */
 package asignacion.vista;
 
+import asignacion.datos.BitacoraDAO;
 import asignacion.datos.Conexion;
 import asignacion.datos.RegistroCatedraticoDAO;
 import asignacion.dominio.RegistroCatedratico;
@@ -51,7 +52,7 @@ public class RegistoCatedratico extends javax.swing.JFrame {
         tblregistrocatedratico.setModel(modelo);
         String[] dato = new String[7];
         for (int i = 0; i < registro.size(); i++) {
-            dato[0] = registro.get(i).getIdCat();
+            dato[0] = Integer.toString(registro.get(i).getIdCat());
             dato[1] = registro.get(i).getNombres();
             dato[2] = registro.get(i).getApellidos();
             dato[3] = registro.get(i).getDpi();
@@ -60,15 +61,16 @@ public class RegistoCatedratico extends javax.swing.JFrame {
             dato[6] = registro.get(i).getIdTel();
             //System.out.println("vendedor:" + vendedores);
             modelo.addRow(dato);
+            
         }
     }
 
     public void buscar() {
         RegistroCatedratico registroAConsultar = new RegistroCatedratico();
         RegistroCatedraticoDAO registroDAO = new RegistroCatedraticoDAO();
+        registroAConsultar.setIdCat(Integer.parseInt(txtIDcatedratico.getText()));
         registroAConsultar = registroDAO.query(registroAConsultar);
 
-        txtIDcatedratico.setText(registroAConsultar.getIdCat());
         txtNombre.setText(registroAConsultar.getNombres());
         txtApellido.setText(registroAConsultar.getApellidos());
         txtDPI.setText(registroAConsultar.getDpi());
@@ -370,14 +372,15 @@ public class RegistoCatedratico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private Connection connection = null;
+
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         RegistroCatedraticoDAO registroDAO = new RegistroCatedraticoDAO();
         RegistroCatedratico registroAInsertar = new RegistroCatedratico();
-
-        registroAInsertar.setIdCat(txtIDcatedratico.getText());
+        
+       registroAInsertar.setIdCat((int) Integer.parseInt(txtIDcatedratico.getText()));
+       
         registroAInsertar.setNombres(txtNombre.getText());
         registroAInsertar.setApellidos(txtApellido.getText());
         registroAInsertar.setDpi(txtDPI.getText());
@@ -394,7 +397,8 @@ public class RegistoCatedratico extends javax.swing.JFrame {
         // TODO add your handling code here:
         RegistroCatedraticoDAO registroDAO = new RegistroCatedraticoDAO();
         RegistroCatedratico registroAActualizar = new RegistroCatedratico();
-        registroAActualizar.setIdCat(txtIDcatedratico.getText());
+        registroAActualizar.setIdCat(Integer.parseInt(txtIDcatedratico.getText()));
+
         registroAActualizar.setNombres(txtNombre.getText());
         registroAActualizar.setApellidos(txtApellido.getText());
         registroAActualizar.setDpi(txtDPI.getText());
@@ -414,15 +418,23 @@ public class RegistoCatedratico extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         RegistroCatedraticoDAO registroDAO = new RegistroCatedraticoDAO();
         RegistroCatedratico registroAEliminar = new RegistroCatedratico();
-        registroAEliminar.setIdCat(txtIDcatedratico.getText());
+        registroAEliminar.setIdCat(Integer.parseInt(txtIDcatedratico.getText()));
         registroDAO.delete(registroAEliminar);
         JOptionPane.showMessageDialog(null, "Registro Eliminado.");
-
+        
+        llenadoDeTablas();
+        limpiar();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         buscar();
+        BitacoraDAO bitacoraDAO = new BitacoraDAO();
+            
+        Bitacora Insertar = new Bitacora();
+
+       
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -434,15 +446,15 @@ public class RegistoCatedratico extends javax.swing.JFrame {
 
     private void btnReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporteActionPerformed
         // TODO add your handling code here:
-       
-         Map p = new HashMap();
+
+        Map p = new HashMap();
         JasperReport report;
         JasperPrint print;
 
         try {
             connection = Conexion.getConnection();
             report = JasperCompileManager.compileReport(new File("").getAbsolutePath()
-                + "src\\main\\java\\asignacion\\reporte\\ReporteRegistroCatedratico.jrxml");
+                    + "src\\main\\java\\asignacion\\reporte\\ReporteRegistroCatedratico.jrxml");
             print = JasperFillManager.fillReport(report, p, connection);
             JasperViewer view = new JasperViewer(print, false);
             view.setTitle("deudor ");
@@ -451,12 +463,12 @@ public class RegistoCatedratico extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_btnReporteActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-         try {
+        try {
             if ((new File("src\\main\\java\\Comercial\\reportes\\Clientes.chm")).exists()) {
                 Process p = Runtime
                         .getRuntime()
@@ -469,9 +481,9 @@ public class RegistoCatedratico extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-         
-    }//GEN-LAST:event_jButton6ActionPerformed
 
+    }//GEN-LAST:event_jButton6ActionPerformed
+    private Connection connection = null;
     /**
      * @param args the command line arguments
      */
