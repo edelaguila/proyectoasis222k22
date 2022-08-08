@@ -469,10 +469,10 @@ public class RegistoCatedratico extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         try {
-            if ((new File("src\\main\\java\\Comercial\\reportes\\Clientes.chm")).exists()) {
+            if ((new File("src\\main\\java\\asignacion\\reporte\\AyudaRegistroCatedratico.chm")).exists()) {
                 Process p = Runtime
                         .getRuntime()
-                        .exec("rundll32 url.dll,FileProtocolHandler src\\main\\java\\Comercial\\reportes\\Clientes.chm");
+                        .exec("rundll32 url.dll,FileProtocolHandler src\\main\\java\\asignacion\\reporte\\AyudaRegistroCatedratico.chm");
                 p.waitFor();
             } else {
                 JOptionPane.showMessageDialog(null, "La ayuda no Fue encontrada");
