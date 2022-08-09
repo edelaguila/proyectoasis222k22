@@ -68,8 +68,6 @@ public class devolucion extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        coddev = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,8 +134,6 @@ public class devolucion extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setText("codigo devolución");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -175,9 +171,7 @@ public class devolucion extends javax.swing.JFrame {
                         .addComponent(devolucion)
                         .addGap(18, 18, 18)
                         .addComponent(jToggleButton1))
-                    .addComponent(jLabel6)
-                    .addComponent(coddev, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(jLabel6))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -198,25 +192,18 @@ public class devolucion extends javax.swing.JFrame {
                     .addComponent(codpelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idrenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buscar))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fecha_renta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fecha_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(coddev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fecha_renta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fecha_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fecha_actual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,34 +249,8 @@ public class devolucion extends javax.swing.JFrame {
     }//GEN-LAST:event_fecha_actualActionPerformed
 
     private void devolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_devolucionActionPerformed
-    String Identidad=coddev.getText(),Nombre=idrenta.getText(),Direccion=fecha_retorno.getText(),
-             Telefono=Mora.getText();
-     String Sql="Insert into devoluciones() Values(?,?,?,?)";
-    try {
-        Statement set=conn.createStatement();
-        ResultSet resultado=set.executeQuery("Select*from usuarios where Identidad like'"+coddev.getText()+"'");
-        if(resultado.next()){
-            getToolkit().beep();
-            JOptionPane.showMessageDialog(null,"Usuario ya existe");
-            coddev.requestFocus();
-        }else if(coddev.getText().isEmpty()){
-             getToolkit().beep();
-            JOptionPane.showMessageDialog(null,"Identidad Obligatoria");
-            coddev.requestFocus();
-        }else{
-            PreparedStatement pasar =conn.prepareStatement(Sql);
-            pasar.setString(1, Identidad);
-            pasar.setString(2, Nombre);
-            pasar.setString(3, Direccion);
-            pasar.setString(4, Telefono);
-            pasar.setString(5, Email);
-            pasar.executeUpdate();
-            JOptionPane.showMessageDialog(null,"Registro Exitoso");
-        }
-        
-    } catch (SQLException ex) {
-        Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        conexion conn = new conexion();
+        conn.Procedimientoinsertdevolucion(idrenta,fecha_actual,Mora);
     }//GEN-LAST:event_devolucionActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -341,7 +302,6 @@ public class devolucion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Mora;
     private javax.swing.JButton buscar;
-    private javax.swing.JTextField coddev;
     private javax.swing.JTextField codpelicula;
     private javax.swing.JButton devolucion;
     private javax.swing.JTextField fecha_actual;
@@ -357,7 +317,6 @@ public class devolucion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField membresia;
     // End of variables declaration//GEN-END:variables

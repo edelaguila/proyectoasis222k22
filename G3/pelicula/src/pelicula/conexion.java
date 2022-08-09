@@ -297,16 +297,15 @@ public class conexion extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    public void Procedimientoinsertdevolucion(JTextField idrenta, JTextField fecha_retorno, JTextField Mora)
+    public void Procedimientoinsertdevolucion(JTextField idren, JTextField fechac, JTextField mora)
     {
         try{
             Connection conecta = conectar();
             CallableStatement proc = conecta.prepareCall(" CALL agregar_devolucion(?,?,?)");
             
-
-            proc.setString(1, idrenta.getText());
-            proc.setString(2, fecha_retorno.getText());
-            proc.setString(3, Mora.getText());
+            proc.setString(1, idren.getText());
+            proc.setString(2, fechac.getText());
+            proc.setString(3, mora.getText());
             proc.execute();
             
             JOptionPane.showMessageDialog(null, "Se ha añadido una nueva devolucion!");
